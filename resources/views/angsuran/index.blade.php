@@ -7,7 +7,7 @@
   <div class="col-md-12 mb-3">
     <div class="card">
       <div class="card-body">
-        <h3>Filter by</h3>
+        <h6>Filter by</h6>
         <form id="filterForm" class="row g-2">
           <div class="col-md-3">
             <select class="form-select" id="filter_nama_anggota">
@@ -54,22 +54,28 @@
     <div class="card">
       <div class="card-header">Data Angsuran</div>
       <div class="card-body">
-        <table id="angsuran-table" class="table table-striped display" style="width:100%">
+   
+        <table id="angsuran-table" class="table table-striped display responsive" >
           <thead>
             <tr>
-              <th>No</th>
               <th>Nama Anggota</th>
               <th>Jenis Pinjaman</th>
-              <th>Angsuran Ke</th>
-              <th>Nominal Angsuran</th>
+              <th>Tenor Ke</th>
+              <th>Nominal Tenor</th>
               <th>Total Pinjaman</th>
+              <th>Jasa</th>
+              <th>Nominal Bayar</th>
               <th>Tgl Bayar</th>
               <th>Tgl Input</th>
               <th>Status</th>
               <th>Aksi</th>
             </tr>
           </thead>
+          <tbody>
+              <!-- Data akan diisi oleh DataTables -->
+          </tbody>
         </table>
+      
       </div>
     </div>
   </div>
@@ -95,8 +101,8 @@
               <span id="label_nominal_angsuran" class="fw-bold">0</span>
             </div>
             <div class="mb-2">
-              <span>Administrasi: </span>
-              <span id="label_administrasi" class="fw-bold">10,000</span>
+              <span>Jasa: </span>
+              <span id="jasa" class="fw-bold"></span>
             </div>
             <div class="mb-2">
               <span>Total Bayar: </span>
@@ -135,6 +141,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     $(document).ready(function () {
       // Inisialisasi datepicker
@@ -163,7 +170,6 @@
           }
         },
         columns: [
-          { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
           { data: 'nama_anggota', name: 'anggota.nama' },
           { data: 'jenis_pinjaman', name: 'pinjaman.jenis_pinjaman' },
           { data: 'angsuran_ke', name: 'angsuran_ke' },
@@ -180,6 +186,14 @@
             render: function (data) {
               return 'Rp ' + parseInt(data).toLocaleString('id-ID');
             }
+          },
+          {
+            data: 'jasa',
+            name: 'jasa',
+          },
+          {
+            data: 'nominal_bayar',
+            name: 'nominal_bayar',
           },
           {
             data: 'tgl_bayar',
@@ -208,14 +222,19 @@
               if (row.status_bayar == '1') {
                 return '<button class="btn btn-sm btn-secondary" disabled>Sudah Dibayar</button>';
               } else {
-                return '<button class="btn btn-sm btn-primary btn-bayar" data-id="' + row.id + '" data-nominal="' + row.nominal_angsuran + '">Bayar</button>';
+                return'<button class="btn btn-sm btn-primary btn-bayar" ' +
+             'data-id="' + row.id + '" ' +
+             'data-nominal="' + row.nominal_angsuran + '" ' +
+             'data-jasa="' + row.jasa + '" ' +
+             'data-nominal_bayar="' + row.nominal_bayar + '">' +
+             'Bayar</button>';
               }
             }
           }
         ],
         language: {
           search: "Cari:",
-          searchPlaceholder: "Nama / Jenis Pinjaman..."
+          // searchPlaceholder: "Nama / Jenis Pinjaman..."
         },
       });
 
@@ -226,45 +245,61 @@
 
       // Tombol Bayar diklik
       $(document).on('click', '.btn-bayar', function () {
-        var id = $(this).attr('data-id');
-        var nominal = parseInt($(this).attr('data-nominal'));
-        var administrasi = 10000;
-        var total = nominal + administrasi;
+      var id = $(this).attr('data-id');
+      var nominal = parseInt($(this).attr('data-nominal'));
+      var jasaRaw = $(this).attr('data-jasa');
+      var nominalBayarRaw = $(this).attr('data-nominal_bayar');
 
-        $('#angsuran_id').val(id);
-        $('#angsuranForm').attr('action', '/angsuran/' + id);
-        $('#label_nominal_angsuran').text('Rp ' + nominal.toLocaleString('id-ID'));
-        $('#label_total_bayar').text('Rp ' + total.toLocaleString('id-ID'));
-        $('#total_bayar').val(total);
+      // var jasa = jasaRaw;
+      var nominalBayar = nominalBayarRaw ? parseInt(nominalBayarRaw) : nominal;
+      var jasa = parseFloat(jasaRaw) * 100; // konversi ke angka lalu kalikan 100
 
-        var angsuranModal = new bootstrap.Modal(document.getElementById('angsuranModal'));
-        angsuranModal.show();
-      });
+      $('#angsuran_id').val(id);
+      $('#angsuranForm').attr('action', '/angsuran/' + id);
+      $('#label_nominal_angsuran').text('Rp ' + nominal.toLocaleString('id-ID'));
+      $('#label_total_bayar').text('Rp ' + nominalBayar.toLocaleString('id-ID'));
+      $('#jasa').text(jasa + '% dari total pinjaman');
+      $('#total_bayar').val(nominalBayar);
+
+      var angsuranModal = new bootstrap.Modal(document.getElementById('angsuranModal'));
+      angsuranModal.show();
+    });
 
       // Submit Form Bayar
       $('#angsuranForm').submit(function (e) {
-        e.preventDefault();
-        var form = $(this);
-        var url = form.attr('action');
+      e.preventDefault();
+      var form = $(this);
+      var url = form.attr('action');
 
-        $.ajax({
-          type: "POST",
-          url: url,
-          data: form.serialize(),
-          success: function (response) {
-            var angsuranModalEl = document.getElementById('angsuranModal');
-            var angsuranModal = bootstrap.Modal.getInstance(angsuranModalEl);
-            angsuranModal.hide();
-            table.draw();
-             // Tampilkan toast sukses
-            showToast('Sukses', 'Pembayaran berhasil disimpan', 'bg-success');
-          },
-          error: function (xhr) {
-            // Tampilkan toast error
-            showToast('Error', 'Terjadi kesalahan: ' + xhr.responseText, 'bg-danger');
-          }
-        });
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: form.serialize(),
+        success: function (response) {
+          var angsuranModalEl = document.getElementById('angsuranModal');
+          var angsuranModal = bootstrap.Modal.getInstance(angsuranModalEl);
+          angsuranModal.hide();
+          table.draw();
+
+          // Ganti showToast dengan SweetAlert2
+          Swal.fire({
+            icon: 'success',
+            title: 'Sukses',
+            text: 'Pembayaran berhasil disimpan',
+            confirmButtonText: 'OK'
+          });
+        },
+        error: function (xhr) {
+          // Ganti showToast dengan SweetAlert2
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Terjadi kesalahan: ' + xhr.responseText,
+            confirmButtonText: 'OK'
+          });
+        }
       });
     });
+  });
   </script>
 @endpush

@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\Jasa;
 use App\Models\Anggota;
 use App\Models\Angsuran;
-use App\Models\jenis_pinjaman;
 use App\Models\Pinjaman;
 use Illuminate\Http\Request;
 
+use App\Models\jenis_pinjaman;
 use Illuminate\Support\Facades\Log;
 
 class AngsuranController extends Controller
@@ -52,13 +53,16 @@ public function getDataAngsuran(Request $request)
             'angsuran.nominal_angsuran',
             'angsuran.total_pinjaman',
             'angsuran.tgl_bayar',
+            'angsuran.jasa',
+            'angsuran.nominal_bayar',
             'angsuran.tgl_input',
             'angsuran.status_bayar',
             'anggota.nama as nama_anggota',
             'pinjaman.jenis_pinjaman'
         ])
         ->leftJoin('anggota', 'anggota.id', '=', 'angsuran.anggota_id')
-        ->leftJoin('pinjaman', 'pinjaman.id', '=', 'angsuran.pinjaman_id');
+        ->leftJoin('pinjaman', 'pinjaman.id', '=', 'angsuran.pinjaman_id')
+        ->orderBy('angsuran.id', 'desc');
 
         $totalRecords = $baseQuery->count(); // total data sebelum filter
 
@@ -107,13 +111,14 @@ public function getDataAngsuran(Request $request)
         $data = [];
         foreach ($angsurans as $index => $angsuran) {
             $data[] = [
-                'DT_RowIndex' => $start + $index + 1,
                 'nama_anggota' => $angsuran->nama_anggota,
                 'jenis_pinjaman' => $angsuran->jenis_pinjaman,
                 'angsuran_ke' => $angsuran->angsuran_ke,
                 'nominal_angsuran' => $angsuran->nominal_angsuran,
                 'total_pinjaman' => $angsuran->total_pinjaman,
-                'tgl_bayar' => $angsuran->tgl_bayar, 
+                'jasa' => $angsuran->jasa,
+                'nominal_bayar' => $angsuran->nominal_bayar,
+                'tgl_bayar' => $angsuran->tgl_bayar,
                 'tgl_input' => $angsuran->tgl_input, 
                 'status_bayar' => $angsuran->status_bayar,
                 'id' => $angsuran->id, // Pastikan id ikut dikirim
@@ -222,6 +227,12 @@ public function getDataAngsuran(Request $request)
             ]);
 
         return response()->json(['message' => 'Pelunasan berhasil']);
+    }
+
+    public function getJasa()
+    {
+        $jasa = Jasa::select('jasa', 'jasa')->get();
+        return response()->json($jasa);
     }
 
 }

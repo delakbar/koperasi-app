@@ -34,45 +34,6 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 mb-3">
-                <div class="card shadow-sm bg-light h-100 info-card hover-shadow">
-                    <div class="card-body d-flex align-items-center">
-                        <div class="me-3">
-                            <i class="bi bi-receipt fs-2 text-success"></i>
-                        </div>
-                        <div>
-                            <h6 class="card-subtitle mb-1 text-muted">Biaya Administrasi</h6>
-                            <h5 class="card-title mb-0" id="administrasi">Rp 0</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 mb-3">
-                <div class="card shadow-sm bg-light h-100 info-card hover-shadow">
-                    <div class="card-body d-flex align-items-center">
-                        <div class="me-3">
-                            <i class="bi bi-piggy-bank fs-2 text-info"></i>
-                        </div>
-                        <div>
-                            <h6 class="card-subtitle mb-1 text-muted">Provisi</h6>
-                            <h5 class="card-title mb-0" id="provisi">Rp 0</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-3">
-                <div class="card shadow-sm bg-light h-100 info-card hover-shadow border-primary border-2">
-                    <div class="card-body d-flex align-items-center">
-                        <div class="me-3">
-                            <i class="bi bi-calculator fs-2 text-primary"></i>
-                        </div>
-                        <div>
-                            <h6 class="card-subtitle mb-1 text-muted">Total Pembayaran</h6>
-                            <h4 class="card-title mb-0 fw-bold" id="totalPembayaran">Rp 0</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <!-- Tabel Angsuran -->
@@ -111,8 +72,9 @@
         <h5 class="modal-title" id="confirmBayarModalLabel">Konfirmasi Pembayaran</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
       </div>
-      <div class="modal-body">
-        Apakah Anda yakin ingin melakukan pembayaran pinjaman ini?
+      <div class="modal-body" id="nominalBayar">
+        <p>Apakah Anda yakin ingin membayar pinjaman ini?</p>
+        <p><strong>Total Nominal:</strong> <span id="totalNominalBayar">Rp 0</span></p>        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
@@ -132,6 +94,7 @@
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     function formatRupiah(angka) {
         return 'Rp ' + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -171,20 +134,10 @@
                 fetchUnpaidDetails(pinjamanId).done(function(response) {
                     var totalNominal = parseInt(response.total_nominal);
                     var sisaAngsuran = parseInt(response.remaining_installments);
-                    var administrasi = parseInt(response.administrasi) || 10000;
-                    var provisiRate = parseFloat(response.provisi) || 0.015; // 1.5% default
-                    var provisi = Math.round(totalNominal * provisiRate);
-                    var totalPembayaran = totalNominal + administrasi + provisi;
-
+                   
                     // Update UI dengan data yang diterima
                     $('#totalNominal').text(formatRupiah(totalNominal));
                     $('#sisaAngsuran').text(sisaAngsuran);
-                    $('#administrasi').text(formatRupiah(administrasi));
-                    $('#provisi').text(formatRupiah(provisi));
-                    $('#totalPembayaran').text(formatRupiah(totalPembayaran));
-                }).fail(function() {
-                    $('#totalNominal').text('Rp 0');
-                    $('#sisaAngsuran').text('0');
                 });
             }
         });
@@ -193,6 +146,8 @@
     var bayarModal = new bootstrap.Modal(document.getElementById('confirmBayarModal'));
 
     $('#btnBayar').click(function() {
+        var totalNominalText = $('#totalNominal').text();
+        $('#totalNominalBayar').text(totalNominalText);
         bayarModal.show();
     });
 
@@ -202,15 +157,28 @@
             type: 'POST',
             data: {
                 _token: '{{ csrf_token() }}'
+                // tambahkan data lain jika diperlukan
             },
             success: function(response) {
                 if (response.success) {
-                    $('#messageBayar').html('<div class="alert alert-success">' + response.message + '</div>');
-                    bayarModal.hide();
-                    location.reload();
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil',
+                        text: response.message,
+                        confirmButtonText: 'OK'
+                    }).then(() => {
+                        bayarModal.hide();
+                        location.reload();
+                    });
                 } else {
-                    $('#messageBayar').html('<div class="alert alert-warning">' + response.message + '</div>');
-                    bayarModal.hide();
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Peringatan',
+                        text: response.message,
+                        confirmButtonText: 'OK'
+                    }).then(() => {
+                        bayarModal.hide();
+                    });
                 }
             },
             error: function(xhr) {
@@ -218,8 +186,14 @@
                 if (xhr.responseJSON && xhr.responseJSON.message) {
                     errMsg = xhr.responseJSON.message;
                 }
-                $('#messageBayar').html('<div class="alert alert-danger">' + errMsg + '</div>');
-                bayarModal.hide();
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: errMsg,
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    bayarModal.hide();
+                });
             }
         });
     });

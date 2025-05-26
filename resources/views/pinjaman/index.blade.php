@@ -9,7 +9,7 @@
             <div class="card-header">Pinjaman</div>
             <div class="card-body">
                 <a href="{{ route('pinjaman.create') }}" class="btn btn-primary mb-3">Tambah Pinjaman</a>
-                <table class="table table-striped">
+                <table id= "pinjaman-table" class="table table-striped display responsive nowrap">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -42,7 +42,7 @@
 <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
 <script>
 $(document).ready(function() {
-    $('.table').DataTable({
+    $('#pinjaman-table').DataTable({
         processing: true,
         serverSide: true,
         ajax: '{{ route("pinjaman.data") }}',

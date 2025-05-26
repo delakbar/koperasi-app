@@ -17,6 +17,8 @@ class Pinjaman extends Model
         'tgl_pinjam',
         'jml_angsuran',
         'input_by',
+        'rate',
+        'provisi',
         'tgl_input',
     ];
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Anggota;
 use App\Models\Provisi;
+use App\Models\Jasa;
 use App\Models\Angsuran;
 use App\Models\Pinjaman;
 use App\Models\Administrasi;
@@ -118,9 +119,27 @@ class PinjamanController extends Controller
         // Ambil user id yang sedang login untuk kolom input_by
         $validated['input_by'] = auth()->id();
 
+        $provisiRecord = Provisi::first()->provisi;
+        $jasaRecord = Jasa::first()->jasa;
+        $provisiNominal = $validated['nominal_pinjaman'] * $provisiRecord;
+
         // Simpan data pinjaman dan ambil id-nya
-        $pinjaman = Pinjaman::create($validated);
-        $nominal_angsuran = $validated['nominal_pinjaman'] / $validated['jml_angsuran'];
+        $pinjaman = Pinjaman::create([
+            'anggota_id' => $validated['anggota_id'],
+            'nominal_pinjaman' => $validated['nominal_pinjaman'],
+            'jenis_pinjaman' => $validated['jenis_pinjaman'],
+            'tgl_pinjam' => $validated['tgl_pinjam'],
+            'jml_angsuran' => $validated['jml_angsuran'],
+            'input_by' => $validated['input_by'],
+            'tgl_input' => $validated['tgl_input'] ?? now(),
+            'rate' => $provisiRecord, // simpan rate jika kolom ada
+            'provisi' => $provisiNominal, // simpan provisi jika kolom ada
+        ]);
+
+        // Hitung nominal angsuran per bulan
+        $angsuranPokok = $validated['nominal_pinjaman'] / $validated['jml_angsuran'];
+        $jasaNominal = $validated['nominal_pinjaman'] * $jasaRecord; // jasa per bulan
+        $nominalAngsuran = $angsuranPokok + $jasaNominal;
 
         // Buat data angsuran sebanyak jml_angsuran
         for ($i = 1; $i <= $validated['jml_angsuran']; $i++) {
@@ -128,9 +147,11 @@ class PinjamanController extends Controller
                 'pinjaman_id' => $pinjaman->id,
                 'anggota_id' => $validated['anggota_id'],
                 'angsuran_ke' => $i,
-                'nominal_angsuran' => $nominal_angsuran,
+                'nominal_angsuran' => $angsuranPokok,
+                'jasa' => $jasaRecord, // simpan jasa per bulan
+                'nominal_bayar' => $nominalAngsuran, // total angsuran per bulan
                 'tgl_bayar' => null,
-                'tgl_input' => $validated['tgl_input'] ?? now(),   
+                'tgl_input' => $validated['tgl_input'] ?? now(),
                 'total_pinjaman' => $validated['nominal_pinjaman'],
                 'status_bayar' => '0',
             ]);

@@ -9,7 +9,7 @@
             <div class="card-header">Simpanan</div>
             <div class="card-body">
                 <a href="{{ route('simpanan.create') }}" class="btn btn-primary mb-3">Tambah Simpanan</a>
-                <table id="simpanan-table" class="table table-striped">
+                <table id="simpanan-table" class="table table-striped display responsive nowrap">
                     <thead>
                         <tr>
                             <th>No</th>

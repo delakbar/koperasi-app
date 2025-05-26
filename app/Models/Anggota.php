@@ -2,16 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable; // <- ini penting
-use App\Models\Simpanan;
 use App\Models\pinjaman;
+use App\Models\Simpanan;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable; // <- ini penting
 
 class Anggota extends Authenticatable
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
     protected $table = 'anggota';
+    protected $primaryKey = 'id';
     protected $fillable = [
         'username',
         'password',
@@ -34,6 +36,10 @@ class Anggota extends Authenticatable
     public function getAuthIdentifierName()
     {
         return 'username';
+    }
+    public function getAuthPassword()
+    {
+        return $this->password;
     }
 
 }
