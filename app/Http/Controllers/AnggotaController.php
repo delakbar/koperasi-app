@@ -7,6 +7,7 @@ use App\Models\Angsuran;
 use App\Models\Pinjaman;
 use App\Models\Simpanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class AnggotaController extends Controller
@@ -51,11 +52,7 @@ class AnggotaController extends Controller
             $aksi = '
                 <a href="'.route('anggota.show', $item->id).'" class="btn btn-info btn-sm">Detail</a>
                 <a href="'.route('anggota.edit', $item->id).'" class="btn btn-warning btn-sm">Edit</a>
-                <form action="'.route('anggota.destroy', $item->id).'" method="POST" style="display:inline;">
-                    '.csrf_field().'
-                    '.method_field('DELETE').'
-                    <button class="btn btn-danger btn-sm" onclick="return confirm(\'Yakin hapus?\')">Hapus</button>
-                </form>
+                <button class="btn btn-danger btn-sm btn-hapus" data-id="'.$item->id.'">Hapus</button>
             ';
 
             $json_data['data'][] = [
@@ -110,20 +107,25 @@ class AnggotaController extends Controller
             return redirect()->route('anggota.index')->with('error', 'Anggota gagal ditambahkan.');
         }
     }
-
-    /**
-     * Display the specified resource.
-     */
     public function show($id)
     {
-        // Ambil data anggota berdasarkan id
+        // Ambil data anggota
         $anggota = Anggota::findOrFail($id);
 
-        // Ambil data simpanan dan pinjaman berdasarkan anggota
-        $simpanan = Simpanan::where('anggota_id', $anggota->id)->sum('nominal_simpanan');
-        $pinjaman = Angsuran::where('anggota_id', $anggota->id)
-            ->where('status_bayar', '0')
-            ->sum('nominal_angsuran');
+        // Ambil total simpanan per jenis
+        $datasimpanan = DB::table('simpanan')
+            ->select('jenis_simpanan', DB::raw('SUM(nominal_simpanan) as nominal_simpanan'))
+            ->where('anggota_id', $anggota->id)
+            ->groupBy('jenis_simpanan')
+            ->get();
+
+        $datapinjaman = DB::table('pinjaman')
+            ->join('angsuran', 'pinjaman.id', '=', 'angsuran.pinjaman_id')
+            ->select('pinjaman.jenis_pinjaman', DB::raw('SUM(angsuran.nominal_angsuran) as nominal_pinjaman'))
+            ->where('angsuran.anggota_id', $anggota->id)
+            ->where('angsuran.status_bayar', '0')
+            ->groupBy('pinjaman.jenis_pinjaman')
+            ->get();
 
         // Ambil 3 simpanan terbaru
         $topSimpanan = Simpanan::where('anggota_id', $anggota->id)
@@ -137,10 +139,14 @@ class AnggotaController extends Controller
             ->limit(3)
             ->get();
 
+        // Kirim data ke view
         return view('anggota.detail', [
             'detail' => $anggota,
-            'simpanan' => $simpanan,
-            'pinjaman' => $pinjaman,
+            'datasimpanan' => $datasimpanan, 
+            'total_simpanan' => $datasimpanan->sum('nominal_simpanan'),
+            'datapinjaman' => $datapinjaman, 
+            'total_pinjaman' => $datapinjaman->sum('nominal_pinjaman'),
+            'anggota' => $anggota,
             'topSimpanan' => $topSimpanan,
             'topPinjaman' => $topPinjaman
         ]);
@@ -151,28 +157,39 @@ class AnggotaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('anggota.edit', [
+            'anggota' => Anggota::findOrFail($id)
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Anggota $anggota)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'username' => 'required|unique:anggota,username,' . $anggota->id,
-            'password' => 'required',
-            'nama' => 'required',
-            'jabatan' => 'required',
-            'no_hp' => 'required',
-            'role' => 'required',
-            'is_active' => 'required',
+        // Validasi input
+        $validatedData = $request->validate([
+            'nama' => 'required|string|max:255',
+            'username' => 'required|string|max:255|unique:anggota,username,' . $id,
+            'jabatan' => 'required|string|max:255',
+            'no_hp' => 'required|string|max:20',
+            'role' => 'required|in:anggota,admin',
         ]);
 
-        $anggota->update($request->all());
-        return response()->json($anggota);
-    }
+        // Cari data anggota berdasarkan id
+        $anggota = Anggota::findOrFail($id);
 
+        // Update data anggota
+        $anggota->nama = $validatedData['nama'];
+        $anggota->username = $validatedData['username'];
+        $anggota->jabatan = $validatedData['jabatan'];
+        $anggota->no_hp = $validatedData['no_hp'];
+        $anggota->role = $validatedData['role'];
+        $anggota->save();
+
+        // Redirect dengan pesan sukses
+        return redirect()->route('anggota.index')->with('success', 'Data anggota berhasil diperbarui.');
+    }
     /**
      * Remove the specified resource from storage.
      */
@@ -181,4 +198,34 @@ class AnggotaController extends Controller
         $anggota->delete();
         return response()->json(null, 204);
     }
+    public function updateStatus(Request $request, $id)
+    {
+        $anggota = Anggota::find($id);
+
+        if (!$anggota) {
+            return response()->json(['success' => false, 'message' => 'Anggota tidak ditemukan.'], 404);
+        }
+
+
+        $hasUnpaidInstallments = Angsuran::where('anggota_id', $id)
+        ->where('status_bayar', '0')
+        ->exists();
+
+        if ($hasUnpaidInstallments) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Tidak bisa menonaktifkan anggota karena masih ada pinjaman atau angsuran yang belum terbayarkan.'
+            ], 400);
+        }
+
+        // Update hanya kolom is_active
+        $anggota->is_active = 0;
+
+        if ($anggota->save()) {
+            return response()->json(['success' => true, 'message' => 'Anggota berhasil dinonaktifkan.']);
+        } else {
+            return response()->json(['success' => false, 'message' => 'Gagal menonaktifkan anggota.'], 500);
+        }
+    }
+
 }

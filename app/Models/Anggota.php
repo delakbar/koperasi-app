@@ -41,5 +41,6 @@ class Anggota extends Authenticatable
     {
         return $this->password;
     }
+    
 
 }

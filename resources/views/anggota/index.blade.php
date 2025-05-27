@@ -54,6 +54,7 @@
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 $(document).ready(function() {
     $('#anggota-table').DataTable({
@@ -71,24 +72,36 @@ $(document).ready(function() {
     });
 });
 
-// Handle delete button click
+// Fungsi untuk menonaktifkan anggota dengan validasi pinjaman
 $(document).on('click', '.btn-hapus', function() {
     var id = $(this).data('id');
-    if (confirm('Apakah Anda yakin ingin menghapus anggota ini?')) {
-        $.ajax({
-            url: '/anggota/' + id,
-            type: 'DELETE',
-            data: {
-                _token: '{{ csrf_token() }}'
-            },
-            success: function(response) {
-                $('#anggota-table').DataTable().ajax.reload(null, false);
-            },
-            error: function(xhr) {
-                alert('Gagal menghapus anggota.');
-            }
-        });
-    }
+
+    Swal.fire({
+        title: 'Apakah Anda yakin?',
+        text: "Anggota ini akan dinonaktifkan!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Ya, nonaktifkan!',
+        cancelButtonText: 'Batal'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: '/anggota/' + id + '/update-status',
+                type: 'PATCH',
+                data: {
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    $('#anggota-table').DataTable().ajax.reload(null, false);
+                    Swal.fire('Berhasil!', response.message, 'success');
+                },
+                error: function(xhr) {
+                    Swal.fire('Gagal!', xhr.responseJSON?.message || 'Gagal menonaktifkan anggota.', 'error');
+                }
+            });
+        }
+    });
 });
+
 </script>
 @endpush

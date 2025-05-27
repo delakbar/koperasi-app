@@ -1,11 +1,11 @@
 @extends('layouts.app')
-
+@section('title', 'Detail Anggota')
 @section('content')
 <div class="container">
     <div class="row">
 
         <!-- Card: Detail Anggota -->
-        <div class="col-md-6 mb-4">
+        <div class="col-md-4 mb-4">
             <div class="card">
                 <div class="card-header">
                     Detail Anggota
@@ -18,34 +18,56 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Card: Jumlah Simpanan -->
-        <div class="col-md-3 mb-4">
-            <div class="card text-white bg-success">
-                <div class="card-header">
-                    Jumlah Simpanan
+    
+        <!-- Card: Jumlah Simpanan Lengkap -->
+        <div class="col-md-4 mb-4 d-flex">
+            <div class="card w-100 text-white bg-gradient-success shadow">
+                <div class="card-header bg-success">
+                    <h5 class="mb-0">Jumlah Simpanan</h5>
                 </div>
-                <div class="card-body">
-                    <h4 class="card-title">
-                        Rp {{ number_format($simpanan, 0, ',', '.') }}
-                    </h4>
+                <div class="card-body text-dark bg-light rounded-bottom">
+                    <ul class="list-group list-group-flush mb-3">
+                        @foreach ($datasimpanan as $simpana )
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {{ $simpana->jenis_simpanan }}
+                            <span class="badge bg-primary text-white">
+                                Rp {{ number_format($simpana->nominal_simpanan, 0, ',', '.') }}
+                            </span>
+                        </li>     
+                        @endforeach
+                    </ul>
+                    <div class="text-center">
+                        <h5 class="fw-bold text-success">Total Simpanan</h5>
+                        <h4 class="text-success">Rp {{ number_format($total_simpanan, 0, ',', '.') }}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card: Jumlah Pinjaman Lengkap -->
+        <div class="col-md-4 mb-4 d-flex">
+            <div class="card w-100 text-white bg-gradient-secondary shadow">
+                <div class="card-header bg-secondary">
+                    <h5 class="mb-0">Jumlah Pinjaman</h5>
+                </div>
+                <div class="card-body text-dark bg-light rounded-bottom">
+                    <ul class="list-group list-group-flush mb-3">
+                        @foreach ($datapinjaman as $Pinjaman )
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {{ $Pinjaman->jenis_pinjaman }}
+                            <span class="badge bg-primary text-white">
+                                Rp {{ number_format($Pinjaman->nominal_pinjaman, 0, ',', '.') }}
+                            </span>
+                        </li>     
+                        @endforeach
+                    </ul>
+                    <div class="text-center">
+                        <h5 class="fw-bold text-secondary">Total Pinjaman</h5>
+                        <h4 class="text-secondary">Rp {{ number_format($total_pinjaman, 0, ',', '.') }}</h4>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Card: Jumlah Pinjaman -->
-        <div class="col-md-3 mb-4">
-            <div class="card text-white bg-info">
-                <div class="card-header">
-                    Jumlah Pinjaman
-                </div>
-                <div class="card-body">
-                    <h4 class="card-title">
-                        Rp {{ number_format($pinjaman, 0, ',', '.') }}
-                    </h4>
-                </div>
-            </div>
-        </div>
         <!-- Table: Histori Simpanan -->
         <div class="col-md-6 mb-4">
             <div class="card">

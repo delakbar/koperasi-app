@@ -32,14 +32,16 @@ Route::middleware(['auth'])->group(function () {
     Route::get('angsuran/data', [AngsuranController::class, 'getDataAngsuran'])->name('angsuran.getDataAngsuran');
     Route::get('pinjaman/data', [PinjamanController::class, 'getDataPinjaman'])->name('pinjaman.data');
     Route::get('simpanan/data', [SimpananController::class, 'getDataSimpanan'])->name('simpanan.data');
+    Route::resource('anggota', AnggotaController::class);
+    Route::resource('simpanan', SimpananController::class);
+    Route::resource('pinjaman', PinjamanController::class);
+    Route::resource('angsuran', AngsuranController::class);
     Route::post('/pinjaman/getpinjaman/{id}', [PinjamanController::class, 'getpinjaman'])
     ->name('pinjaman.getpinjaman');
     Route::post('/angsuran/pelunasan', [AngsuranController::class, 'pelunasan'])->name('angsuran.pelunasan');
     Route::get('/pinjaman/get-administrasi-provisi', [PinjamanController::class, 'getAdministrasiProvisi'])->name('pinjaman.getAdministrasiProvisi');
     Route::get('/pinjaman/unpaid-details/{id}', [PinjamanController::class, 'getUnpaidDetails'])->name('pinjaman.unpaidDetails');
     Route::post('/pinjaman/bayar/{id}', [PinjamanController::class, 'bayarPinjaman'])->name('pinjaman.bayar');
-    Route::resource('anggota', AnggotaController::class);
-    Route::resource('simpanan', SimpananController::class);
-    Route::resource('pinjaman', PinjamanController::class);
-    Route::resource('angsuran', AngsuranController::class);
+    Route::patch('/anggota/{id}/update-status', [AnggotaController::class, 'updateStatus'])->name('anggota.updateStatus');
+
 });

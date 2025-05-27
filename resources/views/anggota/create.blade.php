@@ -1,12 +1,11 @@
 @extends('layouts.app')
-
+@section('title', 'Create Anggota')
 @section('content')
 <div class="row justify-content-center">
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">Tambah Anggota</div>
-                <div class="card-body">
-                    <h2>Tambah Anggota Baru</h2>
+                <div class="card-body">                 
                     <form action="{{ route('anggota.store') }}" method="POST">
                         @csrf
                         <div class="mb-3">
