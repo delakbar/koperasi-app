@@ -38,11 +38,7 @@ class SimpananController extends Controller
 
         if (!empty($search)) {
             $query->where(function ($q) use ($search) {
-                $q->where('anggota_id', 'LIKE', "%{$search}%")
-                  ->orWhere('jenis_simpanan', 'LIKE', "%{$search}%")
-                  ->orWhere('tgl_simpan', 'LIKE', "%{$search}%")
-                  ->orWhere('input_by', 'LIKE', "%{$search}%")
-                  ->orWhere('tgl_input', 'LIKE', "%{$search}%");
+                $q->where('jenis_simpanan', 'LIKE', "%{$search}%");
             })
             // Cari juga berdasarkan nama anggota
             ->orWhereHas('anggota', function($q) use ($search) {

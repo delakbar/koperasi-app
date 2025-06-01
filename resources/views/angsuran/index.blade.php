@@ -105,6 +105,10 @@
               <span id="jasa" class="fw-bold"></span>
             </div>
             <div class="mb-2">
+              <span>Nominal Jasa: </span>
+              <span id="nominal_jasa" class="fw-bold"></span>
+            </div>
+            <div class="mb-2">
               <span>Total Bayar: </span>
               <span id="label_total_bayar" class="fw-bold">0</span>
             </div>
@@ -143,163 +147,149 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    $(document).ready(function () {
-      // Inisialisasi datepicker
-      $('#filter_tgl_pinjam1').datepicker({
-        format: 'yyyy-mm-dd',
-        autoclose: true,
-        todayHighlight: true
-      });
-      $('#filter_tgl_pinjam2').datepicker({
-        format: 'yyyy-mm-dd',
-        autoclose: true,
-        todayHighlight: true
-      });
+$(document).ready(function () {
+  // Inisialisasi datepicker
+  $('#filter_tgl_pinjam1, #filter_tgl_pinjam2').datepicker({
+    format: 'yyyy-mm-dd',
+    autoclose: true,
+    todayHighlight: true
+  });
 
-      // Inisialisasi DataTable
-      var table = $('#angsuran-table').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: {
-          url: "{{ route('angsuran.getDataAngsuran') }}",
-          data: function (d) {
-            d.nama_anggota = $('#filter_nama_anggota').val();
-            d.jenis_pinjaman = $('#filter_jenis_pinjaman').val();
-            d.tgl_pinjam1 = $('#filter_tgl_pinjam1').val();
-            d.tgl_pinjam2 = $('#filter_tgl_pinjam2').val();
-          }
-        },
-        columns: [
-          { data: 'nama_anggota', name: 'anggota.nama' },
-          { data: 'jenis_pinjaman', name: 'pinjaman.jenis_pinjaman' },
-          { data: 'angsuran_ke', name: 'angsuran_ke' },
-          {
-            data: 'nominal_angsuran',
-            name: 'nominal_angsuran',
-            render: function (data) {
-              return 'Rp ' + parseInt(data).toLocaleString('id-ID');
-            }
-          },
-          {
-            data: 'total_pinjaman',
-            name: 'total_pinjaman',
-            render: function (data) {
-              return 'Rp ' + parseInt(data).toLocaleString('id-ID');
-            }
-          },
-          {
-            data: 'jasa',
-            name: 'jasa',
-          },
-          {
-            data: 'nominal_bayar',
-            name: 'nominal_bayar',
-          },
-          {
-            data: 'tgl_bayar',
-            name: 'tgl_bayar',
-          },
-          {
-            data: 'tgl_input',
-            name: 'tgl_input',
-           
-          },
-          {
-            data: 'status_bayar',
-            name: 'status_bayar',
-            render: function (data) {
-              return data == '1' ?
-                '<span class="badge bg-success">Lunas</span>' :
-                '<span class="badge bg-warning">Belum</span>';
-            }
-          },
-          {
-            data: null,
-            name: 'action',
-            orderable: false,
-            searchable: false,
-            render: function (data, type, row) {
-              if (row.status_bayar == '1') {
-                return '<button class="btn btn-sm btn-secondary" disabled>Sudah Dibayar</button>';
-              } else {
-                return'<button class="btn btn-sm btn-primary btn-bayar" ' +
-             'data-id="' + row.id + '" ' +
-             'data-nominal="' + row.nominal_angsuran + '" ' +
-             'data-jasa="' + row.jasa + '" ' +
-             'data-nominal_bayar="' + row.nominal_bayar + '">' +
-             'Bayar</button>';
-              }
-            }
-          }
-        ],
-        language: {
-          search: "Cari:",
-          // searchPlaceholder: "Nama / Jenis Pinjaman..."
-        },
-      });
-
-      // Filter data
-      $('#btnFilter').click(function () {
-        table.draw();
-      });
-
-      // Tombol Bayar diklik
-      $(document).on('click', '.btn-bayar', function () {
-      var id = $(this).attr('data-id');
-      var nominal = parseInt($(this).attr('data-nominal'));
-      var jasaRaw = $(this).attr('data-jasa');
-      var nominalBayarRaw = $(this).attr('data-nominal_bayar');
-
-      // var jasa = jasaRaw;
-      var nominalBayar = nominalBayarRaw ? parseInt(nominalBayarRaw) : nominal;
-      var jasa = parseFloat(jasaRaw) * 100; // konversi ke angka lalu kalikan 100
-
-      $('#angsuran_id').val(id);
-      $('#angsuranForm').attr('action', '/angsuran/' + id);
-      $('#label_nominal_angsuran').text('Rp ' + nominal.toLocaleString('id-ID'));
-      $('#label_total_bayar').text('Rp ' + nominalBayar.toLocaleString('id-ID'));
-      $('#jasa').text(jasa + '% dari total pinjaman');
-      $('#total_bayar').val(nominalBayar);
-
-      var angsuranModal = new bootstrap.Modal(document.getElementById('angsuranModal'));
-      angsuranModal.show();
-    });
-
-      // Submit Form Bayar
-      $('#angsuranForm').submit(function (e) {
-      e.preventDefault();
-      var form = $(this);
-      var url = form.attr('action');
-
-      $.ajax({
-        type: "POST",
-        url: url,
-        data: form.serialize(),
-        success: function (response) {
-          var angsuranModalEl = document.getElementById('angsuranModal');
-          var angsuranModal = bootstrap.Modal.getInstance(angsuranModalEl);
-          angsuranModal.hide();
-          table.draw();
-
-          // Ganti showToast dengan SweetAlert2
-          Swal.fire({
-            icon: 'success',
-            title: 'Sukses',
-            text: 'Pembayaran berhasil disimpan',
-            confirmButtonText: 'OK'
-          });
-        },
-        error: function (xhr) {
-          // Ganti showToast dengan SweetAlert2
-          Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Terjadi kesalahan: ' + xhr.responseText,
-            confirmButtonText: 'OK'
-          });
+  // Inisialisasi DataTable dengan serverSide processing
+  var table = $('#angsuran-table').DataTable({
+    processing: true,
+    serverSide: true,
+    ajax: {
+      url: "{{ route('angsuran.getDataAngsuran') }}",
+      data: function (d) {
+        d.nama_anggota = $('#filter_nama_anggota').val();
+        d.jenis_pinjaman = $('#filter_jenis_pinjaman').val();
+        d.tgl_pinjam1 = $('#filter_tgl_pinjam1').val();
+        d.tgl_pinjam2 = $('#filter_tgl_pinjam2').val();
+      }
+    },
+    columns: [
+      { data: 'nama_anggota', name: 'anggota.nama' },
+      { data: 'jenis_pinjaman', name: 'pinjaman.jenis_pinjaman' },
+      { data: 'angsuran_ke', name: 'angsuran_ke' },
+      {
+        data: 'nominal_angsuran',
+        name: 'nominal_angsuran',
+        render: function (data) {
+          return 'Rp ' + parseInt(data).toLocaleString('id-ID');
         }
-      });
+      },
+      {
+        data: 'total_pinjaman',
+        name: 'total_pinjaman',
+        render: function (data) {
+          return 'Rp ' + parseInt(data).toLocaleString('id-ID');
+        }
+      },
+      { data: 'jasa', name: 'jasa' },
+      { data: 'nominal_bayar', name: 'nominal_bayar' },
+      { data: 'tgl_bayar', name: 'tgl_bayar' },
+      { data: 'tgl_input', name: 'tgl_input' },
+      {
+        data: 'status_bayar',
+        name: 'status_bayar',
+        render: function (data) {
+          return data == '1' ?
+            '<span class="badge bg-success">Lunas</span>' :
+            '<span class="badge bg-warning">Belum</span>';
+        }
+      },
+      {
+        data: null,
+        name: 'action',
+        orderable: false,
+        searchable: false,
+        render: function (data, type, row) {
+          if (row.status_bayar == '1') {
+            return '<button class="btn btn-sm btn-secondary" disabled>Sudah Dibayar</button>';
+          } else {
+            return '<button class="btn btn-sm btn-primary btn-bayar" ' +
+              'data-id="' + row.id + '" ' +
+              'data-nominal="' + row.nominal_angsuran + '" ' +
+              'data-jasa="' + row.jasa + '" ' +
+              'data-nominal_bayar="' + row.nominal_bayar + '" ' +
+              'data-total_pinjaman="' + row.total_pinjaman + '">' +
+              'Bayar</button>';
+          }
+        }
+      }
+    ],
+    language: {
+      search: "Cari:",
+    },
+  });
+
+  // Tombol Filter klik untuk reload data
+  $('#btnFilter').click(function () {
+    table.draw();
+  });
+
+  // Event klik tombol Bayar
+  $(document).on('click', '.btn-bayar', function () {
+    var id = $(this).data('id');
+    var nominal = parseInt($(this).data('nominal'));
+    var jasaRaw = $(this).data('jasa');
+    var nominalBayarRaw = $(this).data('nominal_bayar');
+    var totalPinjaman = parseInt($(this).data('total_pinjaman'));
+
+    var nominalBayar = nominalBayarRaw ? parseInt(nominalBayarRaw) : nominal;
+    var jasa = parseFloat(jasaRaw) * 100; // konversi ke persen untuk tampilan
+    var nominalJasa = totalPinjaman * parseFloat(jasaRaw); // nominal jasa
+
+    // Set nilai di modal
+    $('#angsuran_id').val(id);
+    $('#angsuranForm').attr('action', '/angsuran/' + id);
+    $('#label_nominal_angsuran').text('Rp ' + nominal.toLocaleString('id-ID'));
+    $('#label_total_bayar').text('Rp ' + nominalBayar.toLocaleString('id-ID'));
+    $('#total_bayar').val(nominalBayar);
+
+    // Update jasa dan nominal jasa di modal
+    $('#jasa').text(jasa.toFixed(2) + '%');
+    $('#nominal_jasa').text('Rp ' + nominalJasa.toLocaleString('id-ID'));
+
+    // Tampilkan modal
+    var angsuranModal = new bootstrap.Modal(document.getElementById('angsuranModal'));
+    angsuranModal.show();
+  });
+
+  // Submit form pembayaran angsuran
+  $('#angsuranForm').submit(function (e) {
+    e.preventDefault();
+    var form = $(this);
+    var url = form.attr('action');
+
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: form.serialize(),
+      success: function (response) {
+        var angsuranModalEl = document.getElementById('angsuranModal');
+        var angsuranModal = bootstrap.Modal.getInstance(angsuranModalEl);
+        angsuranModal.hide();
+        table.draw();
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Sukses',
+          text: 'Pembayaran berhasil disimpan',
+          confirmButtonText: 'OK'
+        });
+      },
+      error: function (xhr) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Terjadi kesalahan: ' + xhr.responseText,
+          confirmButtonText: 'OK'
+        });
+      }
     });
   });
-  </script>
+});
+</script>
 @endpush

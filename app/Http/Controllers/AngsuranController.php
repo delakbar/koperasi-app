@@ -184,23 +184,35 @@ public function getDataAngsuran(Request $request)
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-           'total_bayar' => 'required',
+       $request->validate([
+       'total_bayar' => 'required|numeric',
+       // validasi lain jika perlu
         ]);
 
         $angsuran = Angsuran::findOrFail($id);
 
+        // Ambil data pinjaman terkait
+        $pinjaman = $angsuran->pinjaman_id; // pastikan relasi sudah didefinisikan di model Angsuran
+
+        if (!$pinjaman) {
+            return redirect()->route('angsuran.index')->with('error', 'Data pinjaman tidak ditemukan.');
+        }
+
+        // Hitung nominal jasa berdasarkan persentase jasa dan jumlah pinjaman
+        $total_pinjaman = $angsuran->total_pinjaman; // misal 1.000.000
+        $persentase_jasa = 0.01; 
+        $nominal_jasa = ($total_pinjaman * $persentase_jasa);
+
+        // Siapkan data update
         $data = $request->all();
+        $data['nominal_jasa'] = $nominal_jasa;
         $data['tgl_bayar'] = now();
-        $data['status_bayar'] = '1'; 
-        Log::info('Data update angsuran:', $data);
+        $data['status_bayar'] = '1';
+
+        // Update data angsuran
         $angsuran->update($data);
 
-        if ($angsuran) {
-            return redirect()->route('angsuran.index')->with('success', 'Angsuran berhasil dibayar.');
-        } else {
-            return redirect()->route('angsuran.index')->with('error', 'Gagal membayar angsuran.');
-        }
+        return redirect()->route('angsuran.index')->with('success', 'Angsuran berhasil dibayar dengan nominal jasa terhitung.');
     }
 
     /**

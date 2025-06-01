@@ -50,6 +50,24 @@
                 </a>
             </li>
             <li>
+                <a class="nav-link {{ request()->routeIs('shu.*') ? 'active' : '' }}" href="{{ route('shu.index') }}">
+                    <i class="bi bi-calculator"></i> 
+                    <span class="nav-text">SHU</span>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link {{ request()->routeIs('profile.*') ? 'active' : '' }}" href="{{ route('profile.show') }}">
+                    <i class="bi bi-person"></i> 
+                    <span class="nav-text">Profile</span>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link {{ request()->routeIs('control.*') ? 'active' : '' }}" href="{{ route('controlpanel.index') }}">
+                    <i class="bi bi-gear"></i> 
+                    <span class="nav-text">Control</span>
+                </a>
+            </li>
+            <li>
                 <a class="nav-link" href="{{ route('logout') }}">
                     <i class="bi bi-box-arrow-right"></i> 
                     <span class="nav-text">Logout</span>
@@ -79,7 +97,7 @@
             </button>
             <span class="navbar-text ms-auto">
                 @auth
-                    Selamat datang, {{ Auth::user()->nama }}
+                   {{ Auth::user()->nama }}
                 @endauth
             </span>
         </div>
