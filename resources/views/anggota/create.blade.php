@@ -28,8 +28,9 @@
                             <label for="role" class="form-label">role</label>
                             <select class="form-control" id="role" name="role" required>
                             <option value="">-- Pilih Role --</option>
-                            <option value="anggota">Anggota</option>
-                            <option value="admin">Admin</option>
+                            <option value="Anggota">Anggota</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Ketua">Admin</option>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Simpan</button>

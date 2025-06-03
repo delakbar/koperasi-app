@@ -55,8 +55,8 @@
       <div class="card-header">Data Angsuran</div>
       <div class="card-body">
    
-        <table id="angsuran-table" class="table table-striped display responsive" >
-          <thead>
+        <table id="angsuran-table" class="table table-bordered display responsive" >
+          <thead class="table-dark">
             <tr>
               <th>Nama Anggota</th>
               <th>Jenis Pinjaman</th>

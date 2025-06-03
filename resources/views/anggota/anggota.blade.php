@@ -111,14 +111,13 @@
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
-                <table class="table table-bordered display responsive" >
-                    <thead class="table-dark">
+                <table class="table mb-0 table-bordered">
+                    <thead>
                     <tr>
                         <th>Tanggal</th>
                         <th>Jenis</th>
                         <th>Jumlah</th>
-                        <th>status</th>
-                        <th>keterangan</th>
+                        <th>Status</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -127,8 +126,7 @@
                             <td>{{ \Carbon\Carbon::parse($pinjaman->tgl_input)->format('d M Y') }}</td>
                             <td>{{ $pinjaman->jenis_pinjaman ?? '-' }}</td>
                             <td>Rp {{ number_format($pinjaman->nominal_pinjaman, 0, ',', '.') }}</td>
-                            <td>{{ $pinjaman->status ?? '-' }}</td>
-                            <td>{{ $pinjaman->keterangan ?? '-' }}</td>
+                            <td>{{ $pinjaman->status }}</td>
                         </tr>
                     @empty
                         <tr>
@@ -143,4 +141,10 @@
         </div>
     </div>
 </div>
+<a href="{{ route('pengajuan.create') }}" 
+   class="btn btn-primary rounded-circle shadow-lg" 
+   title="Pengajuan Pinjaman"
+   style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; display: flex; justify-content: center; align-items: center;">
+   <i class="bi bi-plus-lg"></i>
+</a>
 @endsection

@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable; // <- ini penting
 
+
 class Anggota extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -34,7 +35,7 @@ class Anggota extends Authenticatable
     }
     public function getAuthIdentifierName()
     {
-        return 'username';
+         return $this->getKeyName(); // biasanya 'id'
     }
     public function getAuthPassword()
     {

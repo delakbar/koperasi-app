@@ -12,15 +12,13 @@ class SimpananController extends Controller
 
     public function getDataSimpanan(Request $request)
     {
-        // Server-side processing for DataTables
         $columns = [
             0 => 'id',
             1 => 'anggota_id',
-            2 => 'nominal_simpanan',
-            3 => 'jenis_simpanan',
-            4 => 'tgl_simpan',
-            5 => 'input_by',
-            6 => 'tgl_input',
+            2 => 'jenis_simpanan',
+            3 => 'nominal_simpanan',
+            4 => 'input_by',
+            5 => 'tgl_update',
         ];
 
         $totalData = Simpanan::count();
@@ -33,19 +31,34 @@ class SimpananController extends Controller
         $orderDir = $request->input('order.0.dir', 'desc');
         $search = $request->input('search.value');
 
-        // Join dengan tabel anggota untuk mendapatkan nama anggota
+        // Query dengan relasi anggota
         $query = Simpanan::with('anggota');
+
+        // Filter berdasarkan input filter
+        if ($request->filled('filter_nama_anggota')) {
+            $query->whereHas('anggota', function($q) use ($request) {
+                $q->where('nama', 'like', '%' . $request->filter_nama_anggota . '%');
+            });
+        }
+
+        if ($request->filled('filter_jenis_simpanan')) {
+            $query->where('jenis_simpanan', $request->filter_jenis_simpanan);
+        }
+
+        if ($request->filled('filter_tgl_pinjam1') && $request->filled('filter_tgl_pinjam2')) {
+            $query->whereBetween('tgl_update', [$request->filter_tgl_pinjam1, $request->filter_tgl_pinjam2]);
+        }
 
         if (!empty($search)) {
             $query->where(function ($q) use ($search) {
-                $q->where('jenis_simpanan', 'LIKE', "%{$search}%");
-            })
-            // Cari juga berdasarkan nama anggota
-            ->orWhereHas('anggota', function($q) use ($search) {
-                $q->where('nama', 'LIKE', "%{$search}%");
+                $q->where('jenis_simpanan', 'LIKE', "%{$search}%")
+                ->orWhereHas('anggota', function($q2) use ($search) {
+                    $q2->where('nama', 'LIKE', "%{$search}%");
+                });
             });
-            $totalFiltered = $query->count();
         }
+
+        $totalFiltered = $query->count();
 
         $simpanan = $query
             ->offset($start)
@@ -58,7 +71,7 @@ class SimpananController extends Controller
         foreach ($simpanan as $item) {
             $row = [];
             $row[] = $no++;
-            $row[] = $item->anggota->nama ?? '-'; // tampilkan nama anggota
+            $row[] = $item->anggota->nama ?? '-';
             $row[] = ucfirst($item->jenis_simpanan);
             $row[] = number_format($item->nominal_simpanan, 2);
             $row[] = $item->input_by;
@@ -78,7 +91,9 @@ class SimpananController extends Controller
      */
     public function index()
     {
-       return view('simpanan.index');
+       $anggota = Anggota::select('id','nama')->get();
+       $jenis_simpanan = Jenis_simpanan::all();
+       return view('simpanan.index',compact('anggota','jenis_simpanan'));
     }
 
     /**

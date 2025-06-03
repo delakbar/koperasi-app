@@ -17,7 +17,6 @@ class PinjamanController extends Controller
 {
     public function getDataPinjaman(Request $request)
     {
-        // Server-side processing for DataTables
         $columns = [
             0 => 'id',
             1 => 'anggota_id',
@@ -40,20 +39,39 @@ class PinjamanController extends Controller
         $orderDir = $request->input('order.0.dir', 'desc');
         $search = $request->input('search.value');
 
-        // Query utama dengan subquery untuk cek angsuran belum lunas
+        // Ambil filter dari request
+        $filterJenisPinjaman = $request->input('filter_jenis_pinjaman');
+        $filterTglPinjam1 = $request->input('filter_tgl_pinjam1');
+        $filterTglPinjam2 = $request->input('filter_tgl_pinjam2');
+
+        // Query utama dengan join anggota dan subquery cek angsuran belum lunas
         $query = Pinjaman::join('anggota', 'anggota.id', '=', 'pinjaman.anggota_id')
             ->select('pinjaman.*', 'anggota.nama as anggota_nama')
             ->addSelect(DB::raw('(SELECT COUNT(*) FROM angsuran WHERE angsuran.pinjaman_id = pinjaman.id AND status_bayar = "0") as angsuran_belum_lunas'));
 
+        // Filter berdasarkan jenis pinjaman jika ada
+        if (!empty($filterJenisPinjaman)) {
+            $query->where('pinjaman.jenis_pinjaman', $filterJenisPinjaman);
+        }
+
+        // Filter berdasarkan rentang tanggal pinjam jika ada
+        if (!empty($filterTglPinjam1) && !empty($filterTglPinjam2)) {
+            $query->whereBetween('pinjaman.tgl_pinjam', [$filterTglPinjam1, $filterTglPinjam2]);
+        } elseif (!empty($filterTglPinjam1)) {
+            $query->where('pinjaman.tgl_pinjam', '>=', $filterTglPinjam1);
+        } elseif (!empty($filterTglPinjam2)) {
+            $query->where('pinjaman.tgl_pinjam', '<=', $filterTglPinjam2);
+        }
+
+        // Filter pencarian global
         if (!empty($search)) {
             $query->where(function ($q) use ($search) {
                 $q->where('anggota.nama', 'LIKE', "%{$search}%")
-                  ->orWhere('pinjaman.jenis_pinjaman', 'LIKE', "%{$search}%")
-                  ->orWhere('pinjaman.tgl_pinjam', 'LIKE', "%{$search}%")
-                  ->orWhere('pinjaman.input_by', 'LIKE', "%{$search}%");
+                ->orWhere('pinjaman.input_by', 'LIKE', "%{$search}%");
             });
-            $totalFiltered = $query->count();
         }
+
+        $totalFiltered = $query->count();
 
         $pinjaman = $query
             ->offset($start)
@@ -66,15 +84,15 @@ class PinjamanController extends Controller
         foreach ($pinjaman as $item) {
             $row = [];
             $row[] = $no++;
-            $row[] = $item->anggota_nama; // tampilkan nama anggota
+            $row[] = $item->anggota_nama; // nama anggota
             $row[] = number_format($item->nominal_pinjaman, 2);
             $row[] = ucfirst($item->jenis_pinjaman);
             $row[] = date('d-m-Y', strtotime($item->tgl_pinjam));
             $row[] = $item->jml_angsuran;
             $row[] = $item->input_by;
             $row[] = $item->tgl_input ? date('d-m-Y', strtotime($item->tgl_input)) : '';
-            $row[] = $item->angsuran_belum_lunas; // tambahkan kolom status lunas
-            $row[] = $item->id; // id pijaman
+            $row[] = $item->angsuran_belum_lunas; // status lunas
+            $row[] = $item->id; // id pinjaman
 
             $data[] = $row;
         }
@@ -86,15 +104,13 @@ class PinjamanController extends Controller
             'data' => $data,
         ]);
     }
-
     public function index()
     {
-        return view('pinjaman.index');
+        $anggota = Anggota::select('id', 'nama')->distinct()->get();
+        $jenis_pinjaman = Jenis_pinjaman::select('id', 'jenis')->get();
+        return view('pinjaman.index' , compact('jenis_pinjaman', 'anggota'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $jenis_pinjaman = jenis_pinjaman::all();
@@ -102,9 +118,6 @@ class PinjamanController extends Controller
         return view('pinjaman.create', compact('anggotas', 'jenis_pinjaman'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -165,9 +178,6 @@ class PinjamanController extends Controller
         return response()->json($pinjaman);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit($id)
     {
         $pinjaman = Pinjaman::findOrFail($id);
@@ -183,9 +193,6 @@ class PinjamanController extends Controller
         //update pinjaman
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Pinjaman $pinjaman)
     {
         $pinjaman->delete();
