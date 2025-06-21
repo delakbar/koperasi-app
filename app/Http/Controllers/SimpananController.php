@@ -7,6 +7,9 @@ use App\Models\Anggota;
 use App\Models\jenis_simpanan;
 use Illuminate\Http\Request;
 
+use App\Imports\SimpananImport;
+use Maatwebsite\Excel\Facades\Excel;
+
 class SimpananController extends Controller
 {
 
@@ -166,4 +169,25 @@ public function store(Request $request)
         $simpanan->delete();
         return response()->json(null, 204);
     }
+
+    public function uploadSimpanan(Request $request)
+    {
+        $request->validate([
+        'file' => 'required|mimes:xlsx,xls'
+        ]);
+
+        $import = new SimpananImport;
+        Excel::import($import, $request->file('file'));
+
+        // Ambil hasil log
+        $log = $import->log;
+
+        return view('simpanan.import-log', compact('log'));
+    }
+    public function showForm()
+    {
+        return view('simpanan.form-upload');
+    }   
+
+    
 }

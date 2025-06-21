@@ -44,6 +44,12 @@
             {{-- Menu khusus untuk Admin --}}
             @if(auth()->user()->role === 'Admin')
                 <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('simpanan.upload') ? 'active' : '' }}" href="{{ route('form.upload.simpanan') }}">
+                        <i class="bi bi-file-arrow-up"></i> 
+                        <span class="nav-text">Upload</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('anggota.*') ? 'active' : '' }}" href="{{ route('anggota.index') }}">
                         <i class="bi bi-people"></i> 
                         <span class="nav-text">Anggota</span>

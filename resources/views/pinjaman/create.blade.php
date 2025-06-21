@@ -35,8 +35,6 @@
                     </div>
                     <div class="mb-3">
                         <label for="nominal_pinjaman_display" class="form-label fw-semibold">Nominal Pinjaman</label>
-                        <label for="nominal_pinjaman_display" class="form-label fw-semibold">Nominal Pinjaman</label>
-    
                         <div class="row g-2 align-items-center">
                             <!-- Input Nominal Pinjaman -->
                             <div class="col-md-6">
@@ -131,7 +129,9 @@
         return prefix == undefined ? rupiah : (rupiah ? rupiah : '');
     }
 
-    const provisi = 0.015; // Nilai provisi 1.5%, bisa diganti dari backend
+    // Nilai provisi 1.5%, bisa diganti dari backend
+    // const provisi = 0.015;
+    const provisi = parseFloat(@json($provisi));
 
     document.getElementById('nominal_pinjaman_display').addEventListener('input', function(e){
         // Ambil nilai input tanpa format (hanya angka)

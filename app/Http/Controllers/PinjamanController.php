@@ -115,7 +115,8 @@ class PinjamanController extends Controller
     {
         $jenis_pinjaman = jenis_pinjaman::all();
         $anggotas = Anggota::all();
-        return view('pinjaman.create', compact('anggotas', 'jenis_pinjaman'));
+        $provisi = DB::table('provisi')->value('provisi');
+        return view('pinjaman.create', compact('anggotas', 'jenis_pinjaman', 'provisi'));
     }
 
     public function store(Request $request)

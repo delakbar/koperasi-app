@@ -76,8 +76,8 @@
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
-                <table class="table mb-0 table-bordered">
-                    <thead>
+                <table class="table table-bordered display responsive">
+                    <thead class="table-dark">
                     <tr>
                         <th>Tanggal</th>
                         <th>Jenis</th>
@@ -100,8 +100,8 @@
                 </table>
                 </div>
             </div>
-            </div>
         </div>
+    </div>
 
         <!-- Table: Histori Pinjaman -->
         <div class="col-md-6 mb-4">
@@ -132,15 +132,13 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="3" class="text-center">Belum ada data</td>
+                            <td colspan="5" class="text-center">Belum ada data</td>
                         </tr>
                     @endforelse
                     </tbody>
                 </table>
                 </div>
             </div>
-            </div>
         </div>
     </div>
-</div>
 @endsection

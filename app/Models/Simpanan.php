@@ -12,6 +12,7 @@ class Simpanan extends Model
     public $timestamps = false; 
     protected $fillable = [
         'anggota_id',
+        'nama',
         'jenis_simpanan',
         'nominal_simpanan',
         'input_by',

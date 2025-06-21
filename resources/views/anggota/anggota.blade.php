@@ -130,7 +130,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="3" class="text-center">Belum ada data</td>
+                            <td colspan="4" class="text-center">Belum ada data</td>
                         </tr>
                     @endforelse
                     </tbody>

@@ -16,6 +16,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\KetuaPinjamanController;
 
 
+
 // Login Routes
 Route::get('/', [LoginController::class, 'showLoginForm'])->name('home');
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -26,7 +27,7 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('register', [RegisterController::class, 'register']);
 
-
+// route untuk semua role
 Route::middleware(['auth', 'role:Anggota,Admin,Ketua'])->group(function () {
     Route::resource('pengajuan', PengajuanController::class);
      // Tampilkan halaman profile
@@ -36,7 +37,7 @@ Route::middleware(['auth', 'role:Anggota,Admin,Ketua'])->group(function () {
     Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
 });
 
-// Contoh route hanya untuk ketua
+// route hanya untuk Admin
 Route::middleware(['auth','role:Admin'])->group(function () {
     Route::get('/controlpanel', [ControlpanelController::class, 'index'])->name('controlpanel.index');
     Route::put('/controlpanel/jenis_simpanan/{id}', [ControlpanelController::class, 'updateJenisSimpanan'])->name('controlpanel.updateJenisSimpanan');
@@ -45,9 +46,10 @@ Route::middleware(['auth','role:Admin'])->group(function () {
     Route::put('/controlpanel/provisi/{id}', [ControlpanelController::class, 'updateProvisi'])->name('controlpanel.updateProvisi');
     Route::post('/controlpanel/save-pengeluaran', [ControlPanelController::class, 'savePengeluaran'])->name('controlpanel.savePengeluaran');
     
-   
-    
-    
+    // Route untuk menampilkan form upload
+    Route::get('/form-upload-simpanan', [SimpananController::class, 'showForm'])->name('form.upload.simpanan');
+    Route::post('/upload-simpanan', [SimpananController::class, 'uploadSimpanan'])->name('upload.simpanan');
+
 
 
     // hitung SHU
@@ -59,15 +61,17 @@ Route::middleware(['auth','role:Admin'])->group(function () {
      //admin cek pinjaman pengajuan
     Route::get('/pinjaman-pengajuan', [AdminPinjamanController::class, 'index'])->name('pinjaman.cekpengajuan');
     Route::patch('/pinjaman-pengajuan/{id}/update-status', [AdminPinjamanController::class, 'updateStatus'])->name('adminpinjaman.updateStatus');
-
+    
 });
 
-// Contoh route hanya untuk anggota
+// route ketua
 Route::middleware(['auth','role:Ketua'])->group(function () {
  // Ketua cek pinjaman pengajuan
     Route::get('/acc-pinjaman', [KetuaPinjamanController::class, 'index'])->name('pinjaman.cekpinjaman');
     Route::patch('/acc-pinjaman/{id}/update-status', [KetuaPinjamanController::class, 'updateStatus'])->name('KetuaPinjaman.updateStatus');
 });
+
+// route untuk admin dan ketua
 Route::middleware(['auth','role:Admin,Ketua'])->group(function () {
 
     Route::post('/pinjaman/getpinjaman/{id}', [PinjamanController::class, 'getpinjaman'])->name('pinjaman.getpinjaman');
