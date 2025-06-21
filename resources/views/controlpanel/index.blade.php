@@ -162,40 +162,36 @@
                     <section>
                         <h5 class="mb-3">Pengeluaran</h5>
                         <div class="table-responsive">
-                            <table class="table table-bordered table-hover align-middle">
+                            <table class="table table-bordered table-hover align-middle"id="pengeluaranTable">
                                 <thead class="table-light">
-                                    <table class="table table-bordered" id="pengeluaranTable">
-                                        <thead>
-                                            <tr>
-                                                <th>Jenis Pengeluaran</th>
-                                                <th>Rate Pengeluaran %</th>
-                                                <th>Input By</th>
-                                                <th>Tanggal Update</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <form action="{{ route('controlpanel.savePengeluaran') }}" method="POST" id="pengeluaranForm">
-                                                @csrf
-                                            @foreach($pengeluaran as $item)
-                                            <tr data-id="{{ $item->id }}">
-                                                <td contenteditable="true" class="editable" data-field="jenisPengeluaran">{{ $item->jenis_pengeluaran }}</td>
-                                                <td contenteditable="true" class="editable" data-field="ratePengeluaran">{{ $item->rate_pengeluaran }}</td>
-                                                <td>{{ $item->input_by }}</td>
-                                                <td>{{ $item->tgl_input }}</td>
-                                                <td>
-                                                    <button class="btn btn-danger btn-sm btn-delete">Delete</button>
-                                                </td>
-                                            </tr>
-                                            @endforeach
-                                            </form>
-                                        </tbody>
-                                    </table>
+                                    <tr>
+                                        <th>Jenis Pengeluaran</th>
+                                        <th>Rate Pengeluaran %</th>
+                                        <th>Input By</th>
+                                        <th>Tanggal Update</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <form action="{{ route('controlpanel.savePengeluaran') }}" method="POST" id="pengeluaranForm">
+                                        @csrf
+                                    @foreach($pengeluaran as $item)
+                                    <tr data-id="{{ $item->id }}">
+                                        <td contenteditable="true" class="editable" data-field="jenisPengeluaran">{{ $item->jenis_pengeluaran }}</td>
+                                        <td contenteditable="true" class="editable" data-field="ratePengeluaran">{{ $item->rate_pengeluaran }}</td>
+                                        <td>{{ $item->input_by }}</td>
+                                        <td>{{ $item->tgl_input }}</td>
+                                        <td>
+                                            <button class="btn btn-danger btn-sm btn-delete">Delete</button>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                    </form>
+                                </tbody>
+                            </table>
 
-                                    <button id="btnAddRow" class="btn btn-success mb-3">Add Row</button>
-                                    <button id="btnSave" class="btn btn-primary mb-3">Save</button>
-                                </div>
-                            </div>
+                            <button id="btnAddRow" class="btn btn-success mb-3">Add Row</button>
+                            <button id="btnSave" class="btn btn-primary mb-3">Save</button>
                         </div>
                     </div>
                 </section>

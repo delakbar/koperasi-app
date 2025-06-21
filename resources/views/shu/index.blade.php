@@ -15,15 +15,15 @@
                     <div class="col-md-2">
                         <input type="text" name="end_date" id="end_date" class="form-control" value="{{ request('end_date') }}" placeholder="Tanggal Selesai">
                     </div>
-                    <div class="col-md-2">
-                        <!-- <button type="submit" class="btn btn-primary">Filter</button> -->
+                    <div class="col-md-4 d-flex align-items-start gap-2">                
+                        @csrf
                         <button type="button" id="hitungShuBtn" class="btn btn-success">Hitung SHU</button>
                         <button type="button" id="resetBtn" class="btn btn-secondary">Reset</button>
                     </div>
                 </form>
 
-                 <table id="shuTable" class="table table-striped display responsive" >
-                    <thead>
+                 <table id="shuTable" class="table table-bordered display responsive" >
+                    <thead class="table-dark">
                         <tr>
                             <th>Nama</th>
                             <th>Total Simpanan</th>
@@ -89,7 +89,7 @@ $(document).ready(function () {
             {
                 data: 'total_simpanan',
                 render: function (data) {
-                    return parseFloat(data).toLocaleString('id-ID');
+                    return 'Rp ' + parseFloat(data).toLocaleString('id-ID');
                 }
             },
             {
@@ -101,13 +101,13 @@ $(document).ready(function () {
             {
                 data: 'shu_simpanan',
                 render: function (data) {
-                    return parseFloat(data).toLocaleString('id-ID', { minimumFractionDigits: 2 });
+                    return 'Rp ' + parseFloat(data).toLocaleString('id-ID', { minimumFractionDigits: 2 });
                 }
             },
             {
                 data: 'total_pinjaman',
                 render: function (data) {
-                    return parseFloat(data).toLocaleString('id-ID');
+                    return 'Rp ' +parseFloat(data).toLocaleString('id-ID');
                 }
             },
             {
@@ -119,13 +119,13 @@ $(document).ready(function () {
             {
                 data: 'shu_pinjaman',
                 render: function (data) {
-                    return parseFloat(data).toLocaleString('id-ID', { minimumFractionDigits: 2 });
+                    return 'Rp ' + parseFloat(data).toLocaleString('id-ID', { minimumFractionDigits: 2 });
                 }
             },
             {
                 data: 'total_shu',
                 render: function (data) {
-                    return parseFloat(data).toLocaleString('id-ID', { minimumFractionDigits: 2 });
+                    return 'Rp ' + parseFloat(data).toLocaleString('id-ID', { minimumFractionDigits: 2 });
                 }
             },
         ]
@@ -181,5 +181,38 @@ $(document).ready(function () {
     });
 });
 </script>
+
+<script>
+document.getElementById('resetBtn').addEventListener('click', function () {
+    fetch("{{ route('shu.reset') }}", {
+        method: "POST",
+        headers: {
+            "X-CSRF-TOKEN": "{{ csrf_token() }}",
+            "Content-Type": "application/json"
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil!',
+            text: data.message,
+            confirmButtonColor: '#28a745'
+        }).then(() => {
+            location.reload(); // Refresh setelah alert ditutup
+        });
+    })
+    .catch(error => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal!',
+            text: 'Terjadi kesalahan saat mereset data.',
+        });
+        console.error(error);
+    });
+});
+</script>
+
+
 
 @endpush

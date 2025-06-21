@@ -20,6 +20,7 @@ class Pinjaman extends Model
         'rate',
         'provisi',
         'tgl_input',
+        'status'
     ];
 
     public function anggota()

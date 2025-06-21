@@ -25,69 +25,110 @@
     </a>
     <ul class="nav nav-pills flex-column mb-auto">
         @auth
+            {{-- Menu untuk semua role yang login --}}
             <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('anggota.*') ? 'active' : '' }}" href="{{ route('anggota.index') }}">
-                    <i class="bi bi-people"></i> 
-                    <span class="nav-text">Anggota</span>
+                <a class="nav-link {{ request()->routeIs('pengajuan.*') ? 'active' : '' }}" href="{{ route('pengajuan.index') }}">
+                    <i class="bi bi-house-door"></i> 
+                    <span class="nav-text">Home</span>
                 </a>
             </li>
-            <li>
-                <a class="nav-link {{ request()->routeIs('simpanan.*') ? 'active' : '' }}" href="{{ route('simpanan.index') }}">
-                    <i class="bi bi-wallet2"></i> 
-                    <span class="nav-text">Simpanan</span>
-                </a>
-            </li>
-            <li>
-                <a class="nav-link {{ request()->routeIs('pinjaman.*') ? 'active' : '' }}" href="{{ route('pinjaman.index') }}">
-                    <i class="bi bi-cash-stack"></i> 
-                    <span class="nav-text">Pinjaman</span>
-                </a>
-            </li>
-            <li>
-                <a class="nav-link {{ request()->routeIs('angsuran.*') ? 'active' : '' }}" href="{{ route('angsuran.index') }}">
-                    <i class="bi bi-credit-card"></i> 
-                    <span class="nav-text">Angsuran</span>
-                </a>
-            </li>
-            <li>
-                <a class="nav-link {{ request()->routeIs('shu.*') ? 'active' : '' }}" href="{{ route('shu.index') }}">
-                    <i class="bi bi-calculator"></i> 
-                    <span class="nav-text">SHU</span>
-                </a>
-            </li>
-            <li>
+
+            <li class="nav-item">
                 <a class="nav-link {{ request()->routeIs('profile.*') ? 'active' : '' }}" href="{{ route('profile.show') }}">
                     <i class="bi bi-person"></i> 
                     <span class="nav-text">Profile</span>
                 </a>
             </li>
-            <li>
-                <a class="nav-link {{ request()->routeIs('control.*') ? 'active' : '' }}" href="{{ route('controlpanel.index') }}">
-                    <i class="bi bi-gear"></i> 
-                    <span class="nav-text">Control</span>
-                </a>
-            </li>
-            <li>
-                <a class="nav-link" href="{{ route('logout') }}">
+            
+
+            {{-- Menu khusus untuk Admin --}}
+            @if(auth()->user()->role === 'Admin')
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('simpanan.upload') ? 'active' : '' }}" href="{{ route('form.upload.simpanan') }}">
+                        <i class="bi bi-file-arrow-up"></i> 
+                        <span class="nav-text">Upload</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('anggota.*') ? 'active' : '' }}" href="{{ route('anggota.index') }}">
+                        <i class="bi bi-people"></i> 
+                        <span class="nav-text">Anggota</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('simpanan.*') ? 'active' : '' }}" href="{{ route('simpanan.index') }}">
+                        <i class="bi bi-wallet2"></i> 
+                        <span class="nav-text">Simpanan</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('pinjaman.index') ? 'active' : '' }}" href="{{ route('pinjaman.index') }}">
+                        <i class="bi bi-cash-stack"></i> 
+                        <span class="nav-text">Pinjaman</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('pinjaman.cekpengajuan') ? 'active' : '' }}" href="{{ route('pinjaman.cekpengajuan') }}">
+                        <i class="bi bi-check2-circle"></i> 
+                        <span class="nav-text">Cek Pengajuan</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('angsuran.*') ? 'active' : '' }}" href="{{ route('angsuran.index') }}">
+                        <i class="bi bi-credit-card"></i> 
+                        <span class="nav-text">Angsuran</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('shu.*') ? 'active' : '' }}" href="{{ route('shu.index') }}">
+                        <i class="bi bi-calculator"></i> 
+                        <span class="nav-text">SHU</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('controlpanel.*') ? 'active' : '' }}" href="{{ route('controlpanel.index') }}">
+                        <i class="bi bi-gear"></i> 
+                        <span class="nav-text">Control Panel</span>
+                    </a>
+                </li>
+            @endif
+
+            {{-- Menu khusus untuk Ketua --}}
+            @if(auth()->user()->role === 'Ketua')
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('pinjaman.cekpinjaman') ? 'active' : '' }}" href="{{ route('pinjaman.cekpinjaman') }}">
+                        <i class="bi bi-check-circle"></i> 
+                        <span class="nav-text">Cek Pengajuan Ketua</span>
+                    </a>
+                </li>
+            @endif
+
+            {{-- Logout --}}
+            <li class="nav-item mt-3">
+                <a class="nav-link text-danger" href="{{ route('logout') }}">
                     <i class="bi bi-box-arrow-right"></i> 
                     <span class="nav-text">Logout</span>
                 </a>
             </li>
-        @else
-            <li>
-                <a class="nav-link" href="{{ route('login') }}">
+        @endauth
+
+        {{-- Jika belum login --}}
+        @guest
+            <li class="nav-item">
+                <a class="nav-link {{ request()->routeIs('login') ? 'active' : '' }}" href="{{ route('login') }}">
                     <i class="bi bi-box-arrow-in-right"></i> 
                     <span class="nav-text">Login</span>
                 </a>
             </li>
-            <li>
-                <a class="nav-link" href="{{ route('register') }}">
+            <li class="nav-item">
+                <a class="nav-link {{ request()->routeIs('register') ? 'active' : '' }}" href="{{ route('register') }}">
                     <i class="bi bi-person-plus"></i> 
                     <span class="nav-text">Register</span>
                 </a>
             </li>
-        @endauth
+        @endguest
     </ul>
+
 </div>
 
     <nav class="navbar navbar-expand navbar-light shadow-sm">

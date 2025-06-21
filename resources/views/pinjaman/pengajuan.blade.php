@@ -8,22 +8,11 @@
         <div class="card">
             <div class="card-header">Tambah Pinjaman</div>
             <div class="card-body">
-                <form method="POST" action="{{ route('pinjaman.store') }}">
+                <form method="POST" action="{{ route('pengajuan.store') }}">
                     @csrf
                     <div class="mb-3">
                         <label for="anggota_id" class="form-label">Anggota</label>
-                        <select class="form-select @error('anggota_id') is-invalid @enderror" id="anggota_id" name="anggota_id" required>
-                            <option value="">Pilih Anggota</option>
-                            @foreach ($anggotas as $anggota)
-                                <option value="{{ $anggota->id }}">{{ $anggota->nama }}</option>
-                            @endforeach
-                        </select>
-                        @error('anggota_id')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
+                        <input type="text" class="form-control @error('anggota_id') is-invalid @enderror" id="anggota_id" value="{{ $user->nama }}" disabled>
                     <div class="mb-3">
                         <label for="jenis_pinjaman" class="form-label">Jenis Pinjaman</label>
                         <select class="form-select @error('jenis_pinjaman') is-invalid @enderror" id="jenis_pinjaman" name="jenis_pinjaman" required>
@@ -35,6 +24,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="nominal_pinjaman_display" class="form-label fw-semibold">Nominal Pinjaman</label>
+                        <label for="nominal_pinjaman_display" class="form-label fw-semibold">Nominal Pinjaman</label>
+    
                         <div class="row g-2 align-items-center">
                             <!-- Input Nominal Pinjaman -->
                             <div class="col-md-6">
@@ -129,9 +120,7 @@
         return prefix == undefined ? rupiah : (rupiah ? rupiah : '');
     }
 
-    // Nilai provisi 1.5%, bisa diganti dari backend
-    // const provisi = 0.015;
-    const provisi = parseFloat(@json($provisi));
+    const provisi = 0.015; // Nilai provisi 1.5%, bisa diganti dari backend
 
     document.getElementById('nominal_pinjaman_display').addEventListener('input', function(e){
         // Ambil nilai input tanpa format (hanya angka)

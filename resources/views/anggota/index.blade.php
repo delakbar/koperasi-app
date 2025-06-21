@@ -24,8 +24,8 @@
                     </div>
                 @endif
 
-                <table id="anggota-table" class="table table-striped display responsive nowrap" style="width:100%">
-                    <thead>
+                <table id="anggota-table" class="table table-bordered display responsive" >
+                    <thead class="table-dark">
                         <tr>
                             <th>No</th>
                             <th>Nama</th>

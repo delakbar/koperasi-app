@@ -138,4 +138,11 @@ class SHUController extends Controller
 
         return response()->json($data);
     }
+    public function reset(Request $request)
+    {
+        // Truncate table shu_anggota
+        DB::table('shu_anggota')->truncate();
+
+        return response()->json(['message' => 'Data SHU berhasil direset']);
+    }
 }
