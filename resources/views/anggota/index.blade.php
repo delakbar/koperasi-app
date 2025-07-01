@@ -60,7 +60,7 @@ $(document).ready(function() {
     $('#anggota-table').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{{ route('anggota.getDataPinjaman') }}",
+        ajax: "{{ route('anggota.getData') }}",
         columns: [
             { data: 0, title: "No" },
             { data: 1, title: "Nama" },

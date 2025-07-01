@@ -10,6 +10,7 @@ use App\Models\Pinjaman;
 use App\Models\Simpanan;
 use Illuminate\Http\Request;
 use App\Models\jenis_pinjaman;
+use App\Models\PengajuanSukarela;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -95,5 +96,33 @@ class PengajuanController extends Controller
     return redirect()->route('pengajuan.index')->with('success', 'Pinjaman berhasil diajukan!');
     }
 
+    public function pengajuan_simpanan()
+    {
+        $user = Auth::user();
     
+        return view('simpanan.pengajuan',compact('user'));
+    }
+    public function store_simpanan(Request $request)
+    {
+        $user = Auth::user();
+
+        $validated = $request->validate([
+            'nominal_simpanan' => 'required|numeric',
+            'tgl_simpan' => 'required|date',
+        ]);
+
+        $data = [
+            'anggota_id' => $user->id,
+            'nama' => $user->nama,
+            'jenis_simpanan' => 'Sukarela',
+            'nominal_simpanan' => $validated['nominal_simpanan'],
+            'input_by' => $user->username,
+            'tgl_update' => $validated['tgl_simpan'],
+            'status' => 'Pengajuan',
+        ];
+
+        PengajuanSukarela::create($data);
+
+        return redirect()->route('pengajuan.index')->with('success', 'Simpanan berhasil diajukan!');
+    }
 }

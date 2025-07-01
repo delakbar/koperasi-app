@@ -39,22 +39,31 @@ class PinjamanController extends Controller
         $orderDir = $request->input('order.0.dir', 'desc');
         $search = $request->input('search.value');
 
-        // Ambil filter dari request
+ 
+        $filterNamaAnggota = $request->input('filter_nama_anggota');
         $filterJenisPinjaman = $request->input('filter_jenis_pinjaman');
         $filterTglPinjam1 = $request->input('filter_tgl_pinjam1');
         $filterTglPinjam2 = $request->input('filter_tgl_pinjam2');
 
-        // Query utama dengan join anggota dan subquery cek angsuran belum lunas
-        $query = Pinjaman::join('anggota', 'anggota.id', '=', 'pinjaman.anggota_id')
-            ->select('pinjaman.*', 'anggota.nama as anggota_nama')
-            ->addSelect(DB::raw('(SELECT COUNT(*) FROM angsuran WHERE angsuran.pinjaman_id = pinjaman.id AND status_bayar = "0") as angsuran_belum_lunas'));
+       $query = Pinjaman::join('anggota', 'anggota.id', '=', 'pinjaman.anggota_id')
+        ->select('pinjaman.*', 'anggota.nama as anggota_nama')
+        ->addSelect([
+            DB::raw('(SELECT COUNT(*) FROM angsuran WHERE angsuran.pinjaman_id = pinjaman.id AND angsuran.status_bayar = "0") as jumlah_angsuran_belum_lunas'),
+            DB::raw('(SELECT COUNT(*) FROM angsuran WHERE angsuran.pinjaman_id = pinjaman.id AND angsuran.status_bayar = "0") as angsuran_belum_lunas')
+        ])
+        ->whereExists(function ($sub) {
+            $sub->select(DB::raw(1))
+                ->from('angsuran')
+                ->whereColumn('angsuran.pinjaman_id', 'pinjaman.id')
+                ->where('angsuran.status_bayar', '=', '0');
+        });
 
-        // Filter berdasarkan jenis pinjaman jika ada
+        if (!empty($filterNamaAnggota)) {
+            $query->where('anggota.id', '=', $filterNamaAnggota);
+        }
         if (!empty($filterJenisPinjaman)) {
             $query->where('pinjaman.jenis_pinjaman', $filterJenisPinjaman);
         }
-
-        // Filter berdasarkan rentang tanggal pinjam jika ada
         if (!empty($filterTglPinjam1) && !empty($filterTglPinjam2)) {
             $query->whereBetween('pinjaman.tgl_pinjam', [$filterTglPinjam1, $filterTglPinjam2]);
         } elseif (!empty($filterTglPinjam1)) {
@@ -84,16 +93,15 @@ class PinjamanController extends Controller
         foreach ($pinjaman as $item) {
             $row = [];
             $row[] = $no++;
-            $row[] = $item->anggota_nama; // nama anggota
+            $row[] = $item->anggota_nama; 
             $row[] = number_format($item->nominal_pinjaman, 2);
             $row[] = ucfirst($item->jenis_pinjaman);
             $row[] = date('d-m-Y', strtotime($item->tgl_pinjam));
-            $row[] = $item->jml_angsuran;
+            $row[] = $item->jumlah_angsuran_belum_lunas;
             $row[] = $item->input_by;
             $row[] = $item->tgl_input ? date('d-m-Y', strtotime($item->tgl_input)) : '';
-            $row[] = $item->angsuran_belum_lunas; // status lunas
-            $row[] = $item->id; // id pinjaman
-
+            $row[] = $item->angsuran_belum_lunas; 
+            $row[] = $item->id; 
             $data[] = $row;
         }
 
@@ -130,14 +138,12 @@ class PinjamanController extends Controller
             'tgl_input' => 'nullable|date',
         ]);
 
-        // Ambil user id yang sedang login untuk kolom input_by
         $validated['input_by'] = auth()->id();
 
         $provisiRecord = Provisi::first()->provisi;
         $jasaRecord = Jasa::first()->jasa;
         $provisiNominal = $validated['nominal_pinjaman'] * $provisiRecord;
 
-        // Simpan data pinjaman dan ambil id-nya
         $pinjaman = Pinjaman::create([
             'anggota_id' => $validated['anggota_id'],
             'nominal_pinjaman' => $validated['nominal_pinjaman'],
@@ -146,13 +152,13 @@ class PinjamanController extends Controller
             'jml_angsuran' => $validated['jml_angsuran'],
             'input_by' => $validated['input_by'],
             'tgl_input' => $validated['tgl_input'] ?? now(),
-            'rate' => $provisiRecord, // simpan rate jika kolom ada
-            'provisi' => $provisiNominal, // simpan provisi jika kolom ada
+            'rate' => $provisiRecord, 
+            'provisi' => $provisiNominal, 
         ]);
 
         // Hitung nominal angsuran per bulan
         $angsuranPokok = $validated['nominal_pinjaman'] / $validated['jml_angsuran'];
-        $jasaNominal = $validated['nominal_pinjaman'] * $jasaRecord; // jasa per bulan
+        $jasaNominal = $validated['nominal_pinjaman'] * $jasaRecord; 
         $nominalAngsuran = $angsuranPokok + $jasaNominal;
 
         // Buat data angsuran sebanyak jml_angsuran
@@ -162,8 +168,9 @@ class PinjamanController extends Controller
                 'anggota_id' => $validated['anggota_id'],
                 'angsuran_ke' => $i,
                 'nominal_angsuran' => $angsuranPokok,
-                'jasa' => $jasaRecord, // simpan jasa per bulan
-                'nominal_bayar' => $nominalAngsuran, // total angsuran per bulan
+                'jasa' => $jasaRecord, 
+                'nominal_jasa' => $jasaNominal, 
+                'nominal_bayar' => $nominalAngsuran, 
                 'tgl_bayar' => null,
                 'tgl_input' => $validated['tgl_input'] ?? now(),
                 'total_pinjaman' => $validated['nominal_pinjaman'],
@@ -186,12 +193,9 @@ class PinjamanController extends Controller
         return view('pinjaman.edit', compact('pinjaman', 'anggotas'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Pinjaman $pinjaman)
     {
-        //update pinjaman
+     
     }
 
     public function destroy(Pinjaman $pinjaman)
@@ -222,9 +226,10 @@ class PinjamanController extends Controller
         $search = request()->input('search.value');
 
         // Join angsuran with anggota to get anggota.nama
-        $query = Angsuran::select('angsuran.id', 'anggota.nama', 'angsuran.angsuran_ke', 'angsuran.nominal_angsuran', 'angsuran.tgl_bayar', 'angsuran.status_bayar')
+        $query = Angsuran::select('*')
             ->join('anggota', 'angsuran.anggota_id', '=', 'anggota.id')
-            ->where('angsuran.pinjaman_id', $id);
+            ->where('angsuran.pinjaman_id', $id)
+            ->where('angsuran.status_bayar', '=', '0');
 
         if (!empty($search)) {
             $query->where(function ($q) use ($search) {
@@ -248,12 +253,12 @@ class PinjamanController extends Controller
         foreach ($angsuran as $item) {
             $row = [];
             $row[] = $no++;
-            $row[] = $item->nama; // anggota.nama instead of anggota_id
-            $row[] = $item->angsuran_ke;
-            $row[] = number_format($item->nominal_angsuran, 2);
-            $row[] = $item->tgl_bayar;
-            $row[] = $item->status_bayar == '0' ? 'Belum Lunas' : 'Lunas';
-            $row[] = $item->id; // id angsuran
+            $row[] = $item->nama; 
+            $row[] = number_format($item->total_pinjaman);
+            $row[] = number_format($item->nominal_angsuran);
+            $row[] = number_format($item->nominal_jasa);
+            $row[] = number_format($item->nominal_bayar);
+            $row[] = $item->id; 
             $data[] = $row;
         }
 
@@ -267,10 +272,7 @@ class PinjamanController extends Controller
     }
     public function getAdministrasiProvisi()
     {
-        // Ambil nilai administrasi dari tabel administrasi (sesuaikan model dan kolom)
         $administrasi = Administrasi::first()?->administrasi;
-
-        // Ambil nilai provisi dari tabel provisi (sesuaikan model dan kolom)
         $provisiRate = Provisi::first()?->provisi;
 
         return response()->json([
@@ -296,13 +298,13 @@ class PinjamanController extends Controller
     }
     public function bayarPinjaman($pinjamanId)
     {
-        // Update semua angsuran yang belum dibayar (status_bayar != 1) untuk pinjaman ini
+
         $updated = DB::table('angsuran')
             ->where('pinjaman_id', $pinjamanId)
             ->where('status_bayar', '=', '0')
             ->update([
                 'tgl_bayar' => Carbon::now()->format('Y-m-d'), 
-                'status_bayar' => '1', // Set status_bayar menjadi 1
+                'status_bayar' => '1', 
             ]);
 
         if ($updated) {
@@ -316,5 +318,52 @@ class PinjamanController extends Controller
                 'message' => 'Tidak ada angsuran yang perlu dibayar atau update gagal.'
             ], 400);
         }
+    }
+    public function getAngsuranPertama($id)
+    {
+        $angsuran = DB::table('angsuran')
+            ->where('pinjaman_id', $id)
+            ->where('status_bayar', '0')
+            ->orderBy('angsuran_ke', 'asc')
+            ->first();
+
+        if ($angsuran) {
+            return response()->json([
+                'success' => true,
+                'angsuran' => $angsuran
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Tidak ada angsuran yang belum dibayar.'
+            ]);
+        }
+    }
+    public function bayarAngsuranSatu(Request $request, $id)
+    {
+        $angsuran = DB::table('angsuran')
+            ->where('pinjaman_id', $id)
+            ->where('status_bayar', '0')
+            ->orderBy('angsuran_ke', 'asc')
+            ->first();
+
+        if (!$angsuran) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Semua angsuran sudah dibayar.'
+            ]);
+        }
+
+        DB::table('angsuran')
+            ->where('id', $angsuran->id)
+            ->update([
+                'status_bayar' => '1',
+                'tgl_bayar' => now()
+            ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Angsuran ke-' . $angsuran->angsuran_ke . ' berhasil dibayar.'
+        ]);
     }
 }

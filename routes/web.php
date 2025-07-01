@@ -30,6 +30,8 @@ Route::post('register', [RegisterController::class, 'register']);
 // route untuk semua role
 Route::middleware(['auth', 'role:Anggota,Admin,Ketua'])->group(function () {
     Route::resource('pengajuan', PengajuanController::class);
+    Route::get('/pengajuan-simpanan/create', [PengajuanController::class, 'pengajuan_simpanan'])->name('pengajuan.pengajuan_simpanan');
+    Route::post('/pengajuan-simpanan', [PengajuanController::class, 'store_simpanan'])->name('pengajuan.store_simpanan');
      // Tampilkan halaman profile
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
 
@@ -49,8 +51,7 @@ Route::middleware(['auth','role:Admin'])->group(function () {
     // Route untuk menampilkan form upload
     Route::get('/form-upload-simpanan', [SimpananController::class, 'showForm'])->name('form.upload.simpanan');
     Route::post('/upload-simpanan', [SimpananController::class, 'uploadSimpanan'])->name('upload.simpanan');
-
-
+    Route::post('/upload/remun', [UploadController::class, 'uploadRemun'])->name('upload.remun');
 
     // hitung SHU
     Route::get('/shu', [SHUController::class, 'index'])->name('shu.index');
@@ -61,7 +62,11 @@ Route::middleware(['auth','role:Admin'])->group(function () {
      //admin cek pinjaman pengajuan
     Route::get('/pinjaman-pengajuan', [AdminPinjamanController::class, 'index'])->name('pinjaman.cekpengajuan');
     Route::patch('/pinjaman-pengajuan/{id}/update-status', [AdminPinjamanController::class, 'updateStatus'])->name('adminpinjaman.updateStatus');
-    
+    Route::patch('/simpanan-pengajuan/{id}/update-status', [AdminPinjamanController::class, 'updateSimpananStatus'])->name('adminpinjaman.updateSimpananStatus');
+
+    Route::get('/pinjaman/topup/{id}', [AdminPinjamanController::class, 'formTopup'])->name('pinjaman.topup.form');
+    Route::post('/pinjaman/topup/{id}', [AdminPinjamanController::class, 'prosesTopup'])->name('pinjaman.topup.proses');
+
 });
 
 // route ketua
@@ -78,9 +83,9 @@ Route::middleware(['auth','role:Admin,Ketua'])->group(function () {
     Route::post('/angsuran/pelunasan', [AngsuranController::class, 'pelunasan'])->name('angsuran.pelunasan');
     Route::get('/pinjaman/get-administrasi-provisi', [PinjamanController::class, 'getAdministrasiProvisi'])->name('pinjaman.getAdministrasiProvisi');
     Route::get('/pinjaman/unpaid-details/{id}', [PinjamanController::class, 'getUnpaidDetails'])->name('pinjaman.unpaidDetails');
-    Route::post('/pinjaman/bayar/{id}', [PinjamanController::class, 'bayarPinjaman'])->name('pinjaman.bayar');
     Route::patch('/anggota/{id}/update-status', [AnggotaController::class, 'updateStatus'])->name('anggota.updateStatus');
-    Route::get('anggota/data', [AnggotaController::class, 'getData'])->name('anggota.getDataPinjaman');
+    Route::post('/pinjaman/bayar/{id}', [PinjamanController::class, 'bayarPinjaman'])->name('pinjaman.bayar');
+    Route::get('anggota/data', [AnggotaController::class, 'getData'])->name('anggota.getData');
     Route::get('angsuran/data', [AngsuranController::class, 'getDataAngsuran'])->name('angsuran.getDataAngsuran');
     Route::get('pinjaman/data', [PinjamanController::class, 'getDataPinjaman'])->name('pinjaman.data');
     Route::get('simpanan/data', [SimpananController::class, 'getDataSimpanan'])->name('simpanan.data');
@@ -88,4 +93,13 @@ Route::middleware(['auth','role:Admin,Ketua'])->group(function () {
     Route::resource('simpanan', SimpananController::class);
     Route::resource('pinjaman', PinjamanController::class);
     Route::resource('angsuran', AngsuranController::class);
+
+    // Route untuk mengupdate status anggota
+    Route::patch('/anggota/{id}/update-status', [AnggotaController::class, 'updateStatus'])->name('anggota.updateStatus');
+    // Ketua mengupdate simpanan sukarela
+    Route::patch('/ketua/simpanan/{id}/update-status', [KetuaPinjamanController::class, 'updateSimpananStatus'])->name('KetuaPinjaman.updateSimpananStatus');
+
+    Route::get('/pinjaman/{id}/angsuran-pertama', [PinjamanController::class, 'getAngsuranPertama']);
+    Route::post('/pinjaman/{id}/bayar-satu', [PinjamanController::class, 'bayarAngsuranSatu']);
+    
 });

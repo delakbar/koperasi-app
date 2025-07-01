@@ -4,6 +4,7 @@
 
 @section('content')
 <div class="container">
+    <a href="{{ route('form.upload.simpanan') }}" class="btn btn-secondary mb-3">← Kembali</a>
     <h4>Log Hasil Import</h4>
     <table class="table table-bordered">
         <thead>
@@ -25,16 +26,27 @@
                     <ul>
                         @foreach ($item['simpanan'] as $logS)
                             @php
-                                $isFailed = str_contains($logS, 'skipped');
+                                $isSkipped = str_contains(strtolower($logS), 'skipped');
+                                $isSuccess = str_contains(strtolower($logS), 'success');
+                                $isNotFound = str_contains(strtolower($logS), 'not found');
+                                $color = $isSkipped ? '#6c757d' : ($isSuccess ? 'green' : ($isNotFound ? 'red' : 'black'));
+                                $icon = $isSkipped ? '⏸️' : ($isSuccess ? '✅' : ($isNotFound ? '❌' : '•'));
                             @endphp
-                         <li style="color: {{ $isFailed ? 'red' : 'green' }}">
-                            {!! $isFailed ? '❌' : '✅' !!} {{ $logS }}
-                        </li>
+                            <li style="color: {{ $color }}">
+                                {!! $icon !!} {{ $logS }}
+                            </li>
                         @endforeach
                     </ul>
                 </td>
-                <td style="color: {{ $item['angsuran_update'] == 'success' ? 'green' : 'red' }}">
-                    {{ ucfirst($item['angsuran_update']) }}
+                @php
+                    $isSkipped = str_contains(strtolower($item['angsuran_update']), 'skipped');
+                    $isSuccess = str_contains(strtolower($item['angsuran_update']), 'success');
+                    $isNotFound = str_contains(strtolower($item['angsuran_update']), 'not found');
+                    $color = $isSkipped ? '#6c757d' : ($isSuccess ? 'green' : ($isNotFound ? 'red' : 'black'));
+                    $icon = $isSkipped ? '⏸️' : ($isSuccess ? '✅' : ($isNotFound ? '❌' : '•'));
+                @endphp
+                <td style="color: {{ $color }}">
+                    {!! $icon !!} {{ ucfirst($item['angsuran_update']) }}
                 </td>
             </tr>
             @endforeach

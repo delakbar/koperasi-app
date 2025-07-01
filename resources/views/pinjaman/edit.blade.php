@@ -36,6 +36,11 @@
             </div>
         </div>
 
+         <div class="mt-3 d-flex justify-content-end">
+            <a href="#" id="btnBayar" class="btn btn-primary">Bayar Pelunasan</a>
+        </div>
+        <div id="messageBayar" class="mt-2"></div>
+
         <!-- Tabel Angsuran -->
         <div class="card">
             <div class="card-header">Detail Angsuran</div>
@@ -45,10 +50,10 @@
                         <tr>
                             <th>No</th>
                             <th>Nama</th>
-                            <th>Angsuran ke</th>
+                            <th>Pinjaman</th>
                             <th>Nominal Angsuran</th>
-                            <th>Tgl bayar</th>
-                            <th>Status Bayar</th>
+                            <th>Jasa</th>
+                            <th>Bayar Cicilan</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,11 +62,6 @@
                 </table>
             </div>
         </div>
-        <div class="mt-3 d-flex justify-content-end">
-            <a href="#" id="btnBayar" class="btn btn-primary">Bayar Pinjaman</a>
-        </div>
-        <div id="messageBayar" class="mt-2"></div>
-
     </div>
 </div>
 <!-- Modal Konfirmasi Pembayaran -->
@@ -73,8 +73,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
       </div>
       <div class="modal-body" id="nominalBayar">
-        <p>Apakah Anda yakin ingin membayar pinjaman ini?</p>
-        <p><strong>Total Nominal:</strong> <span id="totalNominalBayar">Rp 0</span></p>        
+        <p>Pembayaran Pokok saja</p>
+        <p><strong>Nominal:</strong> <span id="totalNominalBayar">Rp 0</span></p>        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
@@ -92,6 +92,7 @@
 
 @push('scripts')
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -124,10 +125,10 @@
             columns: [
                 { data: 0, name: 'id' },
                 { data: 1, name: 'anggota_id' },
-                { data: 2, name: 'angsuran_ke' },
-                { data: 3, name: 'nominal_angsuran' },
-                { data: 4, name: 'tgl_bayar' },
-                { data: 5, name: 'status_bayar' },
+                { data: 2, name: 'total_pinjaman' },
+                { data: 3, name: 'status_bayar' },
+                { data: 4, name: 'jasa' },
+                { data: 5, name: 'nominal_bayar' },
             ],
             drawCallback: function(settings) {
                 // Ambil data total nominal dan sisa angsuran dari server

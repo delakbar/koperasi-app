@@ -111,6 +111,7 @@ class SHUController extends Controller
         $shus = DB::table('shu_anggota')
             ->join('anggota', 'shu_anggota.anggota_id', '=', 'anggota.id')
             ->select('anggota.nama', 'shu_anggota.*')
+            ->orderBy('shu_anggota.anggota_id', 'asc')
             ->get();
 
 
@@ -125,6 +126,7 @@ class SHUController extends Controller
             $data = DB::table('shu_anggota')
             ->join('anggota', 'shu_anggota.anggota_id', '=', 'anggota.id')
             ->select(
+                'shu_anggota.anggota_id',
                 'anggota.nama',
                 'shu_anggota.shu_simpanan',
                 'shu_anggota.shu_pinjaman',
@@ -134,6 +136,7 @@ class SHUController extends Controller
                 'total_simpanan',
                 'total_pinjaman'
             )
+            ->orderBy('shu_anggota.anggota_id', 'asc')
             ->get();
 
         return response()->json($data);

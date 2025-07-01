@@ -25,6 +25,7 @@
                  <table id="shuTable" class="table table-bordered display responsive" >
                     <thead class="table-dark">
                         <tr>
+                            <th style="display: none;">ID</th>
                             <th>Nama</th>
                             <th>Total Simpanan</th>
                             <th>pengkali simpanan</th>
@@ -85,6 +86,7 @@ $(document).ready(function () {
             }
         },
         columns: [
+            { data: 'anggota_id', visible: false }, // Kolom untuk sorting
             { data: 'nama' },
             {
                 data: 'total_simpanan',
@@ -127,8 +129,9 @@ $(document).ready(function () {
                 render: function (data) {
                     return 'Rp ' + parseFloat(data).toLocaleString('id-ID', { minimumFractionDigits: 2 });
                 }
-            },
-        ]
+            }
+        ],
+        order: [[0, 'asc']] // ✅ koma sudah benar
     });
 
     // Submit filter form

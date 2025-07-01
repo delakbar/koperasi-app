@@ -129,8 +129,6 @@
         return prefix == undefined ? rupiah : (rupiah ? rupiah : '');
     }
 
-    // Nilai provisi 1.5%, bisa diganti dari backend
-    // const provisi = 0.015;
     const provisi = parseFloat(@json($provisi));
 
     document.getElementById('nominal_pinjaman_display').addEventListener('input', function(e){

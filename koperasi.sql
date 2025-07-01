@@ -11,7 +11,7 @@
  Target Server Version : 80030
  File Encoding         : 65001
 
- Date: 05/06/2025 10:05:01
+ Date: 01/07/2025 14:24:13
 */
 
 SET NAMES utf8mb4;
@@ -49,123 +49,138 @@ CREATE TABLE `anggota`  (
   `is_active` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `nama`(`nama`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 119 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 127 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of anggota
 -- ----------------------------
-INSERT INTO `anggota` VALUES (1, 'admin', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Admin', 'karyawan', NULL, 'Admin', '2025-05-30 19:06:47', '2025-04-27 05:39:38.000', '1');
-INSERT INTO `anggota` VALUES (2, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. MOH EKA KARTIKA EM, S.H., M.HUM.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (3, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. WAYAN KARYA, S.H., M.Hum.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (4, '195901231986121001', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'H BAKTAR JUBRI NASUTION, S.H, M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (5, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Ucu Jaya Sarjana S, SH.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (6, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MULA PANGARIBUAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (7, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HERMAN HELLER HUTAPEA, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (8, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. JONLAR PURBA, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (9, '195805081986011001', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'JESAYAS TARIGAN, S.H., M.Hum.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (10, '195912151988031005', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'CEPI ISKANDAR, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (11, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HIRAS SIHOMBING, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (13, '195912291986121001', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MUHAMMAD NUR, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (14, '196104171985122001', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SUKMAYANTI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (15, '195809121985031004', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'R MATRAS SUPOMO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (16, '196107181988031002', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. GUNAWAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (17, '196008071985122001', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'PORMAN SITUMORANG, S.H., M.H.', 'karyawan', 'xxx', 'Anggota', '2025-05-30 19:06:47', '2025-06-03 22:43:51', '1');
-INSERT INTO `anggota` VALUES (18, '195806301985031004', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ROBERT SIAHAAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (19, '196111031988031002', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SUDARWIN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (20, '196204181988031003', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'PRANOTO, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (21, '196303281988032003', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hj. WEDHAYATI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (22, '196005171984031004', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'POLTAK SITORUS, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (23, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'RATNA MINTARSIH, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (24, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ASBAN PANJAITAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (25, '196111111982031013', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'KEMAL TAMPUBOLON, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (26, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'IDA MARION, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (27, '196003021985121001', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'IMAN GULTOM, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (28, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MADE SUTRISNA, S.H., M.Hum.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (29, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'VIKTOR PAKPAHAN, S.H., M.H.MSi.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (30, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. KASIANUS TELAUMBANUA, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (31, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'BARITA SARAGIH, S.H.L.L.M.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (32, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Yana Hediyana', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (33, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hj. NENENG WARLINAH, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (34, '196709031993031005', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HENDRO CATUR SUCAHYO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (35, '196012301985031006', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'PAHATAR SIMARMATA, S.H., M.Hum.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (36, '195808281985031005', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Zaherwan Lesmana, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (37, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'H. HANDOKO KRISTIYOSO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (38, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. Hj. Nur Aslam Bustaman, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (39, '19610718198031002', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SURANTO, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (40, '196002171985122001', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'TURSINAH AFTIANTI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (41, '196101051986121001', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MULYANTO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (42, '196203251988031003', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'EDISON MUHAMAD, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (43, '195909021986121001', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. KRISTWAN GENOVA DAMANIK, S.H., M.HUM.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (44, '195905051985121001', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MARISI SIREGAR, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (45, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MOCH MAWARDI, SH MH', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (46, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', ' Hj. JUNILAWATI HARAHAP, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (47, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. NAISYAH KADIR, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (48, '196607131990031004', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SAIFUL ASNURI, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (49, '1957012202201802013', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hj. LILIK SRIHARTATI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (50, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Tri Mulyani, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (51, '196406031989032002', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Sri Yuditiani, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (52, '196806261993032005', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Rosmalinda, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (53, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Erna Rosmawati, S.H., M. H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (54, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Bambang Sugianto', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (55, '196403161985031005', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ENDANG SUMARNO, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (56, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', '	KRISNA SOFIADI, S.H', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (57, '197709122002122003', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ERNIWATI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (58, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hermansyah', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (59, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Bambang Belardaya', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (60, '196409051985021001', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SUGIHARTO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (61, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ARLISA YUNITA NELYANA', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (62, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Nurdiana, SH', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (63, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Khairul Fasja, SH', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (64, '196505051991031005', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'JAFRI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (65, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hendayani, SH', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (66, '196507171987031003', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'GATOT HADI PURWONO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (67, '196810111990031001', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'RIDWAN NURDIN, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (68, '196309281983032003', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'YETI NINGSIH, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (69, '196807091994031004', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ENANG SUPARMAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (70, '196607151992031022', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SUSILO NANDANG BAGIO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (71, '197012232006042002', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'NINA YAYU MAESAROH, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (72, '196309121983012001', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SRI SUBEKTI TRIANA, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (73, '196407241985031005', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'JONO YULIANTO, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (74, '196501141994031001', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'YANI SOFYAN, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (75, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dani Adhia Wardana', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (76, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Ummi Hani, S.Sos', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (77, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Ary Faridah, ', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (78, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Sri Suratno Wibowo', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (79, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Anton Senjaya, S.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (81, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Aljunalliadi, SE', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (82, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Elna Helniarika, S.Kom', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (83, '196902021994032004', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Lies Hendrawani', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (84, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Apriyani Adi Utami', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (85, '197206151994032003', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Lisna Indrawati', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (86, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Sidik Nugraha', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (87, '198306262006042004', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Fitri Kristianti, S.E., Ak.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (89, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Nurhafina N', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (91, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Nurul Yulia', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (92, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Andrie Maeri', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (94, '198405272011011012', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Tia Adistian Pasha, S.T.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (95, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hera Caprina, S.I.Kom.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (96, '199202152019032012', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'NISA WANGSITA, S.Psi.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (97, '198903222015031001', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'YOGI ISKANDAR PAMUNGKAS PUTRA, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (98, '199009172019032008', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MARTINA MAGDALENA BARASA, S.T.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (99, '199506022019032009', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'YUNI CLARA, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (100, '199504202020122003', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ZENI PUTERI SIMANGUNSONG, S.Ak.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (101, '199512152020122014', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'DEVIRA WIENA PRAMINTYA, S.Kom.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (102, '199108202020121003', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'INDRA RIZKY FIRMANSYAH, A.Md.T.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (103, '197504032007011002', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Saepuloh', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (104, '199604232020122012', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'RESTI APRILIA, A.Md.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (105, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', ' AYU PERMATA SARI.,A.Md', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (106, '199408012022032007', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SRI ANGELA SIALLAGAN, A.Md.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (107, '199611302020122008', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'FERGIE NOVITA WASSAHDAD, A.Md.Ak.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (108, '199601192020122012', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HANI NUR AINI, A.Md.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (109, '198609262023211018', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'BUDYAWAN HERIJANTO, S.E.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (110, '197803152023211004', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HERU BUDIYANTO, S.IP.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (111, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'FITRIA NURFAUZIAH, S.E.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (112, '198603182023212022', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'RIA IRAWATI PUSPITASARI, A.Md.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '1');
-INSERT INTO `anggota` VALUES (113, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'LUKMAN ILMAN NURHAKIM, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (114, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ANNISA AYU LESTARI, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (115, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'OLIVIA WAHYU KUSUMANINGTYAS, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (116, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'PUPUT WULANSARI, A.Md.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:47', NULL, '0');
-INSERT INTO `anggota` VALUES (118, 'ketua', '$2y$12$tyjFKPn/uj0TGEorr63zxOgny8ywlED2HkYplSxFouMUYnu5Moz3G', 'ketua', 'karyawan', '08xxxx', 'Ketua', '2025-06-03 22:45:39', '2025-06-03 22:45:39', '1');
+INSERT INTO `anggota` VALUES (1, '1', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'NURDIANA, S.H.', 'karyawan', NULL, 'Admin', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (2, '2', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'BAMBANG BELARDAYA, S.H.', 'karyawan', NULL, 'Ketua', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (3, '3', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'H. KAIRUL FASJA, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (4, '4', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HENDAYANI, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (5, '5', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'LIES HENDRAWANI', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (6, '6', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'DANI ADHIA WARDANA, S.T. ', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (7, '7', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SAEPULOH', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (8, '8', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'UMMI HANI, S. Sos.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (9, '9', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ARY FARIDAH, S.Si.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (10, '10', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SRI SURATNO WIBOWO, S.T.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (11, '11', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ANTON SENJAYA, S.Kom., SH. ', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (12, '12', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ALJUNALLIADI, S.E.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (13, '13', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ELNA HELNIARIKA, S.Kom.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (14, '14', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'APRIYANI ADI UTAMI, S.E.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (15, '15', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SIDIK NUGRAHA, S.Kom.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (16, '16', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ANDRIE MAERI RUSBAYANA, A.Md.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (17, '17', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'FITRI KRISTIANTI, S.E., A.k.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (18, '18', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'NURUL YULIA DWI ASTUTI, A.Md.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (19, '19', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HERI SUPRIYADI', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (20, '20', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'LISNA INDRAWATI', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (21, '21', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'NANTA SUWARNA', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (22, '22', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'DEDI IRAWAN', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (23, '23', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'BAMBANG SUGIANTO', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (24, '24', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'WIDA AMELIA', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (25, '25', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'WINA YUSTI', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (26, '26', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'NURHAFINA NOVIANA', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (27, '27', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'EDDY EFFENDI', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (28, '28', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'DADANG ANWAR', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (29, '29', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SAEFUL FAUZI SOBARI, SH.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (30, '30', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'YANA HEDIYANA, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (31, '31', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'AHMAD SOLIHIN', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (32, '32', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'UCU JAYA SARJANA SIMATUPANG, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (33, '33', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'TENDI KOSTAMAN', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (34, '34', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'LILIK SRIHARTATI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (35, '35', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'TIA ADISTIAN PASHA', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (36, '36', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'FATHIA FARAHNASH', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (37, '37', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'TRI MULYANI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (38, '38', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ZAHERWAN LESMANA, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (39, '39', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HERA CAPRINA S, S.I.Kom.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (40, '40', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HEDI', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (41, '41', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SRI YUDITIANI, SH.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (42, '42', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'JESAYAS TARIGAN, S.H., M.Hum.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (43, '43', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'RESTI APRILIA, A.Md.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (44, '44', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'IWAN', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (45, '45', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HERMANSYAH.,S.H', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (46, '46', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', ' R MATRAS SUPOMO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (47, '47', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'NISA WANGSITA, S.Psi.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (48, '48', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'AYU PERMATA SARI, A.Md.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (49, '49', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. GUNAWAN S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (50, '50', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ROBERT SIAHAAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (51, '51', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'YOGI ISKANDAR PAMUNGKAS PUTRA, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (52, '52', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ROSMALINDA, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (53, '53', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ERNA ROSMAWATI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (54, '54', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'AGHNIA RUSYDA', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (55, '55', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. Hj. NUR ASLAM BUSTAMAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (56, '56', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SURANTO, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (57, '57', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SRI ANGELA SIALLAGAN, A.Md.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (58, '58', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'M SAEFUL', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (59, '59', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SUDARWIN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (60, '60', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MARTINA MAGDALENA BARASA, S.T.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (61, '61', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'INDRA RIZKY FIRMANSYAH, A.Md.T', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (62, '62', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'YUNI CLARA, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (63, '63', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'PRANOTO, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (64, '64', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ZENI PUTERI SIMANGUNSONG, S.Ak.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (65, '65', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hj. WEDHAYATI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (66, '66', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ENDANG SUMARNO, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (67, '67', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SRI SUBEKTI TRIANA, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (68, '68', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'JONO YULIANTO, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (69, '69', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'YANI SOFYAN, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (70, '70', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'POLTAK SITORUS, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (71, '71', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'RATNA MINTARSIH, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (72, '72', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'KEMAL TAMPUBOLON, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (73, '73', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'KRISNA SOFIADI, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (74, '74', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'FERGIE NOVITA WASSAHDAD, A.Md.Ak.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (75, '75', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'DEVIRA WIENA PRAMINTYA, S.Kom.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (76, '76', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HERU BUDIYANTO, S.IP.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (77, '77', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HANI NUR AINI, A.Md.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (78, '78', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'BUDYAWAN HERIJANTO, S.E.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (79, '79', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'RIA IRAWATI PUSPITASARI, A.Md.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (80, '80', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'CECEP SURACHMAN', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (81, '81', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'IMAN GULTOM, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (82, '82', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'PORMAN SITUMORANG, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (83, '83', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'TURSINAH AFTIANTI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (84, '84', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MULYANTO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (85, '85', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'EDISON MUHAMAD, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (86, '86', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. KRISTWAN GENOVA DAMANIK, S.H., M.HUM.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (87, '87', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MARISI SIREGAR, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (88, '88', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MOCH MAWARDI, SH MH', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (89, '89', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'FITRIA NURFAUZIAH, S.E.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (90, '90', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'PAHATAR SIMARMATA, S.H., M.Hum.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (91, '91', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'RIDWAN NURDIN, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (92, '92', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'YETI NINGSIH, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (93, '93', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ENANG SUPARMAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (94, '94', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SUSILO NANDANG BAGIO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (95, '95', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'NINA YAYU MAESAROH, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (96, '96', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'H. HANDOKO KRISTIYOSO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (97, '97', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'CEPI ISKANDAR, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (98, '98', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MUHAMMAD NUR, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (99, '99', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'H. BAKTAR JUBRI NASUTION, S.H, M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (100, '100', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hj. JUNILAWATI HARAHAP, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (101, '101', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SUKMAYANTI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (102, '102', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'LUKMAN ILMAN NURHAKIM, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (103, '103', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ANNISA AYU LESTARI, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (104, '104', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'OLIVIA WAHYU KUSUMANINGTYAS, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (105, '105', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ERNIWATI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (106, '106', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HENDRO CATUR SUCAHYO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (107, '107', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SAIFUL ASNURI, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (108, '108', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SUGIHARTO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (109, '109', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'JAFRI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (110, '110', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'GATOT HADI PURWONO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (111, '111', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. MOH EKA KARTIKA EM, S.H., M.HUM.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (112, '112', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HERMAN HELLER HUTAPEA, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (113, '113', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HIRAS SIHOMBING, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (114, '114', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'IDA MARION, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (115, '115', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MADE SUTRISNA, S.H., M.Hum.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (116, '116', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'VIKTOR PAKPAHAN, S.H., M.H.MSi.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (117, '117', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. KASIANUS TELAUMBANUA, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (118, '118', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'BARITA SARAGIH, S.H.L.L.M.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (119, '119', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. NAISYAH KADIR, S.H., MH.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (120, '120', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'PUPUT WULANSARI, A.Md.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (121, '121', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. WAYAN KARYA, S.H., M.Hum.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (122, '122', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MULA PANGARIBUAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (123, '123', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. JONLAR PURBA, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (124, '124', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ARLISA YUNITA NELYANA, S.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (125, '125', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hj. NENENG WARLINAH, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (126, '126', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ASBAN PANJAITAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
+INSERT INTO `anggota` VALUES (127, '127', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'DEDI LUSIYANA', 'karyawan', NULL, 'Anggota', '2025-06-29 19:55:30', '2025-06-29 19:55:30', '1');
 
 -- ----------------------------
 -- Table structure for anggota_copy1
@@ -306,6 +321,139 @@ INSERT INTO `anggota_copy1` VALUES (NULL, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9z
 INSERT INTO `anggota_copy1` VALUES (NULL, NULL, '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'PUPUT WULANSARI, A.Md.', 'karyawan', NULL, 'Anggota', NULL, NULL, '1');
 
 -- ----------------------------
+-- Table structure for anggota_copy2
+-- ----------------------------
+DROP TABLE IF EXISTS `anggota_copy2`;
+CREATE TABLE `anggota_copy2`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `nama` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `jabatan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `no_hp` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `role` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `created_at` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `updated_at` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `is_active` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `nama`(`nama`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 110 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of anggota_copy2
+-- ----------------------------
+INSERT INTO `anggota_copy2` VALUES (1, '1', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. MOH EKA KARTIKA EM, S.H., M.HUM.', 'karyawan', NULL, 'Admin', '2025-05-30 08:00:00', '2025-04-27 05:39:38.000', '1');
+INSERT INTO `anggota_copy2` VALUES (2, '2', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. WAYAN KARYA, S.H., M.Hum.', 'karyawan', NULL, 'Ketua', '2025-05-30 08:00:00', '2025-04-27 05:39:38.001', '1');
+INSERT INTO `anggota_copy2` VALUES (3, '3', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'H BAKTAR JUBRI NASUTION, S.H, M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.002', '1');
+INSERT INTO `anggota_copy2` VALUES (4, '4', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Ucu Jaya Sarjana S, SH.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.003', '1');
+INSERT INTO `anggota_copy2` VALUES (5, '5', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MULA PANGARIBUAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.004', '1');
+INSERT INTO `anggota_copy2` VALUES (6, '6', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HERMAN HELLER HUTAPEA, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.005', '1');
+INSERT INTO `anggota_copy2` VALUES (7, '7', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. JONLAR PURBA, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.006', '1');
+INSERT INTO `anggota_copy2` VALUES (8, '8', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'JESAYAS TARIGAN, S.H., M.Hum.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.007', '1');
+INSERT INTO `anggota_copy2` VALUES (9, '9', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'CEPI ISKANDAR, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.008', '1');
+INSERT INTO `anggota_copy2` VALUES (10, '10', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HIRAS SIHOMBING, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.009', '1');
+INSERT INTO `anggota_copy2` VALUES (11, '11', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MUHAMMAD NUR, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.010', '1');
+INSERT INTO `anggota_copy2` VALUES (12, '12', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SUKMAYANTI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.011', '1');
+INSERT INTO `anggota_copy2` VALUES (13, '13', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'R MATRAS SUPOMO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.012', '1');
+INSERT INTO `anggota_copy2` VALUES (14, '14', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. GUNAWAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.013', '1');
+INSERT INTO `anggota_copy2` VALUES (15, '15', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'PORMAN SITUMORANG, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.014', '1');
+INSERT INTO `anggota_copy2` VALUES (16, '16', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ROBERT SIAHAAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.015', '1');
+INSERT INTO `anggota_copy2` VALUES (17, '17', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SUDARWIN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.016', '1');
+INSERT INTO `anggota_copy2` VALUES (18, '18', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'PRANOTO, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.017', '1');
+INSERT INTO `anggota_copy2` VALUES (19, '19', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hj. WEDHAYATI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.018', '1');
+INSERT INTO `anggota_copy2` VALUES (20, '20', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'POLTAK SITORUS, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.019', '1');
+INSERT INTO `anggota_copy2` VALUES (21, '21', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'RATNA MINTARSIH, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.020', '1');
+INSERT INTO `anggota_copy2` VALUES (22, '22', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ASBAN PANJAITAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.021', '1');
+INSERT INTO `anggota_copy2` VALUES (23, '23', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'KEMAL TAMPUBOLON, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.022', '1');
+INSERT INTO `anggota_copy2` VALUES (24, '24', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'IDA MARION, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.023', '1');
+INSERT INTO `anggota_copy2` VALUES (25, '25', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'IMAN GULTOM, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.024', '1');
+INSERT INTO `anggota_copy2` VALUES (26, '26', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MADE SUTRISNA, S.H., M.Hum.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.025', '1');
+INSERT INTO `anggota_copy2` VALUES (27, '27', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'VIKTOR PAKPAHAN, S.H., M.H.MSi.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.026', '1');
+INSERT INTO `anggota_copy2` VALUES (28, '28', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. KASIANUS TELAUMBANUA, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.027', '1');
+INSERT INTO `anggota_copy2` VALUES (29, '29', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'BARITA SARAGIH, S.H.L.L.M.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.028', '1');
+INSERT INTO `anggota_copy2` VALUES (30, '30', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Yana Hediyana', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.029', '1');
+INSERT INTO `anggota_copy2` VALUES (31, '31', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hj. NENENG WARLINAH, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.030', '1');
+INSERT INTO `anggota_copy2` VALUES (32, '32', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HENDRO CATUR SUCAHYO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.031', '1');
+INSERT INTO `anggota_copy2` VALUES (33, '33', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'PAHATAR SIMARMATA, S.H., M.Hum.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.032', '1');
+INSERT INTO `anggota_copy2` VALUES (34, '34', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Zaherwan Lesmana, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.033', '1');
+INSERT INTO `anggota_copy2` VALUES (35, '35', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'H. HANDOKO KRISTIYOSO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.034', '1');
+INSERT INTO `anggota_copy2` VALUES (36, '36', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. Hj. Nur Aslam Bustaman, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.035', '1');
+INSERT INTO `anggota_copy2` VALUES (37, '37', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SURANTO, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.036', '1');
+INSERT INTO `anggota_copy2` VALUES (38, '38', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'TURSINAH AFTIANTI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.037', '1');
+INSERT INTO `anggota_copy2` VALUES (39, '39', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MULYANTO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.038', '1');
+INSERT INTO `anggota_copy2` VALUES (40, '40', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'EDISON MUHAMAD, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.039', '1');
+INSERT INTO `anggota_copy2` VALUES (41, '41', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. KRISTWAN GENOVA DAMANIK, S.H., M.HUM.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.040', '1');
+INSERT INTO `anggota_copy2` VALUES (42, '42', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MARISI SIREGAR, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.041', '1');
+INSERT INTO `anggota_copy2` VALUES (43, '43', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MOCH MAWARDI, SH MH', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.042', '1');
+INSERT INTO `anggota_copy2` VALUES (44, '44', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', ' Hj. JUNILAWATI HARAHAP, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.043', '1');
+INSERT INTO `anggota_copy2` VALUES (45, '45', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. NAISYAH KADIR, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.044', '1');
+INSERT INTO `anggota_copy2` VALUES (46, '46', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SAIFUL ASNURI, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.045', '1');
+INSERT INTO `anggota_copy2` VALUES (47, '47', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hj. LILIK SRIHARTATI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.046', '1');
+INSERT INTO `anggota_copy2` VALUES (48, '48', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Tri Mulyani, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.047', '1');
+INSERT INTO `anggota_copy2` VALUES (49, '49', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Sri Yuditiani, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.048', '1');
+INSERT INTO `anggota_copy2` VALUES (50, '50', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Rosmalinda, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.049', '1');
+INSERT INTO `anggota_copy2` VALUES (51, '51', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Erna Rosmawati, S.H., M. H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.050', '1');
+INSERT INTO `anggota_copy2` VALUES (52, '52', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Bambang Sugianto', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.051', '1');
+INSERT INTO `anggota_copy2` VALUES (53, '53', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ENDANG SUMARNO, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.052', '1');
+INSERT INTO `anggota_copy2` VALUES (54, '54', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', '	KRISNA SOFIADI, S.H', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.053', '1');
+INSERT INTO `anggota_copy2` VALUES (55, '55', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ERNIWATI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.054', '1');
+INSERT INTO `anggota_copy2` VALUES (56, '56', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hermansyah', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.055', '1');
+INSERT INTO `anggota_copy2` VALUES (57, '57', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Bambang Belardaya', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.056', '1');
+INSERT INTO `anggota_copy2` VALUES (58, '58', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SUGIHARTO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.057', '1');
+INSERT INTO `anggota_copy2` VALUES (59, '59', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ARLISA YUNITA NELYANA', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.058', '1');
+INSERT INTO `anggota_copy2` VALUES (60, '60', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Nurdiana, SH', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.059', '1');
+INSERT INTO `anggota_copy2` VALUES (61, '61', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Khairul Fasja, SH', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.060', '1');
+INSERT INTO `anggota_copy2` VALUES (62, '62', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'JAFRI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.061', '1');
+INSERT INTO `anggota_copy2` VALUES (63, '63', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hendayani, SH', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.062', '1');
+INSERT INTO `anggota_copy2` VALUES (64, '64', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'GATOT HADI PURWONO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.063', '1');
+INSERT INTO `anggota_copy2` VALUES (65, '65', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'RIDWAN NURDIN, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.064', '1');
+INSERT INTO `anggota_copy2` VALUES (66, '66', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'YETI NINGSIH, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.065', '1');
+INSERT INTO `anggota_copy2` VALUES (67, '67', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ENANG SUPARMAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.066', '1');
+INSERT INTO `anggota_copy2` VALUES (68, '68', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SUSILO NANDANG BAGIO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.067', '1');
+INSERT INTO `anggota_copy2` VALUES (69, '69', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'NINA YAYU MAESAROH, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.068', '1');
+INSERT INTO `anggota_copy2` VALUES (70, '70', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SRI SUBEKTI TRIANA, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.069', '1');
+INSERT INTO `anggota_copy2` VALUES (71, '71', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'JONO YULIANTO, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.070', '1');
+INSERT INTO `anggota_copy2` VALUES (72, '72', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'YANI SOFYAN, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.071', '1');
+INSERT INTO `anggota_copy2` VALUES (73, '73', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dani Adhia Wardana', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.072', '1');
+INSERT INTO `anggota_copy2` VALUES (74, '74', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Ummi Hani, S.Sos', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.073', '1');
+INSERT INTO `anggota_copy2` VALUES (75, '75', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Ary Faridah, ', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.074', '1');
+INSERT INTO `anggota_copy2` VALUES (76, '76', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Sri Suratno Wibowo', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.075', '1');
+INSERT INTO `anggota_copy2` VALUES (77, '77', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Anton Senjaya, S.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.076', '1');
+INSERT INTO `anggota_copy2` VALUES (78, '78', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Aljunalliadi, SE', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.077', '1');
+INSERT INTO `anggota_copy2` VALUES (79, '79', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Elna Helniarika, S.Kom', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.078', '1');
+INSERT INTO `anggota_copy2` VALUES (80, '80', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Lies Hendrawani', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.079', '1');
+INSERT INTO `anggota_copy2` VALUES (81, '81', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Apriyani Adi Utami', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.080', '1');
+INSERT INTO `anggota_copy2` VALUES (82, '82', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Lisna Indrawati', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.081', '1');
+INSERT INTO `anggota_copy2` VALUES (83, '83', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Sidik Nugraha', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.082', '1');
+INSERT INTO `anggota_copy2` VALUES (84, '84', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Fitri Kristianti, S.E., Ak.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.083', '1');
+INSERT INTO `anggota_copy2` VALUES (85, '85', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Nurhafina N', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.084', '1');
+INSERT INTO `anggota_copy2` VALUES (86, '86', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Nurul Yulia', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.085', '1');
+INSERT INTO `anggota_copy2` VALUES (87, '87', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Andrie Maeri', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.086', '1');
+INSERT INTO `anggota_copy2` VALUES (88, '88', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Tia Adistian Pasha, S.T.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.087', '1');
+INSERT INTO `anggota_copy2` VALUES (89, '89', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hera Caprina, S.I.Kom.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.088', '1');
+INSERT INTO `anggota_copy2` VALUES (90, '90', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'NISA WANGSITA, S.Psi.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.089', '1');
+INSERT INTO `anggota_copy2` VALUES (91, '91', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'YOGI ISKANDAR PAMUNGKAS PUTRA, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.090', '1');
+INSERT INTO `anggota_copy2` VALUES (92, '92', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MARTINA MAGDALENA BARASA, S.T.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.091', '1');
+INSERT INTO `anggota_copy2` VALUES (93, '93', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'YUNI CLARA, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.092', '1');
+INSERT INTO `anggota_copy2` VALUES (94, '94', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ZENI PUTERI SIMANGUNSONG, S.Ak.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.093', '1');
+INSERT INTO `anggota_copy2` VALUES (95, '95', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'DEVIRA WIENA PRAMINTYA, S.Kom.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.094', '1');
+INSERT INTO `anggota_copy2` VALUES (96, '96', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'INDRA RIZKY FIRMANSYAH, A.Md.T.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.095', '1');
+INSERT INTO `anggota_copy2` VALUES (97, '97', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Saepuloh', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.096', '1');
+INSERT INTO `anggota_copy2` VALUES (98, '98', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'RESTI APRILIA, A.Md.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.097', '1');
+INSERT INTO `anggota_copy2` VALUES (99, '99', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', ' AYU PERMATA SARI.,A.Md', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.098', '1');
+INSERT INTO `anggota_copy2` VALUES (100, '100', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SRI ANGELA SIALLAGAN, A.Md.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.099', '1');
+INSERT INTO `anggota_copy2` VALUES (101, '101', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'FERGIE NOVITA WASSAHDAD, A.Md.Ak.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.100', '1');
+INSERT INTO `anggota_copy2` VALUES (102, '102', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HANI NUR AINI, A.Md.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.101', '1');
+INSERT INTO `anggota_copy2` VALUES (103, '103', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'BUDYAWAN HERIJANTO, S.E.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.102', '1');
+INSERT INTO `anggota_copy2` VALUES (104, '104', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HERU BUDIYANTO, S.IP.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.103', '1');
+INSERT INTO `anggota_copy2` VALUES (105, '105', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'FITRIA NURFAUZIAH, S.E.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.104', '1');
+INSERT INTO `anggota_copy2` VALUES (106, '106', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'RIA IRAWATI PUSPITASARI, A.Md.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.105', '1');
+INSERT INTO `anggota_copy2` VALUES (107, '107', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'LUKMAN ILMAN NURHAKIM, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.106', '1');
+INSERT INTO `anggota_copy2` VALUES (108, '108', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ANNISA AYU LESTARI, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.107', '1');
+INSERT INTO `anggota_copy2` VALUES (109, '109', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'OLIVIA WAHYU KUSUMANINGTYAS, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.108', '1');
+INSERT INTO `anggota_copy2` VALUES (110, '110', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'PUPUT WULANSARI, A.Md.', 'karyawan', NULL, 'Anggota', '2025-05-30 08:00:00', '2025-04-27 05:39:38.109', '1');
+
+-- ----------------------------
 -- Table structure for anggota_ori
 -- ----------------------------
 DROP TABLE IF EXISTS `anggota_ori`;
@@ -330,6 +478,137 @@ CREATE TABLE `anggota_ori`  (
 INSERT INTO `anggota_ori` VALUES (1, 'admin', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Admin', 'karyawan', '256.758.2645', 'admin', '2025-04-27 05:39:38', '2025-04-27 05:39:38', '1');
 
 -- ----------------------------
+-- Table structure for anggota_x
+-- ----------------------------
+DROP TABLE IF EXISTS `anggota_x`;
+CREATE TABLE `anggota_x`  (
+  `id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `nama` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `jabatan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `no_hp` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `role` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `created_at` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `updated_at` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `is_active` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of anggota_x
+-- ----------------------------
+INSERT INTO `anggota_x` VALUES ('1', '1', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. MOH EKA KARTIKA EM, S.H., M.HUM.', 'karyawan', NULL, 'Admin', '2025-05-30 19:06:47', '2025-04-27 05:39:38.000', '1');
+INSERT INTO `anggota_x` VALUES ('2', '2', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. WAYAN KARYA, S.H., M.Hum.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:48', '2025-04-27 05:39:38.001', '1');
+INSERT INTO `anggota_x` VALUES ('3', '3', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'H BAKTAR JUBRI NASUTION, S.H, M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:49', '2025-04-27 05:39:38.002', '1');
+INSERT INTO `anggota_x` VALUES ('4', '4', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Ucu Jaya Sarjana S, SH.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:50', '2025-04-27 05:39:38.003', '1');
+INSERT INTO `anggota_x` VALUES ('5', '5', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MULA PANGARIBUAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:51', '2025-04-27 05:39:38.004', '1');
+INSERT INTO `anggota_x` VALUES ('6', '6', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HERMAN HELLER HUTAPEA, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:52', '2025-04-27 05:39:38.005', '1');
+INSERT INTO `anggota_x` VALUES ('7', '7', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. JONLAR PURBA, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:53', '2025-04-27 05:39:38.006', '1');
+INSERT INTO `anggota_x` VALUES ('8', '8', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'JESAYAS TARIGAN, S.H., M.Hum.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:54', '2025-04-27 05:39:38.007', '1');
+INSERT INTO `anggota_x` VALUES ('9', '9', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'CEPI ISKANDAR, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:55', '2025-04-27 05:39:38.008', '1');
+INSERT INTO `anggota_x` VALUES ('10', '10', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HIRAS SIHOMBING, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:56', '2025-04-27 05:39:38.009', '1');
+INSERT INTO `anggota_x` VALUES ('11', '11', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MUHAMMAD NUR, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:57', '2025-04-27 05:39:38.010', '1');
+INSERT INTO `anggota_x` VALUES ('12', '12', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SUKMAYANTI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:58', '2025-04-27 05:39:38.011', '1');
+INSERT INTO `anggota_x` VALUES ('13', '13', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'R MATRAS SUPOMO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:59', '2025-04-27 05:39:38.012', '1');
+INSERT INTO `anggota_x` VALUES ('14', '14', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. GUNAWAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:60', '2025-04-27 05:39:38.013', '1');
+INSERT INTO `anggota_x` VALUES ('15', '15', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'PORMAN SITUMORANG, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:61', '2025-04-27 05:39:38.014', '1');
+INSERT INTO `anggota_x` VALUES ('16', '16', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ROBERT SIAHAAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:62', '2025-04-27 05:39:38.015', '1');
+INSERT INTO `anggota_x` VALUES ('17', '17', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SUDARWIN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:63', '2025-04-27 05:39:38.016', '1');
+INSERT INTO `anggota_x` VALUES ('18', '18', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'PRANOTO, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:64', '2025-04-27 05:39:38.017', '1');
+INSERT INTO `anggota_x` VALUES ('19', '19', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hj. WEDHAYATI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:65', '2025-04-27 05:39:38.018', '1');
+INSERT INTO `anggota_x` VALUES ('20', '20', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'POLTAK SITORUS, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:66', '2025-04-27 05:39:38.019', '1');
+INSERT INTO `anggota_x` VALUES ('21', '21', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'RATNA MINTARSIH, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:67', '2025-04-27 05:39:38.020', '1');
+INSERT INTO `anggota_x` VALUES ('22', '22', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ASBAN PANJAITAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:68', '2025-04-27 05:39:38.021', '1');
+INSERT INTO `anggota_x` VALUES ('23', '23', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'KEMAL TAMPUBOLON, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:69', '2025-04-27 05:39:38.022', '1');
+INSERT INTO `anggota_x` VALUES ('24', '24', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'IDA MARION, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:70', '2025-04-27 05:39:38.023', '1');
+INSERT INTO `anggota_x` VALUES ('25', '25', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'IMAN GULTOM, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:71', '2025-04-27 05:39:38.024', '1');
+INSERT INTO `anggota_x` VALUES ('26', '26', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MADE SUTRISNA, S.H., M.Hum.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:72', '2025-04-27 05:39:38.025', '1');
+INSERT INTO `anggota_x` VALUES ('27', '27', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'VIKTOR PAKPAHAN, S.H., M.H.MSi.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:73', '2025-04-27 05:39:38.026', '1');
+INSERT INTO `anggota_x` VALUES ('28', '28', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. KASIANUS TELAUMBANUA, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:74', '2025-04-27 05:39:38.027', '1');
+INSERT INTO `anggota_x` VALUES ('29', '29', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'BARITA SARAGIH, S.H.L.L.M.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:75', '2025-04-27 05:39:38.028', '1');
+INSERT INTO `anggota_x` VALUES ('30', '30', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Yana Hediyana', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:76', '2025-04-27 05:39:38.029', '1');
+INSERT INTO `anggota_x` VALUES ('31', '31', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hj. NENENG WARLINAH, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:77', '2025-04-27 05:39:38.030', '1');
+INSERT INTO `anggota_x` VALUES ('32', '32', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HENDRO CATUR SUCAHYO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:78', '2025-04-27 05:39:38.031', '1');
+INSERT INTO `anggota_x` VALUES ('33', '33', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'PAHATAR SIMARMATA, S.H., M.Hum.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:79', '2025-04-27 05:39:38.032', '1');
+INSERT INTO `anggota_x` VALUES ('34', '34', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Zaherwan Lesmana, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:80', '2025-04-27 05:39:38.033', '1');
+INSERT INTO `anggota_x` VALUES ('35', '35', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'H. HANDOKO KRISTIYOSO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:81', '2025-04-27 05:39:38.034', '1');
+INSERT INTO `anggota_x` VALUES ('36', '36', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. Hj. Nur Aslam Bustaman, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:82', '2025-04-27 05:39:38.035', '1');
+INSERT INTO `anggota_x` VALUES ('37', '37', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SURANTO, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:83', '2025-04-27 05:39:38.036', '1');
+INSERT INTO `anggota_x` VALUES ('38', '38', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'TURSINAH AFTIANTI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:84', '2025-04-27 05:39:38.037', '1');
+INSERT INTO `anggota_x` VALUES ('39', '39', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MULYANTO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:85', '2025-04-27 05:39:38.038', '1');
+INSERT INTO `anggota_x` VALUES ('40', '40', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'EDISON MUHAMAD, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:86', '2025-04-27 05:39:38.039', '1');
+INSERT INTO `anggota_x` VALUES ('41', '41', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. KRISTWAN GENOVA DAMANIK, S.H., M.HUM.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:87', '2025-04-27 05:39:38.040', '1');
+INSERT INTO `anggota_x` VALUES ('42', '42', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MARISI SIREGAR, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:88', '2025-04-27 05:39:38.041', '1');
+INSERT INTO `anggota_x` VALUES ('43', '43', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MOCH MAWARDI, SH MH', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:89', '2025-04-27 05:39:38.042', '1');
+INSERT INTO `anggota_x` VALUES ('44', '44', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', ' Hj. JUNILAWATI HARAHAP, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:90', '2025-04-27 05:39:38.043', '1');
+INSERT INTO `anggota_x` VALUES ('45', '45', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dr. NAISYAH KADIR, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:91', '2025-04-27 05:39:38.044', '1');
+INSERT INTO `anggota_x` VALUES ('46', '46', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SAIFUL ASNURI, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:92', '2025-04-27 05:39:38.045', '1');
+INSERT INTO `anggota_x` VALUES ('47', '47', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hj. LILIK SRIHARTATI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:93', '2025-04-27 05:39:38.046', '1');
+INSERT INTO `anggota_x` VALUES ('48', '48', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Tri Mulyani, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:94', '2025-04-27 05:39:38.047', '1');
+INSERT INTO `anggota_x` VALUES ('49', '49', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Sri Yuditiani, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:95', '2025-04-27 05:39:38.048', '1');
+INSERT INTO `anggota_x` VALUES ('50', '50', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Rosmalinda, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:96', '2025-04-27 05:39:38.049', '1');
+INSERT INTO `anggota_x` VALUES ('51', '51', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Erna Rosmawati, S.H., M. H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:97', '2025-04-27 05:39:38.050', '1');
+INSERT INTO `anggota_x` VALUES ('52', '52', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Bambang Sugianto', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:98', '2025-04-27 05:39:38.051', '1');
+INSERT INTO `anggota_x` VALUES ('53', '53', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ENDANG SUMARNO, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:99', '2025-04-27 05:39:38.052', '1');
+INSERT INTO `anggota_x` VALUES ('54', '54', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', '	KRISNA SOFIADI, S.H', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:100', '2025-04-27 05:39:38.053', '1');
+INSERT INTO `anggota_x` VALUES ('55', '55', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ERNIWATI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:101', '2025-04-27 05:39:38.054', '1');
+INSERT INTO `anggota_x` VALUES ('56', '56', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hermansyah', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:102', '2025-04-27 05:39:38.055', '1');
+INSERT INTO `anggota_x` VALUES ('57', '57', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Bambang Belardaya', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:103', '2025-04-27 05:39:38.056', '1');
+INSERT INTO `anggota_x` VALUES ('58', '58', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SUGIHARTO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:104', '2025-04-27 05:39:38.057', '1');
+INSERT INTO `anggota_x` VALUES ('59', '59', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ARLISA YUNITA NELYANA', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:105', '2025-04-27 05:39:38.058', '1');
+INSERT INTO `anggota_x` VALUES ('60', '60', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Nurdiana, SH', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:106', '2025-04-27 05:39:38.059', '1');
+INSERT INTO `anggota_x` VALUES ('61', '61', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Khairul Fasja, SH', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:107', '2025-04-27 05:39:38.060', '1');
+INSERT INTO `anggota_x` VALUES ('62', '62', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'JAFRI, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:108', '2025-04-27 05:39:38.061', '1');
+INSERT INTO `anggota_x` VALUES ('63', '63', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hendayani, SH', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:109', '2025-04-27 05:39:38.062', '1');
+INSERT INTO `anggota_x` VALUES ('64', '64', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'GATOT HADI PURWONO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:110', '2025-04-27 05:39:38.063', '1');
+INSERT INTO `anggota_x` VALUES ('65', '65', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'RIDWAN NURDIN, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:111', '2025-04-27 05:39:38.064', '1');
+INSERT INTO `anggota_x` VALUES ('66', '66', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'YETI NINGSIH, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:112', '2025-04-27 05:39:38.065', '1');
+INSERT INTO `anggota_x` VALUES ('67', '67', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ENANG SUPARMAN, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:113', '2025-04-27 05:39:38.066', '1');
+INSERT INTO `anggota_x` VALUES ('68', '68', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SUSILO NANDANG BAGIO, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:114', '2025-04-27 05:39:38.067', '1');
+INSERT INTO `anggota_x` VALUES ('69', '69', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'NINA YAYU MAESAROH, S.H., M.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:115', '2025-04-27 05:39:38.068', '1');
+INSERT INTO `anggota_x` VALUES ('70', '70', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SRI SUBEKTI TRIANA, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:116', '2025-04-27 05:39:38.069', '1');
+INSERT INTO `anggota_x` VALUES ('71', '71', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'JONO YULIANTO, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:117', '2025-04-27 05:39:38.070', '1');
+INSERT INTO `anggota_x` VALUES ('72', '72', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'YANI SOFYAN, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:118', '2025-04-27 05:39:38.071', '1');
+INSERT INTO `anggota_x` VALUES ('73', '73', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Dani Adhia Wardana', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:119', '2025-04-27 05:39:38.072', '1');
+INSERT INTO `anggota_x` VALUES ('74', '74', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Ummi Hani, S.Sos', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:120', '2025-04-27 05:39:38.073', '1');
+INSERT INTO `anggota_x` VALUES ('75', '75', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Ary Faridah, ', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:121', '2025-04-27 05:39:38.074', '1');
+INSERT INTO `anggota_x` VALUES ('76', '76', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Sri Suratno Wibowo', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:122', '2025-04-27 05:39:38.075', '1');
+INSERT INTO `anggota_x` VALUES ('77', '77', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Anton Senjaya, S.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:123', '2025-04-27 05:39:38.076', '1');
+INSERT INTO `anggota_x` VALUES ('78', '78', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Aljunalliadi, SE', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:124', '2025-04-27 05:39:38.077', '1');
+INSERT INTO `anggota_x` VALUES ('79', '79', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Elna Helniarika, S.Kom', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:125', '2025-04-27 05:39:38.078', '1');
+INSERT INTO `anggota_x` VALUES ('80', '80', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Lies Hendrawani', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:126', '2025-04-27 05:39:38.079', '1');
+INSERT INTO `anggota_x` VALUES ('81', '81', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Apriyani Adi Utami', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:127', '2025-04-27 05:39:38.080', '1');
+INSERT INTO `anggota_x` VALUES ('82', '82', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Lisna Indrawati', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:128', '2025-04-27 05:39:38.081', '1');
+INSERT INTO `anggota_x` VALUES ('83', '83', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Sidik Nugraha', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:129', '2025-04-27 05:39:38.082', '1');
+INSERT INTO `anggota_x` VALUES ('84', '84', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Fitri Kristianti, S.E., Ak.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:130', '2025-04-27 05:39:38.083', '1');
+INSERT INTO `anggota_x` VALUES ('85', '85', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Nurhafina N', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:131', '2025-04-27 05:39:38.084', '1');
+INSERT INTO `anggota_x` VALUES ('86', '86', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Nurul Yulia', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:132', '2025-04-27 05:39:38.085', '1');
+INSERT INTO `anggota_x` VALUES ('87', '87', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Andrie Maeri', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:133', '2025-04-27 05:39:38.086', '1');
+INSERT INTO `anggota_x` VALUES ('88', '88', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Tia Adistian Pasha, S.T.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:134', '2025-04-27 05:39:38.087', '1');
+INSERT INTO `anggota_x` VALUES ('89', '89', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Hera Caprina, S.I.Kom.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:135', '2025-04-27 05:39:38.088', '1');
+INSERT INTO `anggota_x` VALUES ('90', '90', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'NISA WANGSITA, S.Psi.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:136', '2025-04-27 05:39:38.089', '1');
+INSERT INTO `anggota_x` VALUES ('91', '91', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'YOGI ISKANDAR PAMUNGKAS PUTRA, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:137', '2025-04-27 05:39:38.090', '1');
+INSERT INTO `anggota_x` VALUES ('92', '92', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'MARTINA MAGDALENA BARASA, S.T.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:138', '2025-04-27 05:39:38.091', '1');
+INSERT INTO `anggota_x` VALUES ('93', '93', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'YUNI CLARA, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:139', '2025-04-27 05:39:38.092', '1');
+INSERT INTO `anggota_x` VALUES ('94', '94', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ZENI PUTERI SIMANGUNSONG, S.Ak.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:140', '2025-04-27 05:39:38.093', '1');
+INSERT INTO `anggota_x` VALUES ('95', '95', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'DEVIRA WIENA PRAMINTYA, S.Kom.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:141', '2025-04-27 05:39:38.094', '1');
+INSERT INTO `anggota_x` VALUES ('96', '96', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'INDRA RIZKY FIRMANSYAH, A.Md.T.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:142', '2025-04-27 05:39:38.095', '1');
+INSERT INTO `anggota_x` VALUES ('97', '97', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'Saepuloh', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:143', '2025-04-27 05:39:38.096', '1');
+INSERT INTO `anggota_x` VALUES ('98', '98', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'RESTI APRILIA, A.Md.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:144', '2025-04-27 05:39:38.097', '1');
+INSERT INTO `anggota_x` VALUES ('99', '99', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', ' AYU PERMATA SARI.,A.Md', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:145', '2025-04-27 05:39:38.098', '1');
+INSERT INTO `anggota_x` VALUES ('100', '100', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'SRI ANGELA SIALLAGAN, A.Md.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:146', '2025-04-27 05:39:38.099', '1');
+INSERT INTO `anggota_x` VALUES ('101', '101', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'FERGIE NOVITA WASSAHDAD, A.Md.Ak.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:147', '2025-04-27 05:39:38.100', '1');
+INSERT INTO `anggota_x` VALUES ('102', '102', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HANI NUR AINI, A.Md.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:148', '2025-04-27 05:39:38.101', '1');
+INSERT INTO `anggota_x` VALUES ('103', '103', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'BUDYAWAN HERIJANTO, S.E.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:149', '2025-04-27 05:39:38.102', '1');
+INSERT INTO `anggota_x` VALUES ('104', '104', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'HERU BUDIYANTO, S.IP.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:150', '2025-04-27 05:39:38.103', '1');
+INSERT INTO `anggota_x` VALUES ('105', '105', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'FITRIA NURFAUZIAH, S.E.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:151', '2025-04-27 05:39:38.104', '1');
+INSERT INTO `anggota_x` VALUES ('106', '106', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'RIA IRAWATI PUSPITASARI, A.Md.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:152', '2025-04-27 05:39:38.105', '1');
+INSERT INTO `anggota_x` VALUES ('107', '107', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'LUKMAN ILMAN NURHAKIM, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:153', '2025-04-27 05:39:38.106', '1');
+INSERT INTO `anggota_x` VALUES ('108', '108', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'ANNISA AYU LESTARI, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:154', '2025-04-27 05:39:38.107', '1');
+INSERT INTO `anggota_x` VALUES ('109', '109', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'OLIVIA WAHYU KUSUMANINGTYAS, S.H.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:155', '2025-04-27 05:39:38.108', '1');
+INSERT INTO `anggota_x` VALUES ('110', '110', '$2y$12$.5lYMzGqfSLZi26VV7CKsO9zHScUKczecjkSyTKZyDA22yviYZmY6', 'PUPUT WULANSARI, A.Md.', 'karyawan', NULL, 'Anggota', '2025-05-30 19:06:156', '2025-04-27 05:39:38.109', '1');
+
+-- ----------------------------
 -- Table structure for angsuran
 -- ----------------------------
 DROP TABLE IF EXISTS `angsuran`;
@@ -348,32 +627,91 @@ CREATE TABLE `angsuran`  (
   `status_bayar` enum('0','1') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `pinjaman_id`(`pinjaman_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 90 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of angsuran
 -- ----------------------------
-INSERT INTO `angsuran` VALUES (1, 10, '1', 1, 500000.00, 5000000, '0.01', '50000', '550000', '2025-05-31', '2025-05-30 20:02:47', '1');
-INSERT INTO `angsuran` VALUES (2, 10, '1', 2, 500000.00, 5000000, '0.01', '50000', '550000', '2025-05-31', '2025-05-30 20:02:47', '1');
-INSERT INTO `angsuran` VALUES (3, 10, '1', 3, 500000.00, 5000000, '0.01', '50000', '550000', '2025-05-31', '2025-05-30 20:02:47', '1');
-INSERT INTO `angsuran` VALUES (4, 10, '1', 4, 500000.00, 5000000, '0.01', '50000', '550000', '2025-05-31', '2025-05-30 20:02:47', '1');
-INSERT INTO `angsuran` VALUES (5, 10, '1', 5, 500000.00, 5000000, '0.01', '50000', '550000', '2025-05-31', '2025-05-30 20:02:47', '1');
-INSERT INTO `angsuran` VALUES (6, 10, '1', 6, 500000.00, 5000000, '0.01', '50000', '550000', '2025-05-31', '2025-05-30 20:02:47', '1');
-INSERT INTO `angsuran` VALUES (7, 10, '1', 7, 500000.00, 5000000, '0.01', '50000', '550000', '2025-05-31', '2025-05-30 20:02:47', '1');
-INSERT INTO `angsuran` VALUES (8, 10, '1', 8, 500000.00, 5000000, '0.01', '50000', '550000', '2025-06-01', '2025-05-30 20:02:47', '1');
-INSERT INTO `angsuran` VALUES (9, 10, '1', 9, 500000.00, 5000000, '0.01', '50000', '550000', '2025-06-01', '2025-05-30 20:02:47', '1');
-INSERT INTO `angsuran` VALUES (10, 10, '1', 10, 500000.00, 5000000, '0.01', '50000', '550000', '2025-06-01', '2025-05-30 20:02:47', '1');
-INSERT INTO `angsuran` VALUES (11, 1, '2', 1, 1250000.00, 7500000, '0.01', '75000', '1325000', '2025-05-31', '2025-05-31 14:25:53', '1');
-INSERT INTO `angsuran` VALUES (12, 1, '2', 2, 1250000.00, 7500000, '0.01', '75000', '1325000', '2025-05-31', '2025-05-31 14:25:53', '1');
-INSERT INTO `angsuran` VALUES (13, 1, '2', 3, 1250000.00, 7500000, '0.01', '75000', '1325000', '2025-05-31', '2025-05-31 14:25:53', '1');
-INSERT INTO `angsuran` VALUES (14, 1, '2', 4, 1250000.00, 7500000, '0.01', '75000', '1325000', '2025-06-01', '2025-05-31 14:25:53', '1');
-INSERT INTO `angsuran` VALUES (15, 1, '2', 5, 1250000.00, 7500000, '0.01', '75000', '1325000', '2025-06-01', '2025-05-31 14:25:53', '1');
-INSERT INTO `angsuran` VALUES (16, 1, '2', 6, 1250000.00, 7500000, '0.01', '75000', '1325000', '2025-06-01', '2025-05-31 14:25:53', '1');
-INSERT INTO `angsuran` VALUES (17, 5, '6', 1, 500000.00, 1000000, '0.01', '10000', '510000', '2025-06-01', '2025-06-01 20:44:24', '1');
-INSERT INTO `angsuran` VALUES (18, 5, '6', 2, 500000.00, 1000000, '0.01', '10000', '510000', '2025-06-01', '2025-06-01 20:44:24', '1');
-INSERT INTO `angsuran` VALUES (19, 1, '7', 1, 500000.00, 1500000, '0', '15000', '500000', '2025-06-02', '2025-06-02 16:20:17', '1');
-INSERT INTO `angsuran` VALUES (20, 1, '7', 2, 500000.00, 1500000, '0', '15000', '500000', '2025-06-02', '2025-06-02 16:20:17', '1');
-INSERT INTO `angsuran` VALUES (21, 1, '7', 3, 500000.00, 1500000, '0', '15000', '500000', '2025-06-03', '2025-06-02 16:20:17', '1');
+INSERT INTO `angsuran` VALUES (1, 21, '1', 1, 5000000.00, 50000000, '0.01', '500000', '5500000', '2025-06-26', '2025-06-25 20:21:05', '1');
+INSERT INTO `angsuran` VALUES (2, 21, '1', 2, 5000000.00, 50000000, '0.01', '500000', '5500000', '2025-06-28', '2025-06-25 20:22:28', '1');
+INSERT INTO `angsuran` VALUES (3, 21, '1', 3, 5000000.00, 50000000, '0.01', '500000', '5500000', '2025-06-28', '2025-06-25 20:23:39', '1');
+INSERT INTO `angsuran` VALUES (4, 21, '1', 4, 5000000.00, 50000000, '0.01', '500000', '5500000', NULL, '2025-06-25 20:24:19', '0');
+INSERT INTO `angsuran` VALUES (5, 21, '1', 5, 5000000.00, 50000000, '0.01', '500000', '5500000', NULL, '2025-06-25 20:25:55', '0');
+INSERT INTO `angsuran` VALUES (6, 21, '1', 6, 5000000.00, 50000000, '0.01', '500000', '5500000', NULL, '2025-06-25 20:27:06', '0');
+INSERT INTO `angsuran` VALUES (7, 21, '1', 7, 5000000.00, 50000000, '0.01', '500000', '5500000', NULL, '2025-06-25 20:27:33', '0');
+INSERT INTO `angsuran` VALUES (8, 21, '1', 8, 5000000.00, 50000000, '0.01', '500000', '5500000', NULL, '2025-06-29 19:16:57', '1');
+INSERT INTO `angsuran` VALUES (9, 21, '1', 9, 5000000.00, 50000000, '0.01', '500000', '5500000', NULL, '2025-06-25 20:19:03', '0');
+INSERT INTO `angsuran` VALUES (10, 21, '1', 10, 5000000.00, 50000000, '0.01', '500000', '5500000', NULL, '2025-06-25 20:19:03', '0');
+INSERT INTO `angsuran` VALUES (11, 45, '2', 1, 5000000.00, 50000000, '0.01', '500000', '5500000', '2025-06-26', '2025-06-25 20:21:05', '1');
+INSERT INTO `angsuran` VALUES (12, 45, '2', 2, 5000000.00, 50000000, '0.01', '500000', '5500000', '2025-06-28', '2025-06-25 20:22:28', '1');
+INSERT INTO `angsuran` VALUES (13, 45, '2', 3, 5000000.00, 50000000, '0.01', '500000', '5500000', '2025-06-28', '2025-06-25 20:23:39', '1');
+INSERT INTO `angsuran` VALUES (14, 45, '2', 4, 5000000.00, 50000000, '0.01', '500000', '5500000', NULL, '2025-06-25 20:24:19', '0');
+INSERT INTO `angsuran` VALUES (15, 45, '2', 5, 5000000.00, 50000000, '0.01', '500000', '5500000', NULL, '2025-06-25 20:25:55', '0');
+INSERT INTO `angsuran` VALUES (16, 45, '2', 6, 5000000.00, 50000000, '0.01', '500000', '5500000', NULL, '2025-06-25 20:27:06', '0');
+INSERT INTO `angsuran` VALUES (17, 45, '2', 7, 5000000.00, 50000000, '0.01', '500000', '5500000', NULL, '2025-06-25 20:27:33', '0');
+INSERT INTO `angsuran` VALUES (18, 45, '2', 8, 5000000.00, 50000000, '0.01', '500000', '5500000', NULL, '2025-06-29 19:16:57', '1');
+INSERT INTO `angsuran` VALUES (19, 45, '2', 9, 5000000.00, 50000000, '0.01', '500000', '5500000', NULL, '2025-06-25 20:19:37', '0');
+INSERT INTO `angsuran` VALUES (20, 45, '2', 10, 5000000.00, 50000000, '0.01', '500000', '5500000', NULL, '2025-06-25 20:19:37', '0');
+INSERT INTO `angsuran` VALUES (21, 58, '3', 1, 800000.00, 16000000, '0.01', '120000', '960000', '2025-06-26', '2025-06-25 20:21:05', '1');
+INSERT INTO `angsuran` VALUES (22, 58, '3', 2, 800000.00, 16000000, '0.01', '120000', '960000', '2025-06-28', '2025-06-25 20:22:28', '1');
+INSERT INTO `angsuran` VALUES (23, 58, '3', 3, 800000.00, 16000000, '0.01', '120000', '960000', '2025-06-28', '2025-06-25 20:23:39', '1');
+INSERT INTO `angsuran` VALUES (24, 58, '3', 4, 800000.00, 16000000, '0.01', '120000', '960000', '2025-06-28', '2025-06-25 20:24:19', '1');
+INSERT INTO `angsuran` VALUES (25, 58, '3', 5, 800000.00, 16000000, '0.01', '120000', '960000', NULL, '2025-06-25 20:25:55', '0');
+INSERT INTO `angsuran` VALUES (26, 58, '3', 6, 800000.00, 16000000, '0.01', '120000', '960000', NULL, '2025-06-25 20:27:06', '0');
+INSERT INTO `angsuran` VALUES (27, 58, '3', 7, 800000.00, 16000000, '0.01', '120000', '960000', NULL, '2025-06-25 20:27:33', '0');
+INSERT INTO `angsuran` VALUES (28, 58, '3', 8, 800000.00, 16000000, '0.01', '120000', '960000', NULL, '2025-06-29 19:16:57', '1');
+INSERT INTO `angsuran` VALUES (29, 58, '3', 9, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:15', '0');
+INSERT INTO `angsuran` VALUES (30, 58, '3', 10, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:15', '0');
+INSERT INTO `angsuran` VALUES (31, 58, '3', 11, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:15', '0');
+INSERT INTO `angsuran` VALUES (32, 58, '3', 12, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:15', '0');
+INSERT INTO `angsuran` VALUES (33, 58, '3', 13, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:15', '0');
+INSERT INTO `angsuran` VALUES (34, 58, '3', 14, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:15', '0');
+INSERT INTO `angsuran` VALUES (35, 58, '3', 15, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:15', '0');
+INSERT INTO `angsuran` VALUES (36, 58, '3', 16, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:15', '0');
+INSERT INTO `angsuran` VALUES (37, 58, '3', 17, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:15', '0');
+INSERT INTO `angsuran` VALUES (38, 58, '3', 18, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:15', '0');
+INSERT INTO `angsuran` VALUES (39, 58, '3', 19, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:15', '0');
+INSERT INTO `angsuran` VALUES (40, 58, '3', 20, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:15', '0');
+INSERT INTO `angsuran` VALUES (41, 57, '4', 1, 800000.00, 16000000, '0.01', '160000', '960000', '2025-06-26', '2025-06-25 20:21:05', '1');
+INSERT INTO `angsuran` VALUES (42, 57, '4', 2, 800000.00, 16000000, '0.01', '160000', '960000', '2025-06-28', '2025-06-25 20:22:28', '1');
+INSERT INTO `angsuran` VALUES (43, 57, '4', 3, 800000.00, 16000000, '0.01', '160000', '960000', '2025-06-28', '2025-06-25 20:23:39', '1');
+INSERT INTO `angsuran` VALUES (44, 57, '4', 4, 800000.00, 16000000, '0.01', '160000', '960000', '2025-06-28', '2025-06-25 20:24:19', '1');
+INSERT INTO `angsuran` VALUES (45, 57, '4', 5, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:25:55', '0');
+INSERT INTO `angsuran` VALUES (46, 57, '4', 6, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:27:06', '0');
+INSERT INTO `angsuran` VALUES (47, 57, '4', 7, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:27:33', '0');
+INSERT INTO `angsuran` VALUES (48, 57, '4', 8, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-29 19:16:57', '1');
+INSERT INTO `angsuran` VALUES (49, 57, '4', 9, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:41', '0');
+INSERT INTO `angsuran` VALUES (50, 57, '4', 10, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:41', '0');
+INSERT INTO `angsuran` VALUES (51, 57, '4', 11, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:41', '0');
+INSERT INTO `angsuran` VALUES (52, 57, '4', 12, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:41', '0');
+INSERT INTO `angsuran` VALUES (53, 57, '4', 13, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:41', '0');
+INSERT INTO `angsuran` VALUES (54, 57, '4', 14, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:41', '0');
+INSERT INTO `angsuran` VALUES (55, 57, '4', 15, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:41', '0');
+INSERT INTO `angsuran` VALUES (56, 57, '4', 16, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:41', '0');
+INSERT INTO `angsuran` VALUES (57, 57, '4', 17, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:41', '0');
+INSERT INTO `angsuran` VALUES (58, 57, '4', 18, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:41', '0');
+INSERT INTO `angsuran` VALUES (59, 57, '4', 19, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:41', '0');
+INSERT INTO `angsuran` VALUES (60, 57, '4', 20, 800000.00, 16000000, '0.01', '160000', '960000', NULL, '2025-06-25 20:20:41', '0');
+INSERT INTO `angsuran` VALUES (61, 60, '6', 1, 5000000.00, 50000000, '0.01', '500000', '5500000', '2025-06-29', '2025-06-28 20:11:15', '1');
+INSERT INTO `angsuran` VALUES (62, 60, '6', 2, 5000000.00, 50000000, '0.01', '500000', '5500000', '2025-06-29', '2025-06-28 20:11:15', '1');
+INSERT INTO `angsuran` VALUES (63, 60, '6', 3, 5000000.00, 50000000, '0.01', '500000', '5500000', '2025-06-29', '2025-06-28 20:11:15', '1');
+INSERT INTO `angsuran` VALUES (64, 60, '6', 4, 5000000.00, 50000000, '0.01', '500000', '5500000', '2025-06-29', '2025-06-28 20:11:15', '1');
+INSERT INTO `angsuran` VALUES (65, 60, '6', 5, 5000000.00, 50000000, '0.01', '500000', '5500000', '2025-06-29', '2025-06-28 20:11:15', '1');
+INSERT INTO `angsuran` VALUES (66, 60, '6', 6, 5000000.00, 50000000, '0.01', '500000', '5500000', '2025-06-29', '2025-06-28 20:11:15', '1');
+INSERT INTO `angsuran` VALUES (67, 60, '6', 7, 5000000.00, 50000000, '0.01', '500000', '5500000', '2025-06-29', '2025-06-28 20:11:15', '1');
+INSERT INTO `angsuran` VALUES (68, 60, '6', 8, 5000000.00, 50000000, '0.01', '500000', '5500000', '2025-06-29', '2025-06-28 20:11:15', '1');
+INSERT INTO `angsuran` VALUES (69, 60, '6', 9, 5000000.00, 50000000, '0.01', '500000', '5500000', '2025-06-29', '2025-06-28 20:11:15', '1');
+INSERT INTO `angsuran` VALUES (70, 60, '6', 10, 5000000.00, 50000000, '0.01', '500000', '5500000', '2025-06-28', '2025-06-28 20:11:15', '1');
+INSERT INTO `angsuran` VALUES (81, 60, '16', 1, 5000000.00, 50000000, NULL, '750000', '5000000', NULL, NULL, '0');
+INSERT INTO `angsuran` VALUES (82, 60, '16', 2, 5000000.00, 50000000, NULL, '750000', '5000000', NULL, NULL, '0');
+INSERT INTO `angsuran` VALUES (83, 60, '16', 3, 5000000.00, 50000000, NULL, '750000', '5000000', NULL, NULL, '0');
+INSERT INTO `angsuran` VALUES (84, 60, '16', 4, 5000000.00, 50000000, NULL, '750000', '5000000', NULL, NULL, '0');
+INSERT INTO `angsuran` VALUES (85, 60, '16', 5, 5000000.00, 50000000, NULL, '750000', '5000000', NULL, NULL, '0');
+INSERT INTO `angsuran` VALUES (86, 60, '16', 6, 5000000.00, 50000000, NULL, '750000', '5000000', NULL, NULL, '0');
+INSERT INTO `angsuran` VALUES (87, 60, '16', 7, 5000000.00, 50000000, NULL, '750000', '5000000', NULL, NULL, '0');
+INSERT INTO `angsuran` VALUES (88, 60, '16', 8, 5000000.00, 50000000, NULL, '750000', '5000000', NULL, NULL, '0');
+INSERT INTO `angsuran` VALUES (89, 60, '16', 9, 5000000.00, 50000000, NULL, '750000', '5000000', NULL, NULL, '0');
+INSERT INTO `angsuran` VALUES (90, 60, '16', 10, 5000000.00, 50000000, NULL, '750000', '5000000', NULL, NULL, '0');
 
 -- ----------------------------
 -- Table structure for cache
@@ -448,7 +786,7 @@ CREATE TABLE `jenis_pinjaman`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `jenis` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of jenis_pinjaman
@@ -465,7 +803,7 @@ CREATE TABLE `jenis_simpanan`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `jenis` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of jenis_simpanan
@@ -745,6 +1083,31 @@ INSERT INTO `nik` VALUES (171, 'Deliyus 2', 1111, '$2y$10$kg4JcwpBn3hNLTeUytCQy.
 INSERT INTO `nik` VALUES (172, 'Dr. MOH. EKA KARTIKA E.M., S.H., M.Hum.', 195811101984031005, '$2y$10$1ThsdhCide5BceLkQEzYjO4wYkXQMDYP9b/XXDXU9zI3ktPX/FIzi', 'DIREKTUR JENDERAL BADAN PERADILAN UMUM', 'admin2', 'x', NULL, NULL, 'H. BAMBANG MYANTO, S.H., M.H.', 196805231992121002, 'H. BAMBANG MYANTO, S.H., M.H.', 196805231992121002, 'default.jpg', '1984-03-01', 'KPN', '8116648894');
 
 -- ----------------------------
+-- Table structure for p_sim_sukarela
+-- ----------------------------
+DROP TABLE IF EXISTS `p_sim_sukarela`;
+CREATE TABLE `p_sim_sukarela`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `anggota_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `nama` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `jenis_simpanan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `nominal_simpanan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `input_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `tgl_update` datetime NULL DEFAULT NULL,
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `keterangan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `nama`(`nama`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 138 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of p_sim_sukarela
+-- ----------------------------
+INSERT INTO `p_sim_sukarela` VALUES (136, '4', 'Ucu Jaya Sarjana S, SH.', 'Sukarela', '5000000', '4', '2025-06-22 00:00:00', 'Diterima Admin', NULL);
+INSERT INTO `p_sim_sukarela` VALUES (137, '1', 'Dr. MOH EKA KARTIKA EM, S.H., M.HUM.', 'Sukarela', '5000000', '1', '2025-06-25 00:00:00', 'Disetujui Ketua', NULL);
+INSERT INTO `p_sim_sukarela` VALUES (138, '1', 'Dr. MOH EKA KARTIKA EM, S.H., M.HUM.', 'Sukarela', '150000', '1', '2025-06-25 00:00:00', 'Diterima Admin', NULL);
+
+-- ----------------------------
 -- Table structure for password_reset_tokens
 -- ----------------------------
 DROP TABLE IF EXISTS `password_reset_tokens`;
@@ -771,13 +1134,13 @@ CREATE TABLE `pengeluaran`  (
   `input_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `keterangan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pengeluaran
 -- ----------------------------
 INSERT INTO `pengeluaran` VALUES (9, 'Dana Sosial', 0.020, '2025-06-01', 'Admin', NULL);
-INSERT INTO `pengeluaran` VALUES (10, 'Biaya Rapat', 0.040, '2025-06-01', 'Admin', NULL);
+INSERT INTO `pengeluaran` VALUES (10, 'Biaya RAT', 0.040, '2025-06-18', 'Admin', NULL);
 INSERT INTO `pengeluaran` VALUES (11, 'Zakat', 0.025, '2025-06-01', 'Admin', NULL);
 INSERT INTO `pengeluaran` VALUES (13, 'Cadangan', 0.050, '2025-06-04', 'Admin', NULL);
 
@@ -799,15 +1162,18 @@ CREATE TABLE `pinjaman`  (
   `tgl_input` timestamp NULL DEFAULT NULL,
   `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pinjaman
 -- ----------------------------
-INSERT INTO `pinjaman` VALUES (1, 10, 5000000.00, 'Kasbon', '2025-05-30', 10, '195901231986121001', 0.0150, '75000', NULL, '2025-05-30 20:02:47', 'Diterima Ketua');
-INSERT INTO `pinjaman` VALUES (2, 1, 7500000.00, 'Remunisasi', '2025-05-31', 6, 'admin', 0.0150, '112500', NULL, '2025-05-31 14:25:53', 'Diterima Ketua');
-INSERT INTO `pinjaman` VALUES (6, 5, 1000000.00, 'Kasbon', '2025-06-01', 2, 'admin', 0.0150, '15000', NULL, '2025-06-01 20:44:24', 'Diterima Ketua');
-INSERT INTO `pinjaman` VALUES (7, 1, 1500000.00, 'Remunisasi', '2025-05-31', 3, 'admin', 0.0150, '22500', NULL, '2025-06-01 20:45:48', 'Diterima Ketua');
+INSERT INTO `pinjaman` VALUES (1, 21, 50000000.00, 'Gaji', '2025-05-01', 10, '1', 0.0150, '750000', NULL, '2025-06-25 20:19:03', NULL);
+INSERT INTO `pinjaman` VALUES (2, 45, 50000000.00, 'Gaji', '2025-06-25', 10, '1', 0.0150, '750000', NULL, '2025-06-25 20:19:37', NULL);
+INSERT INTO `pinjaman` VALUES (3, 58, 16000000.00, 'Gaji', '2025-05-01', 20, '1', 0.0150, '240000', NULL, '2025-06-25 20:20:15', NULL);
+INSERT INTO `pinjaman` VALUES (4, 57, 16000000.00, 'Gaji', '2025-05-01', 20, '1', 0.0150, '240000', NULL, '2025-06-25 20:20:41', NULL);
+INSERT INTO `pinjaman` VALUES (5, 1, 25000000.00, 'Remunisasi', '2025-06-25', 5, '1', 0.0150, '375000', NULL, '2025-06-25 21:50:31', 'Diterima Admin');
+INSERT INTO `pinjaman` VALUES (6, 60, 50000000.00, 'Kasbon', '2025-05-01', 10, '1', 0.0150, '750000', NULL, '2025-06-28 20:11:15', NULL);
+INSERT INTO `pinjaman` VALUES (16, 60, 50000000.00, 'Kasbon', '2025-06-29', 10, 'Admin', 0.0150, '750000', 'Topup dari pinjaman ID: 6', '2025-06-29 12:31:46', 'Pengajuan');
 
 -- ----------------------------
 -- Table structure for provisi
@@ -822,7 +1188,7 @@ CREATE TABLE `provisi`  (
 -- ----------------------------
 -- Records of provisi
 -- ----------------------------
-INSERT INTO `provisi` VALUES ('0.015', 'admin', '2025-06-04');
+INSERT INTO `provisi` VALUES ('0.015', '1', '2025-06-21');
 
 -- ----------------------------
 -- Table structure for sessions
@@ -843,9 +1209,11 @@ CREATE TABLE `sessions`  (
 -- ----------------------------
 -- Records of sessions
 -- ----------------------------
-INSERT INTO `sessions` VALUES ('4oKAHsHWbJwXYHTAMVMkRPo9zVN4gw9BAcsWYMe3', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoia2tyQkU1bmJsN2JMVmZxdkw1Rm1rOHhlSmdXYnVORE05WTRlSm1wZSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9sb2dpbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1748974140);
-INSERT INTO `sessions` VALUES ('BCYImINEatGcDcDJossjXmbHear7jcWbbfXk2Bxu', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiRENLMGdxTmswRm51djZJeG5qQ1JweXZ5OFZYQkFoWmo5M2pmRHhrRCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zaW1wYW5hbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1749012810);
-INSERT INTO `sessions` VALUES ('LBHzkDdFeWuNgZfqN73UQkenRMdcaDIkyUDJwoYF', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiblJiMDJwUUVXUFY5OWx4UjJXSE1MNWpHcXFPc2RnYkd5Rm9zSXBLcCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9jb250cm9scGFuZWwiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1748978059);
+INSERT INTO `sessions` VALUES ('7WlBj5cJuaIapqK8cXp9T944M7WuI0xk9WDZUYcA', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoidm5CeUJST25DZWJRbHRtR3V6TzVRZXFsbDVIcDBsWVNOelJmZFIyZyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hbmdnb3RhIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1751203463);
+INSERT INTO `sessions` VALUES ('97kbkjpBZcCMVYk9bdGWjvXhngtjNpD1cLfrSkZk', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoibmpDTG5wcWw2UlVRYlF0Mk1tVWQ0dDlUMTdJVFdVNWREbmNpRUsyeSI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czozODoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL3BpbmphbWFuL3RvcHVwLzYiO31zOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czoyNzoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2xvZ2luIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1751165302);
+INSERT INTO `sessions` VALUES ('UynKNvjpg3Hpctmr9UnQnoGmM6B926Xtr2YwMVzc', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiWkhLQ0RZUHFyVWNsTlRYNTJSYXlQeXVXQXZieno2UmxJMnZLUHdQaCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9mb3JtLXVwbG9hZC1zaW1wYW5hbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1751199679);
+INSERT INTO `sessions` VALUES ('wBb0yFqYPyS1JsPCn9l8M5T2CCpXkrLRJlIE2VXd', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoibWdLa0R5YkxIMWtsRnV1TkVXYko5WjJQalZ4aGJYYjJIdlJTUHNlTiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9waW5qYW1hbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1751175138);
+INSERT INTO `sessions` VALUES ('YrgnJ72LhmzqghZys8Lz03zxIG6fGmedXFy33uH8', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiSjVHanZqT0xXeXAwSERaZkVvYXNIUmdORkVOSGZtRHR1Vzk4bHhWdSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9waW5qYW1hbi90b3B1cC82Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1751161466);
 
 -- ----------------------------
 -- Table structure for shu_anggota
@@ -864,96 +1232,11 @@ CREATE TABLE `shu_anggota`  (
   `total_shu` decimal(15, 2) NULL DEFAULT 0.00,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `shu_anggota_anggota_id_index`(`anggota_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 86 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of shu_anggota
 -- ----------------------------
-INSERT INTO `shu_anggota` VALUES (1, 46, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (2, 56, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (3, 79, '250000', '6.8466097399306', 1711.65, '0', '10.269914609896', 0.00, '1.7116524349826', 1711.65);
-INSERT INTO `shu_anggota` VALUES (4, 61, '350000', '6.8466097399306', 2396.31, '0', '10.269914609896', 0.00, '1.7116524349826', 2396.31);
-INSERT INTO `shu_anggota` VALUES (5, 77, '1150000', '6.8466097399306', 7873.60, '0', '10.269914609896', 0.00, '1.7116524349826', 7873.60);
-INSERT INTO `shu_anggota` VALUES (6, 24, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (7, 59, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (8, 54, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (9, 31, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (10, 10, '150000', '6.8466097399306', 1026.99, '5000000.00', '10.269914609896', 51349.57, '1.7116524349826', 52376.56);
-INSERT INTO `shu_anggota` VALUES (11, 75, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (12, 16, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (13, 38, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (14, 8, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (15, 30, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (16, 43, '2150000', '6.8466097399306', 14720.21, '0', '10.269914609896', 0.00, '1.7116524349826', 14720.21);
-INSERT INTO `shu_anggota` VALUES (17, 2, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (18, 47, '500000', '6.8466097399306', 3423.30, '0', '10.269914609896', 0.00, '1.7116524349826', 3423.30);
-INSERT INTO `shu_anggota` VALUES (19, 3, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (20, 42, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (21, 69, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (22, 55, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (23, 53, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (24, 57, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (25, 66, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (26, 4, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (27, 37, '5150000', '6.8466097399306', 35260.04, '0', '10.269914609896', 0.00, '1.7116524349826', 35260.04);
-INSERT INTO `shu_anggota` VALUES (28, 65, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (29, 34, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (30, 7, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (31, 58, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (32, 11, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (33, 49, '4800000', '6.8466097399306', 32863.73, '0', '10.269914609896', 0.00, '1.7116524349826', 32863.73);
-INSERT INTO `shu_anggota` VALUES (34, 33, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (35, 21, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (36, 26, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (37, 27, '2150000', '6.8466097399306', 14720.21, '0', '10.269914609896', 0.00, '1.7116524349826', 14720.21);
-INSERT INTO `shu_anggota` VALUES (38, 64, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (39, 9, '10150000', '6.8466097399306', 69493.09, '0', '10.269914609896', 0.00, '1.7116524349826', 69493.09);
-INSERT INTO `shu_anggota` VALUES (40, 73, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (41, 25, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (42, 63, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (43, 28, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (44, 44, '2650000', '6.8466097399306', 18143.52, '0', '10.269914609896', 0.00, '1.7116524349826', 18143.52);
-INSERT INTO `shu_anggota` VALUES (45, 45, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (46, 13, '2650000', '6.8466097399306', 18143.52, '0', '10.269914609896', 0.00, '1.7116524349826', 18143.52);
-INSERT INTO `shu_anggota` VALUES (47, 6, '2650000', '6.8466097399306', 18143.52, '0', '10.269914609896', 0.00, '1.7116524349826', 18143.52);
-INSERT INTO `shu_anggota` VALUES (48, 41, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (49, 71, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (50, 62, '1150000', '6.8466097399306', 7873.60, '0', '10.269914609896', 0.00, '1.7116524349826', 7873.60);
-INSERT INTO `shu_anggota` VALUES (51, 35, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (52, 22, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (53, 17, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (54, 20, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (55, 15, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (56, 23, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (57, 67, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (58, 18, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (59, 52, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (60, 48, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (61, 72, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (62, 78, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (63, 51, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (64, 19, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (65, 60, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (66, 14, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (67, 39, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (68, 70, '1150000', '6.8466097399306', 7873.60, '0', '10.269914609896', 0.00, '1.7116524349826', 7873.60);
-INSERT INTO `shu_anggota` VALUES (69, 50, '1150000', '6.8466097399306', 7873.60, '0', '10.269914609896', 0.00, '1.7116524349826', 7873.60);
-INSERT INTO `shu_anggota` VALUES (70, 40, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (71, 5, '150000', '6.8466097399306', 1026.99, '1000000.00', '10.269914609896', 10269.91, '1.7116524349826', 11296.91);
-INSERT INTO `shu_anggota` VALUES (72, 76, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (73, 29, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (74, 32, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (75, 74, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (76, 68, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (77, 36, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (78, 82, '100000', '6.8466097399306', 684.66, '0', '10.269914609896', 0.00, '1.7116524349826', 684.66);
-INSERT INTO `shu_anggota` VALUES (79, 103, '1100000', '6.8466097399306', 7531.27, '0', '10.269914609896', 0.00, '1.7116524349826', 7531.27);
-INSERT INTO `shu_anggota` VALUES (80, 87, '150000', '6.8466097399306', 1026.99, '0', '10.269914609896', 0.00, '1.7116524349826', 1026.99);
-INSERT INTO `shu_anggota` VALUES (81, 84, '200000', '6.8466097399306', 1369.32, '0', '10.269914609896', 0.00, '1.7116524349826', 1369.32);
-INSERT INTO `shu_anggota` VALUES (82, 83, '500000', '6.8466097399306', 3423.30, '0', '10.269914609896', 0.00, '1.7116524349826', 3423.30);
-INSERT INTO `shu_anggota` VALUES (83, 107, '500000', '6.8466097399306', 3423.30, '0', '10.269914609896', 0.00, '1.7116524349826', 3423.30);
-INSERT INTO `shu_anggota` VALUES (84, 98, '1000000', '6.8466097399306', 6846.61, '0', '10.269914609896', 0.00, '1.7116524349826', 6846.61);
-INSERT INTO `shu_anggota` VALUES (85, 1, '29188000', '6.8466097399306', 199838.85, '9000000.00', '10.269914609896', 92429.23, '1.7116524349826', 292268.08);
 
 -- ----------------------------
 -- Table structure for simpanan
@@ -967,114 +1250,279 @@ CREATE TABLE `simpanan`  (
   `nominal_simpanan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `input_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `tgl_update` datetime NULL DEFAULT NULL,
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `keterangan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `nama`(`nama`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 111 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 264 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of simpanan
 -- ----------------------------
-INSERT INTO `simpanan` VALUES (1, '46', ' Hj. JUNILAWATI HARAHAP, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (2, '56', '	KRISNA SOFIADI, S.H', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (3, '79', 'Anton Senjaya, S.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (4, '61', 'ARLISA YUNITA NELYANA', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (5, '77', 'Ary Faridah, ', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (6, '24', 'ASBAN PANJAITAN, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (7, '59', 'Bambang Belardaya', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (8, '54', 'Bambang Sugianto', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (9, '31', 'BARITA SARAGIH, S.H.L.L.M.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (10, '10', 'CEPI ISKANDAR, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (11, '75', 'Dani Adhia Wardana', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (12, '16', 'Dr. GUNAWAN, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (13, '38', 'Dr. Hj. Nur Aslam Bustaman, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (14, '8', 'Dr. JONLAR PURBA, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (15, '30', 'Dr. KASIANUS TELAUMBANUA, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (16, '43', 'Dr. KRISTWAN GENOVA DAMANIK, S.H., M.HUM.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (17, '2', 'Dr. MOH EKA KARTIKA EM, S.H., M.HUM.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (18, '47', 'Dr. NAISYAH KADIR, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (19, '3', 'Dr. WAYAN KARYA, S.H., M.Hum.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (20, '42', 'EDISON MUHAMAD, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (21, '69', 'ENANG SUPARMAN, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (22, '55', 'ENDANG SUMARNO, S.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (23, '53', 'Erna Rosmawati, S.H., M. H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (24, '57', 'ERNIWATI, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (25, '66', 'GATOT HADI PURWONO, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (26, '4', 'H BAKTAR JUBRI NASUTION, S.H, M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (27, '37', 'H. HANDOKO KRISTIYOSO, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (28, '65', 'Hendayani, SH', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (29, '34', 'HENDRO CATUR SUCAHYO, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (30, '7', 'HERMAN HELLER HUTAPEA, S.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (31, '58', 'Hermansyah', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (32, '11', 'HIRAS SIHOMBING, S.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (33, '49', 'Hj. LILIK SRIHARTATI, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (34, '33', 'Hj. NENENG WARLINAH, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (35, '21', 'Hj. WEDHAYATI, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (36, '26', 'IDA MARION, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (37, '27', 'IMAN GULTOM, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (38, '64', 'JAFRI, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (39, '9', 'JESAYAS TARIGAN, S.H., M.Hum.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (40, '73', 'JONO YULIANTO, S.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (41, '25', 'KEMAL TAMPUBOLON, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (42, '63', 'Khairul Fasja, SH', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (43, '28', 'MADE SUTRISNA, S.H., M.Hum.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (44, '44', 'MARISI SIREGAR, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (45, '45', 'MOCH MAWARDI, SH MH', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (46, '13', 'MUHAMMAD NUR, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (47, '6', 'MULA PANGARIBUAN, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (48, '41', 'MULYANTO, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (49, '71', 'NINA YAYU MAESAROH, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (50, '62', 'Nurdiana, SH', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (51, '35', 'PAHATAR SIMARMATA, S.H., M.Hum.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (52, '22', 'POLTAK SITORUS, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (53, '17', 'PORMAN SITUMORANG, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (54, '20', 'PRANOTO, S.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (55, '15', 'R MATRAS SUPOMO, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (56, '23', 'RATNA MINTARSIH, S.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (57, '67', 'RIDWAN NURDIN, S.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (58, '18', 'ROBERT SIAHAAN, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (59, '52', 'Rosmalinda, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (60, '48', 'SAIFUL ASNURI, S.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (61, '72', 'SRI SUBEKTI TRIANA, S.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (62, '78', 'Sri Suratno Wibowo', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (63, '51', 'Sri Yuditiani, S.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (64, '19', 'SUDARWIN, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (65, '60', 'SUGIHARTO, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (66, '14', 'SUKMAYANTI, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (67, '39', 'SURANTO, S.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (68, '70', 'SUSILO NANDANG BAGIO, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (69, '50', 'Tri Mulyani, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (70, '40', 'TURSINAH AFTIANTI, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (71, '5', 'Ucu Jaya Sarjana S, SH.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (72, '76', 'Ummi Hani, S.Sos', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (73, '29', 'VIKTOR PAKPAHAN, S.H., M.H.MSi.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (74, '32', 'Yana Hediyana', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (75, '74', 'YANI SOFYAN, S.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (76, '68', 'YETI NINGSIH, S.H., M.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (77, '36', 'Zaherwan Lesmana, S.H.', 'Wajib', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (78, '79', 'Anton Senjaya, S.', 'Sukarela', '100000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (79, '82', 'Elna Helniarika, S.Kom', 'Sukarela', '100000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (80, '103', 'Saepuloh', 'Sukarela', '100000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (81, '87', 'Fitri Kristianti, S.E., Ak.', 'Sukarela', '150000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (82, '61', 'ARLISA YUNITA NELYANA', 'Sukarela', '200000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (83, '84', 'Apriyani Adi Utami', 'Sukarela', '200000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (84, '47', 'Dr. NAISYAH KADIR, S.H., M.H.', 'Sukarela', '350000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (85, '83', 'Lies Hendrawani', 'Sukarela', '500000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (86, '107', 'FERGIE NOVITA WASSAHDAD, A.Md.Ak.', 'Sukarela', '500000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (87, '50', 'Tri Mulyani, S.H., M.H.', 'Sukarela', '1000000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (88, '62', 'Nurdiana, SH', 'Sukarela', '1000000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (89, '70', 'SUSILO NANDANG BAGIO, S.H., M.H.', 'Sukarela', '1000000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (90, '77', 'Ary Faridah, ', 'Sukarela', '1000000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (91, '98', 'MARTINA MAGDALENA BARASA, S.T.', 'Sukarela', '1000000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (92, '27', 'IMAN GULTOM, S.H., M.H.', 'Sukarela', '2000000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (93, '43', 'Dr. KRISTWAN GENOVA DAMANIK, S.H., M.HUM.', 'Sukarela', '2000000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (94, '6', 'MULA PANGARIBUAN, S.H., M.H.', 'Sukarela', '2500000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (95, '13', 'MUHAMMAD NUR, S.H., M.H.', 'Sukarela', '2500000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (96, '44', 'MARISI SIREGAR, S.H., M.H.', 'Sukarela', '2500000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (97, '49', 'Hj. LILIK SRIHARTATI, S.H., M.H.', 'Sukarela', '4650000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (98, '37', 'H. HANDOKO KRISTIYOSO, S.H., M.H.', 'Sukarela', '5000000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (99, '9', 'JESAYAS TARIGAN, S.H., M.Hum.', 'Sukarela', '10000000', 'Admin', '2025-05-30 19:05:26');
-INSERT INTO `simpanan` VALUES (109, '103', NULL, 'Sukarela', '1000000', '4', '2025-05-30 00:00:00');
-INSERT INTO `simpanan` VALUES (110, '1', NULL, 'Wajib', '29188000', '1', '2025-06-01 00:00:00');
+INSERT INTO `simpanan` VALUES (1, '1', 'Dr. MOH EKA KARTIKA EM, S.H., M.HUM.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (2, '2', 'Dr. WAYAN KARYA, S.H., M.Hum.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (3, '3', 'H BAKTAR JUBRI NASUTION, S.H, M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (4, '4', 'Ucu Jaya Sarjana S, SH.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (5, '5', 'MULA PANGARIBUAN, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (6, '5', 'MULA PANGARIBUAN, S.H., M.H.', 'sukarela', '2500000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (7, '6', 'HERMAN HELLER HUTAPEA, S.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (8, '7', 'Dr. JONLAR PURBA, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (9, '8', 'JESAYAS TARIGAN, S.H., M.Hum.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (10, '8', 'JESAYAS TARIGAN, S.H., M.Hum.', 'sukarela', '10000000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (11, '9', 'CEPI ISKANDAR, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (12, '10', 'HIRAS SIHOMBING, S.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (13, '11', 'MUHAMMAD NUR, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (14, '11', 'MUHAMMAD NUR, S.H., M.H.', 'sukarela', '2500000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (15, '12', 'SUKMAYANTI, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (16, '13', 'R MATRAS SUPOMO, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (17, '14', 'Dr. GUNAWAN, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (18, '15', 'PORMAN SITUMORANG, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (19, '16', 'ROBERT SIAHAAN, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (20, '17', 'SUDARWIN, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (21, '18', 'PRANOTO, S.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (22, '19', 'Hj. WEDHAYATI, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (23, '20', 'POLTAK SITORUS, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (24, '21', 'RATNA MINTARSIH, S.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (25, '22', 'ASBAN PANJAITAN, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (26, '23', 'KEMAL TAMPUBOLON, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (27, '24', 'IDA MARION, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (28, '25', 'IMAN GULTOM, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (29, '25', 'IMAN GULTOM, S.H., M.H.', 'sukarela', '2000000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (30, '26', 'MADE SUTRISNA, S.H., M.Hum.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (31, '27', 'VIKTOR PAKPAHAN, S.H., M.H.MSi.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (32, '28', 'Dr. KASIANUS TELAUMBANUA, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (33, '29', 'BARITA SARAGIH, S.H.L.L.M.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (34, '30', 'Yana Hediyana', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (35, '31', 'Hj. NENENG WARLINAH, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (36, '32', 'HENDRO CATUR SUCAHYO, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (37, '33', 'PAHATAR SIMARMATA, S.H., M.Hum.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (38, '34', 'Zaherwan Lesmana, S.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (39, '35', 'H. HANDOKO KRISTIYOSO, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (40, '35', 'H. HANDOKO KRISTIYOSO, S.H., M.H.', 'sukarela', '5000000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (41, '36', 'Dr. Hj. Nur Aslam Bustaman, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (42, '37', 'SURANTO, S.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (43, '38', 'TURSINAH AFTIANTI, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (44, '39', 'MULYANTO, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (45, '40', 'EDISON MUHAMAD, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (46, '41', 'Dr. KRISTWAN GENOVA DAMANIK, S.H., M.HUM.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (47, '41', 'Dr. KRISTWAN GENOVA DAMANIK, S.H., M.HUM.', 'sukarela', '2000000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (48, '42', 'MARISI SIREGAR, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (49, '42', 'MARISI SIREGAR, S.H., M.H.', 'sukarela', '2500000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (50, '43', 'MOCH MAWARDI, SH MH', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (51, '44', 'Hj. JUNILAWATI HARAHAP, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (52, '45', 'Dr. NAISYAH KADIR, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (53, '45', 'Dr. NAISYAH KADIR, S.H., M.H.', 'sukarela', '350000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (54, '46', 'SAIFUL ASNURI, S.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (55, '47', 'Hj. LILIK SRIHARTATI, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (56, '47', 'Hj. LILIK SRIHARTATI, S.H., M.H.', 'sukarela', '4650000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (57, '48', 'Tri Mulyani, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (58, '48', 'Tri Mulyani, S.H., M.H.', 'sukarela', '1000000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (59, '49', 'Sri Yuditiani, S.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (60, '50', 'Rosmalinda, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (61, '51', 'Erna Rosmawati, S.H., M. H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (62, '52', 'Bambang Sugianto', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (63, '53', 'ENDANG SUMARNO, S.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (64, '54', 'KRISNA SOFIADI, S.H', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (65, '55', 'ERNIWATI, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (66, '56', 'Hermansyah', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (67, '57', 'Bambang Belardaya', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (68, '58', 'SUGIHARTO, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (69, '59', 'ARLISA YUNITA NELYANA', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (70, '59', 'ARLISA YUNITA NELYANA', 'sukarela', '200000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (71, '60', 'Nurdiana, SH', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (72, '60', 'Nurdiana, SH', 'sukarela', '1000000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (73, '61', 'Khairul Fasja, SH', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (74, '62', 'JAFRI, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (75, '63', 'Hendayani, SH', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (76, '64', 'GATOT HADI PURWONO, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (77, '65', 'RIDWAN NURDIN, S.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (78, '66', 'YETI NINGSIH, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (79, '67', 'ENANG SUPARMAN, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (80, '68', 'SUSILO NANDANG BAGIO, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (81, '68', 'SUSILO NANDANG BAGIO, S.H., M.H.', 'sukarela', '1000000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (82, '69', 'NINA YAYU MAESAROH, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (83, '70', 'SRI SUBEKTI TRIANA, S.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (84, '71', 'JONO YULIANTO, S.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (85, '72', 'YANI SOFYAN, S.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (86, '73', 'Dani Adhia Wardana', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (87, '74', 'Ummi Hani, S.Sos', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (88, '75', 'Ary Faridah,', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (89, '75', 'Ary Faridah,', 'sukarela', '1000000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (90, '76', 'Sri Suratno Wibowo', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (91, '77', 'Anton Senjaya, S.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (92, '77', 'Anton Senjaya, S.', 'sukarela', '100000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (93, '78', 'Aljunalliadi, SE', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (94, '79', 'Elna Helniarika, S.Kom', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (95, '79', 'Elna Helniarika, S.Kom', 'sukarela', '100000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (96, '80', 'Lies Hendrawani', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (97, '80', 'Lies Hendrawani', 'sukarela', '500000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (98, '81', 'Apriyani Adi Utami', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (99, '81', 'Apriyani Adi Utami', 'sukarela', '200000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (100, '82', 'Lisna Indrawati', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (101, '83', 'Sidik Nugraha', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (102, '84', 'Fitri Kristianti, S.E., Ak.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (103, '84', 'Fitri Kristianti, S.E., Ak.', 'sukarela', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (104, '85', 'Nurhafina N', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (105, '86', 'Nurul Yulia', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (106, '87', 'Andrie Maeri', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (107, '88', 'Tia Adistian Pasha, S.T.', 'wajib', '300000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (108, '89', 'Hera Caprina, S.I.Kom.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (109, '90', 'NISA WANGSITA, S.Psi.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (110, '91', 'YOGI ISKANDAR PAMUNGKAS PUTRA, S.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (111, '92', 'MARTINA MAGDALENA BARASA, S.T.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (112, '92', 'MARTINA MAGDALENA BARASA, S.T.', 'sukarela', '1000000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (113, '93', 'YUNI CLARA, S.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (114, '94', 'ZENI PUTERI SIMANGUNSONG, S.Ak.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (115, '95', 'DEVIRA WIENA PRAMINTYA, S.Kom.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (116, '96', 'INDRA RIZKY FIRMANSYAH, A.Md.T.', 'wajib', '100000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (117, '97', 'Saepuloh', 'wajib', '100000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (118, '97', 'Saepuloh', 'sukarela', '100000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (119, '98', 'RESTI APRILIA, A.Md.', 'wajib', '100000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (120, '99', 'AYU PERMATA SARI.,A.Md', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (121, '100', 'SRI ANGELA SIALLAGAN, A.Md.', 'wajib', '100000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (122, '101', 'FERGIE NOVITA WASSAHDAD, A.Md.Ak.', 'wajib', '100000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (123, '101', 'FERGIE NOVITA WASSAHDAD, A.Md.Ak.', 'sukarela', '500000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (124, '102', 'HANI NUR AINI, A.Md.', 'wajib', '100000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (125, '103', 'BUDYAWAN HERIJANTO, S.E.', 'wajib', '100000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (126, '104', 'HERU BUDIYANTO, S.IP.', 'wajib', '100000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (127, '105', 'FITRIA NURFAUZIAH, S.E.', 'wajib', '100000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (128, '106', 'RIA IRAWATI PUSPITASARI, A.Md.', 'wajib', '100000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (129, '107', 'LUKMAN ILMAN NURHAKIM, S.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (130, '108', 'ANNISA AYU LESTARI, S.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (131, '109', 'OLIVIA WAHYU KUSUMANINGTYAS, S.H.', 'wajib', '150000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (132, '110', 'PUPUT WULANSARI, A.Md.', 'wajib', '100000', 'system', '2025-06-26 18:45:35', NULL, NULL);
+INSERT INTO `simpanan` VALUES (133, '1', 'Dr. MOH EKA KARTIKA EM, S.H., M.HUM.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (134, '2', 'Dr. WAYAN KARYA, S.H., M.Hum.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (135, '3', 'H BAKTAR JUBRI NASUTION, S.H, M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (136, '4', 'Ucu Jaya Sarjana S, SH.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (137, '5', 'MULA PANGARIBUAN, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (138, '5', 'MULA PANGARIBUAN, S.H., M.H.', 'sukarela', '2500000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (139, '6', 'HERMAN HELLER HUTAPEA, S.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (140, '7', 'Dr. JONLAR PURBA, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (141, '8', 'JESAYAS TARIGAN, S.H., M.Hum.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (142, '8', 'JESAYAS TARIGAN, S.H., M.Hum.', 'sukarela', '10000000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (143, '9', 'CEPI ISKANDAR, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (144, '10', 'HIRAS SIHOMBING, S.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (145, '11', 'MUHAMMAD NUR, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (146, '11', 'MUHAMMAD NUR, S.H., M.H.', 'sukarela', '2500000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (147, '12', 'SUKMAYANTI, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (148, '13', 'R MATRAS SUPOMO, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (149, '14', 'Dr. GUNAWAN, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (150, '15', 'PORMAN SITUMORANG, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (151, '16', 'ROBERT SIAHAAN, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (152, '17', 'SUDARWIN, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (153, '18', 'PRANOTO, S.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (154, '19', 'Hj. WEDHAYATI, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (155, '20', 'POLTAK SITORUS, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (156, '21', 'RATNA MINTARSIH, S.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (157, '22', 'ASBAN PANJAITAN, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (158, '23', 'KEMAL TAMPUBOLON, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (159, '24', 'IDA MARION, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (160, '25', 'IMAN GULTOM, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (161, '25', 'IMAN GULTOM, S.H., M.H.', 'sukarela', '2000000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (162, '26', 'MADE SUTRISNA, S.H., M.Hum.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (163, '27', 'VIKTOR PAKPAHAN, S.H., M.H.MSi.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (164, '28', 'Dr. KASIANUS TELAUMBANUA, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (165, '29', 'BARITA SARAGIH, S.H.L.L.M.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (166, '30', 'Yana Hediyana', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (167, '31', 'Hj. NENENG WARLINAH, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (168, '32', 'HENDRO CATUR SUCAHYO, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (169, '33', 'PAHATAR SIMARMATA, S.H., M.Hum.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (170, '34', 'Zaherwan Lesmana, S.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (171, '35', 'H. HANDOKO KRISTIYOSO, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (172, '35', 'H. HANDOKO KRISTIYOSO, S.H., M.H.', 'sukarela', '5000000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (173, '36', 'Dr. Hj. Nur Aslam Bustaman, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (174, '37', 'SURANTO, S.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (175, '38', 'TURSINAH AFTIANTI, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (176, '39', 'MULYANTO, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (177, '40', 'EDISON MUHAMAD, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (178, '41', 'Dr. KRISTWAN GENOVA DAMANIK, S.H., M.HUM.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (179, '41', 'Dr. KRISTWAN GENOVA DAMANIK, S.H., M.HUM.', 'sukarela', '2000000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (180, '42', 'MARISI SIREGAR, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (181, '42', 'MARISI SIREGAR, S.H., M.H.', 'sukarela', '2500000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (182, '43', 'MOCH MAWARDI, SH MH', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (183, '44', 'Hj. JUNILAWATI HARAHAP, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (184, '45', 'Dr. NAISYAH KADIR, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (185, '45', 'Dr. NAISYAH KADIR, S.H., M.H.', 'sukarela', '350000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (186, '46', 'SAIFUL ASNURI, S.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (187, '47', 'Hj. LILIK SRIHARTATI, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (188, '47', 'Hj. LILIK SRIHARTATI, S.H., M.H.', 'sukarela', '4650000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (189, '48', 'Tri Mulyani, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (190, '48', 'Tri Mulyani, S.H., M.H.', 'sukarela', '1000000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (191, '49', 'Sri Yuditiani, S.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (192, '50', 'Rosmalinda, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (193, '51', 'Erna Rosmawati, S.H., M. H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (194, '52', 'Bambang Sugianto', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (195, '53', 'ENDANG SUMARNO, S.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (196, '54', 'KRISNA SOFIADI, S.H', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (197, '55', 'ERNIWATI, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (198, '56', 'Hermansyah', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (199, '57', 'Bambang Belardaya', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (200, '58', 'SUGIHARTO, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (201, '59', 'ARLISA YUNITA NELYANA', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (202, '59', 'ARLISA YUNITA NELYANA', 'sukarela', '200000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (203, '60', 'Nurdiana, SH', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (204, '60', 'Nurdiana, SH', 'sukarela', '1000000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (205, '61', 'Khairul Fasja, SH', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (206, '62', 'JAFRI, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (207, '63', 'Hendayani, SH', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (208, '64', 'GATOT HADI PURWONO, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (209, '65', 'RIDWAN NURDIN, S.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (210, '66', 'YETI NINGSIH, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (211, '67', 'ENANG SUPARMAN, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (212, '68', 'SUSILO NANDANG BAGIO, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (213, '68', 'SUSILO NANDANG BAGIO, S.H., M.H.', 'sukarela', '1000000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (214, '69', 'NINA YAYU MAESAROH, S.H., M.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (215, '70', 'SRI SUBEKTI TRIANA, S.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (216, '71', 'JONO YULIANTO, S.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (217, '72', 'YANI SOFYAN, S.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (218, '73', 'Dani Adhia Wardana', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (219, '74', 'Ummi Hani, S.Sos', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (220, '75', 'Ary Faridah,', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (221, '75', 'Ary Faridah,', 'sukarela', '1000000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (222, '76', 'Sri Suratno Wibowo', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (223, '77', 'Anton Senjaya, S.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (224, '77', 'Anton Senjaya, S.', 'sukarela', '100000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (225, '78', 'Aljunalliadi, SE', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (226, '79', 'Elna Helniarika, S.Kom', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (227, '79', 'Elna Helniarika, S.Kom', 'sukarela', '100000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (228, '80', 'Lies Hendrawani', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (229, '80', 'Lies Hendrawani', 'sukarela', '500000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (230, '81', 'Apriyani Adi Utami', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (231, '81', 'Apriyani Adi Utami', 'sukarela', '200000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (232, '82', 'Lisna Indrawati', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (233, '83', 'Sidik Nugraha', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (234, '84', 'Fitri Kristianti, S.E., Ak.', 'wajib', '150000', 'system', '2025-06-29 19:16:57', NULL, NULL);
+INSERT INTO `simpanan` VALUES (235, '84', 'Fitri Kristianti, S.E., Ak.', 'sukarela', '150000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (236, '85', 'Nurhafina N', 'wajib', '150000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (237, '86', 'Nurul Yulia', 'wajib', '150000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (238, '87', 'Andrie Maeri', 'wajib', '150000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (239, '88', 'Tia Adistian Pasha, S.T.', 'wajib', '300000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (240, '89', 'Hera Caprina, S.I.Kom.', 'wajib', '150000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (241, '90', 'NISA WANGSITA, S.Psi.', 'wajib', '150000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (242, '91', 'YOGI ISKANDAR PAMUNGKAS PUTRA, S.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (243, '92', 'MARTINA MAGDALENA BARASA, S.T.', 'wajib', '150000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (244, '92', 'MARTINA MAGDALENA BARASA, S.T.', 'sukarela', '1000000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (245, '93', 'YUNI CLARA, S.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (246, '94', 'ZENI PUTERI SIMANGUNSONG, S.Ak.', 'wajib', '150000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (247, '95', 'DEVIRA WIENA PRAMINTYA, S.Kom.', 'wajib', '150000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (248, '96', 'INDRA RIZKY FIRMANSYAH, A.Md.T.', 'wajib', '100000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (249, '97', 'Saepuloh', 'wajib', '100000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (250, '97', 'Saepuloh', 'sukarela', '100000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (251, '98', 'RESTI APRILIA, A.Md.', 'wajib', '100000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (252, '99', 'AYU PERMATA SARI.,A.Md', 'wajib', '150000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (253, '100', 'SRI ANGELA SIALLAGAN, A.Md.', 'wajib', '100000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (254, '101', 'FERGIE NOVITA WASSAHDAD, A.Md.Ak.', 'wajib', '100000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (255, '101', 'FERGIE NOVITA WASSAHDAD, A.Md.Ak.', 'sukarela', '500000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (256, '102', 'HANI NUR AINI, A.Md.', 'wajib', '100000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (257, '103', 'BUDYAWAN HERIJANTO, S.E.', 'wajib', '100000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (258, '104', 'HERU BUDIYANTO, S.IP.', 'wajib', '100000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (259, '105', 'FITRIA NURFAUZIAH, S.E.', 'wajib', '100000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (260, '106', 'RIA IRAWATI PUSPITASARI, A.Md.', 'wajib', '100000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (261, '107', 'LUKMAN ILMAN NURHAKIM, S.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (262, '108', 'ANNISA AYU LESTARI, S.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (263, '109', 'OLIVIA WAHYU KUSUMANINGTYAS, S.H.', 'wajib', '150000', 'system', '2025-06-29 19:16:58', NULL, NULL);
+INSERT INTO `simpanan` VALUES (264, '110', 'PUPUT WULANSARI, A.Md.', 'wajib', '100000', 'system', '2025-06-29 19:16:58', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for simpanan_ori
@@ -1134,6 +1582,146 @@ INSERT INTO `sukarela` VALUES (NULL, '44', 'MARISI SIREGAR, S.H., M.H.', 'Sukare
 INSERT INTO `sukarela` VALUES (NULL, '49', 'Hj. LILIK SRIHARTATI, S.H., M.H.', 'Sukarela', '4650000', 'Admin', NULL);
 INSERT INTO `sukarela` VALUES (NULL, '37', 'H. HANDOKO KRISTIYOSO, S.H., M.H.', 'Sukarela', '5000000', 'Admin', NULL);
 INSERT INTO `sukarela` VALUES (NULL, '9', 'JESAYAS TARIGAN, S.H., M.Hum.', 'Sukarela', '10000000', 'Admin', NULL);
+
+-- ----------------------------
+-- Table structure for tb_anggota
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_anggota`;
+CREATE TABLE `tb_anggota`  (
+  `no` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `nama` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of tb_anggota
+-- ----------------------------
+INSERT INTO `tb_anggota` VALUES ('1', 'NURDIANA, S.H.');
+INSERT INTO `tb_anggota` VALUES ('2', 'BAMBANG BELARDAYA, S.H.');
+INSERT INTO `tb_anggota` VALUES ('3', 'H. KAIRUL FASJA, S.H.');
+INSERT INTO `tb_anggota` VALUES ('4', 'HENDAYANI, S.H.');
+INSERT INTO `tb_anggota` VALUES ('5', 'LIES HENDRAWANI');
+INSERT INTO `tb_anggota` VALUES ('6', 'DANI ADHIA WARDANA, S.T. ');
+INSERT INTO `tb_anggota` VALUES ('7', 'SAEPULOH');
+INSERT INTO `tb_anggota` VALUES ('8', 'UMMI HANI, S. Sos.');
+INSERT INTO `tb_anggota` VALUES ('9', 'ARY FARIDAH, S.Si.');
+INSERT INTO `tb_anggota` VALUES ('10', 'SRI SURATNO WIBOWO, S.T.');
+INSERT INTO `tb_anggota` VALUES ('11', 'ANTON SENJAYA, S.Kom., SH. ');
+INSERT INTO `tb_anggota` VALUES ('12', 'ALJUNALLIADI, S.E.');
+INSERT INTO `tb_anggota` VALUES ('13', 'ELNA HELNIARIKA, S.Kom.');
+INSERT INTO `tb_anggota` VALUES ('14', 'APRIYANI ADI UTAMI, S.E.');
+INSERT INTO `tb_anggota` VALUES ('15', 'SIDIK NUGRAHA, S.Kom.');
+INSERT INTO `tb_anggota` VALUES ('16', 'ANDRIE MAERI RUSBAYANA, A.Md.');
+INSERT INTO `tb_anggota` VALUES ('17', 'FITRI KRISTIANTI, S.E., A.k.');
+INSERT INTO `tb_anggota` VALUES ('18', 'NURUL YULIA DWI ASTUTI, A.Md.');
+INSERT INTO `tb_anggota` VALUES ('19', 'HERI SUPRIYADI');
+INSERT INTO `tb_anggota` VALUES ('20', 'LISNA INDRAWATI');
+INSERT INTO `tb_anggota` VALUES ('21', 'NANTA SUWARNA');
+INSERT INTO `tb_anggota` VALUES ('22', 'DEDI IRAWAN');
+INSERT INTO `tb_anggota` VALUES ('23', 'BAMBANG SUGIANTO');
+INSERT INTO `tb_anggota` VALUES ('24', 'WIDA AMELIA');
+INSERT INTO `tb_anggota` VALUES ('25', 'WINA YUSTI');
+INSERT INTO `tb_anggota` VALUES ('26', 'NURHAFINA NOVIANA');
+INSERT INTO `tb_anggota` VALUES ('27', 'EDDY EFFENDI');
+INSERT INTO `tb_anggota` VALUES ('28', 'DADANG ANWAR');
+INSERT INTO `tb_anggota` VALUES ('29', 'SAEFUL FAUZI SOBARI, SH.');
+INSERT INTO `tb_anggota` VALUES ('30', 'YANA HEDIYANA, S.H.');
+INSERT INTO `tb_anggota` VALUES ('31', 'AHMAD SOLIHIN');
+INSERT INTO `tb_anggota` VALUES ('32', 'UCU JAYA SARJANA SIMATUPANG, S.H.');
+INSERT INTO `tb_anggota` VALUES ('33', 'TENDI KOSTAMAN');
+INSERT INTO `tb_anggota` VALUES ('34', 'LILIK SRIHARTATI, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('35', 'TIA ADISTIAN PASHA');
+INSERT INTO `tb_anggota` VALUES ('36', 'FATHIA FARAHNASH');
+INSERT INTO `tb_anggota` VALUES ('37', 'TRI MULYANI, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('38', 'ZAHERWAN LESMANA, S.H.');
+INSERT INTO `tb_anggota` VALUES ('39', 'HERA CAPRINA S, S.I.Kom.');
+INSERT INTO `tb_anggota` VALUES ('40', 'HEDI');
+INSERT INTO `tb_anggota` VALUES ('41', 'SRI YUDITIANI, SH.');
+INSERT INTO `tb_anggota` VALUES ('42', 'JESAYAS TARIGAN, S.H., M.Hum.');
+INSERT INTO `tb_anggota` VALUES ('43', 'RESTI APRILIA, A.Md.');
+INSERT INTO `tb_anggota` VALUES ('44', 'IWAN');
+INSERT INTO `tb_anggota` VALUES ('45', 'HERMANSYAH.,S.H');
+INSERT INTO `tb_anggota` VALUES ('46', ' R MATRAS SUPOMO, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('47', 'NISA WANGSITA, S.Psi.');
+INSERT INTO `tb_anggota` VALUES ('48', 'AYU PERMATA SARI, A.Md.');
+INSERT INTO `tb_anggota` VALUES ('49', 'Dr. GUNAWAN S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('50', 'ROBERT SIAHAAN, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('51', 'YOGI ISKANDAR PAMUNGKAS PUTRA, S.H.');
+INSERT INTO `tb_anggota` VALUES ('52', 'ROSMALINDA, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('53', 'ERNA ROSMAWATI, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('54', 'AGHNIA RUSYDA');
+INSERT INTO `tb_anggota` VALUES ('55', 'Dr. Hj. NUR ASLAM BUSTAMAN, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('56', 'SURANTO, S.H.');
+INSERT INTO `tb_anggota` VALUES ('57', 'SRI ANGELA SIALLAGAN, A.Md.');
+INSERT INTO `tb_anggota` VALUES ('58', 'M SAEFUL');
+INSERT INTO `tb_anggota` VALUES ('59', 'SUDARWIN, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('60', 'MARTINA MAGDALENA BARASA, S.T.');
+INSERT INTO `tb_anggota` VALUES ('61', 'INDRA RIZKY FIRMANSYAH, A.Md.T');
+INSERT INTO `tb_anggota` VALUES ('62', 'YUNI CLARA, S.H.');
+INSERT INTO `tb_anggota` VALUES ('63', 'PRANOTO, S.H.');
+INSERT INTO `tb_anggota` VALUES ('64', 'ZENI PUTERI SIMANGUNSONG, S.Ak.');
+INSERT INTO `tb_anggota` VALUES ('65', 'Hj. WEDHAYATI, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('66', 'ENDANG SUMARNO, S.H.');
+INSERT INTO `tb_anggota` VALUES ('67', 'SRI SUBEKTI TRIANA, S.H.');
+INSERT INTO `tb_anggota` VALUES ('68', 'JONO YULIANTO, S.H.');
+INSERT INTO `tb_anggota` VALUES ('69', 'YANI SOFYAN, S.H.');
+INSERT INTO `tb_anggota` VALUES ('70', 'POLTAK SITORUS, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('71', 'RATNA MINTARSIH, S.H.');
+INSERT INTO `tb_anggota` VALUES ('72', 'KEMAL TAMPUBOLON, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('73', 'KRISNA SOFIADI, S.H.');
+INSERT INTO `tb_anggota` VALUES ('74', 'FERGIE NOVITA WASSAHDAD, A.Md.Ak.');
+INSERT INTO `tb_anggota` VALUES ('75', 'DEVIRA WIENA PRAMINTYA, S.Kom.');
+INSERT INTO `tb_anggota` VALUES ('76', 'HERU BUDIYANTO, S.IP.');
+INSERT INTO `tb_anggota` VALUES ('77', 'HANI NUR AINI, A.Md.');
+INSERT INTO `tb_anggota` VALUES ('78', 'BUDYAWAN HERIJANTO, S.E.');
+INSERT INTO `tb_anggota` VALUES ('79', 'RIA IRAWATI PUSPITASARI, A.Md.');
+INSERT INTO `tb_anggota` VALUES ('80', 'CECEP SURACHMAN');
+INSERT INTO `tb_anggota` VALUES ('81', 'IMAN GULTOM, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('82', 'PORMAN SITUMORANG, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('83', 'TURSINAH AFTIANTI, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('84', 'MULYANTO, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('85', 'EDISON MUHAMAD, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('86', 'Dr. KRISTWAN GENOVA DAMANIK, S.H., M.HUM.');
+INSERT INTO `tb_anggota` VALUES ('87', 'MARISI SIREGAR, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('88', 'MOCH MAWARDI, SH MH');
+INSERT INTO `tb_anggota` VALUES ('89', 'FITRIA NURFAUZIAH, S.E.');
+INSERT INTO `tb_anggota` VALUES ('90', 'PAHATAR SIMARMATA, S.H., M.Hum.');
+INSERT INTO `tb_anggota` VALUES ('91', 'RIDWAN NURDIN, S.H.');
+INSERT INTO `tb_anggota` VALUES ('92', 'YETI NINGSIH, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('93', 'ENANG SUPARMAN, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('94', 'SUSILO NANDANG BAGIO, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('95', 'NINA YAYU MAESAROH, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('96', 'H. HANDOKO KRISTIYOSO, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('97', 'CEPI ISKANDAR, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('98', 'MUHAMMAD NUR, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('99', 'H. BAKTAR JUBRI NASUTION, S.H, M.H.');
+INSERT INTO `tb_anggota` VALUES ('100', 'Hj. JUNILAWATI HARAHAP, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('101', 'SUKMAYANTI, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('102', 'LUKMAN ILMAN NURHAKIM, S.H.');
+INSERT INTO `tb_anggota` VALUES ('103', 'ANNISA AYU LESTARI, S.H.');
+INSERT INTO `tb_anggota` VALUES ('104', 'OLIVIA WAHYU KUSUMANINGTYAS, S.H.');
+INSERT INTO `tb_anggota` VALUES ('105', 'ERNIWATI, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('106', 'HENDRO CATUR SUCAHYO, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('107', 'SAIFUL ASNURI, S.H.');
+INSERT INTO `tb_anggota` VALUES ('108', 'SUGIHARTO, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('109', 'JAFRI, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('110', 'GATOT HADI PURWONO, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('111', 'Dr. MOH EKA KARTIKA EM, S.H., M.HUM.');
+INSERT INTO `tb_anggota` VALUES ('112', 'HERMAN HELLER HUTAPEA, S.H.');
+INSERT INTO `tb_anggota` VALUES ('113', 'HIRAS SIHOMBING, S.H.');
+INSERT INTO `tb_anggota` VALUES ('114', 'IDA MARION, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('115', 'MADE SUTRISNA, S.H., M.Hum.');
+INSERT INTO `tb_anggota` VALUES ('116', 'VIKTOR PAKPAHAN, S.H., M.H.MSi.');
+INSERT INTO `tb_anggota` VALUES ('117', 'Dr. KASIANUS TELAUMBANUA, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('118', 'BARITA SARAGIH, S.H.L.L.M.');
+INSERT INTO `tb_anggota` VALUES ('119', 'Dr. NAISYAH KADIR, S.H., MH.');
+INSERT INTO `tb_anggota` VALUES ('120', 'PUPUT WULANSARI, A.Md.');
+INSERT INTO `tb_anggota` VALUES ('121', 'Dr. WAYAN KARYA, S.H., M.Hum.');
+INSERT INTO `tb_anggota` VALUES ('122', 'MULA PANGARIBUAN, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('123', 'Dr. JONLAR PURBA, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('124', 'ARLISA YUNITA NELYANA, S.H.');
+INSERT INTO `tb_anggota` VALUES ('125', 'Hj. NENENG WARLINAH, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('126', 'ASBAN PANJAITAN, S.H., M.H.');
+INSERT INTO `tb_anggota` VALUES ('127', 'DEDI LUSIYANA');
 
 -- ----------------------------
 -- Table structure for users_

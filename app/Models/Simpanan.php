@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Anggota;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Simpanan extends Model
 {
@@ -17,6 +18,8 @@ class Simpanan extends Model
         'nominal_simpanan',
         'input_by',
         'tgl_update',
+        'status',
+        'keterangan',
     ];
 
     public function anggota()

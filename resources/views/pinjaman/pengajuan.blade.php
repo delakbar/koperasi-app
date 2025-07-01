@@ -24,7 +24,6 @@
                     </div>
                     <div class="mb-3">
                         <label for="nominal_pinjaman_display" class="form-label fw-semibold">Nominal Pinjaman</label>
-                        <label for="nominal_pinjaman_display" class="form-label fw-semibold">Nominal Pinjaman</label>
     
                         <div class="row g-2 align-items-center">
                             <!-- Input Nominal Pinjaman -->

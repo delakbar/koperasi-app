@@ -23,7 +23,7 @@ class SimpananImport implements ToCollection, WithStartRow
     {
         foreach ($rows as $rowIndex => $row) {
             $nama = trim($row[2]); // Kolom C = index 2 (NAMA)
-            $anggotaId = trim($row[1]); // Kolom B = index 1 (NO / anggota_id)
+            $anggotaId = trim($row[9]); // Kolom J = index 9 (NO / anggota_id)
 
             $logRow = [
                 'row' => $rowIndex + 4,

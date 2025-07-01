@@ -25,7 +25,8 @@ class AnggotaController extends Controller
         $search = $request->input('search.value');
 
         $query = Anggota::select('id', 'nama','username','jabatan', 'no_hp')
-            ->where('is_active', 1);
+            ->where('is_active', 1)
+            ->orderBy('id', 'asc');
         
         if (!empty($search)) {
             $query->where(function($q) use ($search) {

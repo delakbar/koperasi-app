@@ -246,5 +246,6 @@ public function getDataAngsuran(Request $request)
         $jasa = Jasa::select('jasa', 'jasa')->get();
         return response()->json($jasa);
     }
+    
 
 }

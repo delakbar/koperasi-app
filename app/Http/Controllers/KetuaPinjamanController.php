@@ -2,20 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jasa;
 use App\Models\Angsuran;
 use App\Models\Pinjaman;
+use App\Models\Simpanan;
 use Illuminate\Http\Request;
+use App\Models\PengajuanSukarela;
 
 class KetuaPinjamanController extends Controller
 {
     public function index()
     {
         $pinjamanPengajuan = Pinjaman::with('anggota')
-
             ->orderBy('tgl_input', 'desc')
             ->get();
 
-        return view('pinjaman.cekpinjaman', compact('pinjamanPengajuan'));
+        $simpananPengajuan = PengajuanSukarela::with('anggota')
+            ->orderBy('tgl_update', 'desc')
+            ->get();
+
+        return view('pinjaman.cekpinjaman', compact('pinjamanPengajuan', 'simpananPengajuan'));
     }
 
     public function updateStatus(Request $request, $id)
@@ -43,11 +49,10 @@ class KetuaPinjamanController extends Controller
         $pinjaman->save();
 
         // Jika status diterima, buat data angsuran
-        if ($request->status === 'Diterima Ketua') {
+        if ($request->status === 'Disetujui Ketua') {
             $nominalPinjaman = $pinjaman->nominal_pinjaman;
             $jmlAngsuran = $pinjaman->jml_angsuran;
-            $jasa = $pinjaman->jasa; // misal: 0.02 untuk 2% per bulan
-
+            $jasa = Jasa::first()->jasa;
             // Hitung nominal angsuran pokok per bulan
             $angsuranPokok = $nominalPinjaman / $jmlAngsuran;
 
@@ -64,7 +69,8 @@ class KetuaPinjamanController extends Controller
                     'anggota_id' => $pinjaman->anggota_id,
                     'angsuran_ke' => $i,
                     'nominal_angsuran' => $angsuranPokok,
-                    'jasa' => $jasaNominal,
+                    'jasa' => $jasa,
+                    'nominal_jasa' => $jasaNominal,
                     'nominal_bayar' => $nominalAngsuran,
                     'tgl_bayar' => null,
                     'tgl_input' => now(),
@@ -76,5 +82,40 @@ class KetuaPinjamanController extends Controller
 
         // Redirect kembali dengan pesan sukses
         return redirect()->back()->with('success', 'Status pengajuan pinjaman berhasil diperbarui.');
+    }
+    public function updateSimpananStatus(Request $request, $id)
+    {
+        // Validasi input
+        $request->validate([
+            'status' => 'required|string',
+            'keterangan' => 'nullable|string',
+        ]);
+
+        // Ambil data pengajuan
+        $pengajuan = PengajuanSukarela::findOrFail($id);
+
+        // Update status
+        $pengajuan->status = $request->status;
+
+        // Simpan keterangan jika ditolak
+        if (str_contains($request->status, 'Ditolak')) {
+            $pengajuan->keterangan = $request->keterangan;
+        } else {
+            $pengajuan->keterangan = null;
+        }
+
+        $pengajuan->save();
+
+        // Jika disetujui oleh ketua, salin semua data ke tabel simpanan
+        if ($request->status === 'Disetujui Ketua') {
+            $data = $pengajuan->toArray();     // Ambil semua kolom pengajuan
+            unset($data['id']);                // Hapus kolom ID agar tidak bentrok dengan auto-increment
+            $data['keterangan'] = 'Pengajuan'; // Opsi: bisa tambahkan keterangan khusus
+            $data['tgl_update'] = now();       // Update waktu input saat disalin
+
+            Simpanan::create($data);
+        }
+
+        return redirect()->back()->with('success', 'Status simpanan berhasil diperbarui oleh Ketua.');
     }
 }

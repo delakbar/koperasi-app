@@ -186,8 +186,21 @@ public function store(Request $request)
     }
     public function showForm()
     {
-        return view('simpanan.form-upload');
-    }   
+         $log = [];
+        return view('simpanan.form-upload', compact('log'));
+    }  
+     public function uploadRemun(Request $request)
+    {
+        $request->validate([
+            'file_remun' => 'required|mimes:xlsx,xls'
+        ]);
 
-    
+        $import = new RemunImport();
+        Excel::import($import, $request->file('file_remun'));
+
+        // Jika Anda ingin mengembalikan log, bisa tambahkan seperti di atas
+        $log = $import->log ?? [];
+
+        return view('upload.index', compact('log'));
+    }    
 }
