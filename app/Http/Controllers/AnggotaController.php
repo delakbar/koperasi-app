@@ -96,7 +96,10 @@ class AnggotaController extends Controller
             'jabatan' => 'required',
             'no_hp' => 'required',
             'role' => 'required',
+<<<<<<< HEAD
             'create_at' => 'required',
+=======
+>>>>>>> 7ea93c042cd04d7f5d5288c7fb217c3c5e2bee9f
         ]);
 
         $data = $request->all();
@@ -172,6 +175,7 @@ class AnggotaController extends Controller
     {
         // Validasi input
         $validatedData = $request->validate([
+<<<<<<< HEAD
             'nama' => 'required|string|max:50',
             'jabatan' => 'required|string|max:50',
             'no_hp' => 'max:20',
@@ -179,10 +183,24 @@ class AnggotaController extends Controller
         ]);
 
    
+=======
+            'nama' => 'required|string|max:255',
+            'username' => 'required|string|max:255|unique:anggota,username,' . $id,
+            'jabatan' => 'required|string|max:255',
+            'no_hp' => 'required|string|max:20',
+            'role' => 'required|in:anggota,admin',
+        ]);
+
+        // Cari data anggota berdasarkan id
+>>>>>>> 7ea93c042cd04d7f5d5288c7fb217c3c5e2bee9f
         $anggota = Anggota::findOrFail($id);
 
         // Update data anggota
         $anggota->nama = $validatedData['nama'];
+<<<<<<< HEAD
+=======
+        $anggota->username = $validatedData['username'];
+>>>>>>> 7ea93c042cd04d7f5d5288c7fb217c3c5e2bee9f
         $anggota->jabatan = $validatedData['jabatan'];
         $anggota->no_hp = $validatedData['no_hp'];
         $anggota->role = $validatedData['role'];
@@ -191,7 +209,13 @@ class AnggotaController extends Controller
         // Redirect dengan pesan sukses
         return redirect()->route('anggota.index')->with('success', 'Data anggota berhasil diperbarui.');
     }
+<<<<<<< HEAD
 
+=======
+    /**
+     * Remove the specified resource from storage.
+     */
+>>>>>>> 7ea93c042cd04d7f5d5288c7fb217c3c5e2bee9f
     public function destroy(Anggota $anggota)
     {
         $anggota->delete();

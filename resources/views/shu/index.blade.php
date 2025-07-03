@@ -22,6 +22,7 @@
                     </div>
                 </form>
 
+<<<<<<< HEAD
                 <div class="row mb-3">
                     <div class="col-md-4">
                         <div class="alert alert-info">
@@ -40,6 +41,9 @@
                     </div>
                 </div>
                                 <table id="shuTable" class="table table-bordered display responsive" >
+=======
+                 <table id="shuTable" class="table table-bordered display responsive" >
+>>>>>>> 7ea93c042cd04d7f5d5288c7fb217c3c5e2bee9f
                     <thead class="table-dark">
                         <tr>
                             <th style="display: none;">ID</th>
@@ -148,7 +152,11 @@ $(document).ready(function () {
                 }
             }
         ],
+<<<<<<< HEAD
         order: [[0, 'asc']] 
+=======
+        order: [[0, 'asc']] // ✅ koma sudah benar
+>>>>>>> 7ea93c042cd04d7f5d5288c7fb217c3c5e2bee9f
     });
 
     // Submit filter form
@@ -177,6 +185,7 @@ $(document).ready(function () {
                 $('#hitungShuBtn').prop('disabled', true).text('Menghitung...');
             },
             success: function (response) {
+<<<<<<< HEAD
             const data = response.data;
 
             // Tampilkan nilai total
@@ -193,6 +202,16 @@ $(document).ready(function () {
 
             table.ajax.reload();
         },
+=======
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil',
+                    text: response.message || 'SHU berhasil dihitung.',
+                    confirmButtonColor: '#3085d6'
+                });
+                table.ajax.reload();
+            },
+>>>>>>> 7ea93c042cd04d7f5d5288c7fb217c3c5e2bee9f
             error: function (xhr) {
                 const error = xhr.responseJSON?.message || 'Terjadi kesalahan saat menghitung SHU.';
                 Swal.fire({
@@ -227,7 +246,11 @@ document.getElementById('resetBtn').addEventListener('click', function () {
             text: data.message,
             confirmButtonColor: '#28a745'
         }).then(() => {
+<<<<<<< HEAD
             location.reload(); 
+=======
+            location.reload(); // Refresh setelah alert ditutup
+>>>>>>> 7ea93c042cd04d7f5d5288c7fb217c3c5e2bee9f
         });
     })
     .catch(error => {
@@ -240,4 +263,10 @@ document.getElementById('resetBtn').addEventListener('click', function () {
     });
 });
 </script>
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 7ea93c042cd04d7f5d5288c7fb217c3c5e2bee9f
 @endpush

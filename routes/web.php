@@ -51,8 +51,12 @@ Route::middleware(['auth','role:Admin'])->group(function () {
     // Route untuk menampilkan form upload
     Route::get('/form-upload-simpanan', [SimpananController::class, 'showForm'])->name('form.upload.simpanan');
     Route::post('/upload-simpanan', [SimpananController::class, 'uploadSimpanan'])->name('upload.simpanan');
+<<<<<<< HEAD
     Route::get('/upload/remun', [SimpananController::class, 'showForm'])->name('form.upload.remun');
     Route::post('/upload/remun', [SimpananController::class, 'uploadRemun'])->name('upload.remun');
+=======
+    Route::post('/upload/remun', [UploadController::class, 'uploadRemun'])->name('upload.remun');
+>>>>>>> 7ea93c042cd04d7f5d5288c7fb217c3c5e2bee9f
 
     // hitung SHU
     Route::get('/shu', [SHUController::class, 'index'])->name('shu.index');

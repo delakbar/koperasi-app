@@ -25,10 +25,13 @@
                             <input type="text" class="form-control" id="no_hp" name="no_hp" required>
                         </div>
                         <div class="mb-3">
+<<<<<<< HEAD
                             <label for="no_hp" class="form-label">Tgl Masuk</label>
                             <input type="date" class="form-control" id="create_at" name="create_at" required>
                         </div>
                         <div class="mb-3">
+=======
+>>>>>>> 7ea93c042cd04d7f5d5288c7fb217c3c5e2bee9f
                             <label for="role" class="form-label">role</label>
                             <select class="form-control" id="role" name="role" required>
                             <option value="">-- Pilih Role --</option>

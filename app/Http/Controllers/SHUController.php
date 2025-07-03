@@ -8,7 +8,13 @@ use App\Models\ShuAnggota;
 
 class SHUController extends Controller
 {
+<<<<<<< HEAD
 
+=======
+    /**
+     * Hitung SHU berdasarkan tanggal dan simpan ke tabel shu_anggota
+     */
+>>>>>>> 7ea93c042cd04d7f5d5288c7fb217c3c5e2bee9f
     public function hitungSHU(Request $request)
     {
         $startDate = $request->start_date;
@@ -88,6 +94,7 @@ class SHUController extends Controller
         }
 
         return response()->json([
+<<<<<<< HEAD
         'status' => 'success',
         'message' => 'SHU berhasil dihitung!',
         'data' => [
@@ -103,6 +110,24 @@ class SHUController extends Controller
     ]);
     }
 
+=======
+            'status' => 'success',
+            'message' => 'SHU berhasil dihitung!',
+            'data' => [
+                'total_simpanan' => $totalSimpanan,
+                'total_pinjaman' => $totalPinjaman,
+                'shu_bersih' => $shuBersih,
+                'shu_anggota' => $shuBersihAnggota,
+                'pengkalisimpanan' => $pengkaliSimpanan,
+                'pengkalipinjaman' => $pengkaliPinjaman,
+            ]
+        ]);
+    }
+
+    /**
+     * Tampilkan halaman index SHU
+     */
+>>>>>>> 7ea93c042cd04d7f5d5288c7fb217c3c5e2bee9f
     public function index(Request $request)
     {
         $shus = DB::table('shu_anggota')

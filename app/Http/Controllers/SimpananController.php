@@ -8,7 +8,10 @@ use App\Models\jenis_simpanan;
 use Illuminate\Http\Request;
 
 use App\Imports\SimpananImport;
+<<<<<<< HEAD
 use App\Imports\RemunImport;
+=======
+>>>>>>> 7ea93c042cd04d7f5d5288c7fb217c3c5e2bee9f
 use Maatwebsite\Excel\Facades\Excel;
 
 class SimpananController extends Controller
@@ -113,6 +116,7 @@ class SimpananController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+<<<<<<< HEAD
     public function store(Request $request)
     {
         $request->validate([
@@ -128,6 +132,23 @@ class SimpananController extends Controller
         Simpanan::create($data);
         return redirect()->route('simpanan.index')->with('success', 'Data simpanan berhasil disimpan.');
     }
+=======
+public function store(Request $request)
+{
+    $request->validate([
+        'anggota_id' => 'required',
+        'jenis_simpanan' => 'required',
+        'nominal_simpanan' => 'required|numeric',
+    ]);
+
+    $data = $request->all();
+    // Ambil user id yang sedang login untuk kolom input_by
+    $data['input_by'] = auth()->user()->id ?? null;
+
+    Simpanan::create($data);
+    return redirect()->route('simpanan.index')->with('success', 'Data simpanan berhasil disimpan.');
+}
+>>>>>>> 7ea93c042cd04d7f5d5288c7fb217c3c5e2bee9f
 
     /**
      * Display the specified resource.
@@ -198,7 +219,16 @@ class SimpananController extends Controller
 
         $import = new RemunImport();
         Excel::import($import, $request->file('file_remun'));
+<<<<<<< HEAD
         $log = $import->log ?? [];
         return view('pinjaman.form-remun', compact('log'));
     }
+=======
+
+        // Jika Anda ingin mengembalikan log, bisa tambahkan seperti di atas
+        $log = $import->log ?? [];
+
+        return view('upload.index', compact('log'));
+    }    
+>>>>>>> 7ea93c042cd04d7f5d5288c7fb217c3c5e2bee9f
 }
